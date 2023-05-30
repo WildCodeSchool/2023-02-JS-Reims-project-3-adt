@@ -1,3 +1,15 @@
+Nom du projet : Projet ADT de la departement de la Marne.
+Début du projet : 24/05/23
+Fin du projet : 13/07/23
+
+Collaborateurs du projet : 
+[Adlan](https://www.linkedin.com/in/khaliev/)
+[Rina](https://www.linkedin.com/in/ni-kadek-rina-wati/)
+[Alexandre. O](https://www.linkedin.com/in/apompidou/)
+[Alexandre. P](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
+[Elodie](https://www.linkedin.com/in/elodie-jehl/)
+
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
