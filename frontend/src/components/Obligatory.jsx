@@ -1,14 +1,15 @@
 /* eslint-disable no-alert */
-/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-restricted-syntax */
+/* eslint-disable react/button-has-type */
 import React, { useState } from "react";
+import Optional from "./Optional";
 
 function Obligatory() {
   const [question1, setQuestion1] = useState("");
   const [question2, setQuestion2] = useState("");
   const [question3, setQuestion3] = useState("");
   const [question4, setQuestion4] = useState("");
+  const [obligatoryCompleted, setObligatoryCompleted] = useState(false);
 
   const handleQuestion1Change = (event) => {
     setQuestion1(event.target.value);
@@ -28,9 +29,10 @@ function Obligatory() {
 
   const handleNextSection = () => {
     if (question1 && question2 && question3 && question4) {
-      console.log("go next");
+      setObligatoryCompleted(true);
+    } else {
+      alert("Veuillez répondre à toutes les questions obligatoires");
     }
-    return alert("Veuillez répondre à toutes les questions obligatoires");
   };
 
   return (
@@ -69,6 +71,8 @@ function Obligatory() {
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
+
+      {obligatoryCompleted && <Optional />}
 
       <button onClick={handleNextSection}>Next</button>
     </div>

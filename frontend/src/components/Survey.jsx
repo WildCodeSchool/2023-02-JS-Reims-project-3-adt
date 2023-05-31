@@ -5,6 +5,10 @@ import "./Survey.css";
 
 function Survey() {
   <div className="questionnaire" />;
-  return <Obligatory />;
+  return (
+    <div>
+      <Obligatory />
+    </div>
+  );
 }
 export default Survey;
