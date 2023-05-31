@@ -1,33 +1,21 @@
-<h2> Project Eco-tourisme ADT de la Marne<h2>
-<br>
-<div>
+Project Eco-tourisme ADT de la Marne
+
+##
 Project start date : 24/05/2023
-<br>
 Project end date : 13/07/2023
-<br>
-</div>
-<br>
-<div>
-Description :<br>
-<br>
+
+## Description :
 Develop a platform to measure the eligibility of local tourism actors for labels related to eco-tourism.<br>
-</div>
-<br>
-<div>
-Project leader :<br>
-<br>
+Project leader :
 Pierre Labadie, Marne Development Agency Partner (ADT).<br>
-</div>
-<br>
-<div>
-Project collaborators :<br>
-<br>
-[Elodie Jehl] (https://www.linkedin.com/in/elodie-jehl/)<br>
-[Adlan Khaliev] (https://www.linkedin.com/in/khaliev/)<br>
-[Alexandre Oudin] (https://www.linkedin.com/in/alexandre-oudin-b66b98236/)<br>
-[Alexandre Pompidou] (https://www.linkedin.com/in/apompidou/)<br>
-[Rina Wati] (https://www.linkedin.com/in/ni-kadek-rina-wati/)<br>
-</div>
+
+##Project collaborators :
+[Elodie Jehl] (https://www.linkedin.com/in/elodie-jehl/)
+[Adlan Khaliev] (https://www.linkedin.com/in/khaliev/)
+[Alexandre Oudin] (https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
+[Alexandre Pompidou] (https://www.linkedin.com/in/apompidou/)
+[Rina Wati] (https://www.linkedin.com/in/ni-kadek-rina-wati/)
+
 
 ## Concept
 
