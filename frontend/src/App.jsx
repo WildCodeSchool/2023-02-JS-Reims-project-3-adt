@@ -1,12 +1,12 @@
-import Home from "./pages/Home";
+import React from "react";
+import Survey from "./components/Survey";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Survey />
     </div>
   );
 }

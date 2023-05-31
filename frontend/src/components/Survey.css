@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.questionnaire {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.question label {
+  width: 60%;
+  margin-right: 10px;
+}
+
+.question select {
+  width: 40%;
+}
