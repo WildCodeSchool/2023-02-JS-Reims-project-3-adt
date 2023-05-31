@@ -10,11 +10,11 @@ Project leader :
 Pierre Labadie, Marne Development Agency Partner (ADT).<br>
 
 ##Project collaborators :
-[Elodie Jehl] (https://www.linkedin.com/in/elodie-jehl/)
-[Adlan Khaliev] (https://www.linkedin.com/in/khaliev/)
-[Alexandre Oudin] (https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
-[Alexandre Pompidou] (https://www.linkedin.com/in/apompidou/)
-[Rina Wati] (https://www.linkedin.com/in/ni-kadek-rina-wati/)
+[Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)
+[Adlan Khaliev](https://www.linkedin.com/in/khaliev/)
+[Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
+[Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)
+[Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)
 
 
 ## Concept
