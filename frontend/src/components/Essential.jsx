@@ -47,7 +47,9 @@ function Essential() {
         </a>
       </span>
       <select value={question1} onChange={handleQuestion1Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -57,7 +59,9 @@ function Essential() {
         matériaux de construction biosourcés :
       </span>
       <select value={question2} onChange={handleQuestion2Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -69,7 +73,9 @@ function Essential() {
         </a>
       </span>
       <select value={question3} onChange={handleQuestion3Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -79,7 +85,9 @@ function Essential() {
         été : volets battants, électriques, casquette végétale, etc :
       </span>
       <select value={question4} onChange={handleQuestion4Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -93,7 +101,9 @@ function Essential() {
         </a>
       </span>
       <select value={question5} onChange={handleQuestion5Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
