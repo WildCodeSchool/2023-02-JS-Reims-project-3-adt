@@ -18,11 +18,11 @@
 <div>
 <h3>Collaborateurs du projet :</h3>
 <ul>
-<li> Elodie Jehl <a href="https://www.linkedin.com/in/elodie-jehl/"></li>
-<li> Adlan Khaliev <a href="https://www.linkedin.com/in/khaliev/"></li>
-<li> Alexandre Oudin <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/"></li>
-<li> Alexandre Pompidou <a href="https://www.linkedin.com/in/apompidou/"></li>
-<li> Rina Wati <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/)"></li>
+<li> <a href="https://www.linkedin.com/in/elodie-jehl/">Elodie Jehl</a></li>
+<li> <a href="https://www.linkedin.com/in/khaliev/">Adlan Khaliev</a></li>
+<li> <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/">Alexandre Oudin</a></li>
+<li> <a href="https://www.linkedin.com/in/apompidou/">Alexandre Pompidou</a></li>
+<li> <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/)">Rina Wati</a></li>
 </ul>
 </div>
 
