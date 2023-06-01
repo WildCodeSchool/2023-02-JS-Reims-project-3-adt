@@ -1,3 +1,31 @@
+<h2> Projet Eco-tourisme ADT de la Marne</h2>
+
+<div>
+<p>Date début du projet : 24/05/2023</p>
+<p>Date fin du projet : 13/07/2023</p>
+</div>
+
+<div>
+<h3>Description :</h3> 
+<p>Développer une plateforme afin de mesurer l'éligibilité des acteurs touristiques locaux à des labels en lien avec l'éco-tourisme.</p>
+</div>
+
+<div>
+<h3>Porteur du projet :</h3>
+<p>Monsieur Pierre Labadie, Agence de Développement Touristique de la Marne (ADT).</p>
+</div>
+
+<div>
+<h3>Collaborateurs du projet :</h3>
+<ul>
+<li> <a href="https://www.linkedin.com/in/elodie-jehl/">Elodie Jehl</a></li>
+<li> <a href="https://www.linkedin.com/in/khaliev/">Adlan Khaliev</a></li>
+<li> <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/">Alexandre Oudin</a></li>
+<li> <a href="https://www.linkedin.com/in/apompidou/">Alexandre Pompidou</a></li>
+<li> <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/">Rina Wati</a></li>
+</ul>
+</div>
+
 ## Concept
 
 Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
