@@ -39,7 +39,9 @@ function Obligatory() {
 
       <span>Suivi mensuel des consommations électriques:</span>
       <select value={question1} onChange={handleQuestion1Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -48,7 +50,9 @@ function Obligatory() {
         Plus de la moitié des dispositifs d'éclairage sont de classe A:
       </span>
       <select value={question2} onChange={handleQuestion2Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -58,7 +62,9 @@ function Obligatory() {
         climatisation extérieurs:
       </span>
       <select value={question3} onChange={handleQuestion3Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -69,7 +75,9 @@ function Obligatory() {
         value={question4}
         onChange={handleQuestion4Change}
       >
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>

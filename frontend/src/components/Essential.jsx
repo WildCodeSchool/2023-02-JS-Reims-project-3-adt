@@ -7,8 +7,7 @@ function Essential() {
   const [question3, setQuestion3] = useState("");
   const [question4, setQuestion4] = useState("");
   const [question5, setQuestion5] = useState("");
-
-  // const [essentialCompleted, setEssentialCompleted] = useState(false);
+  const [showOptional, setShowOptional] = useState(false);
 
   const handleQuestion1Change = (event) => {
     setQuestion1(event.target.value);
@@ -31,22 +30,26 @@ function Essential() {
   };
 
   const handleNextSection = () => {
-    console.warn("go to next section");
+    setShowOptional(true);
   };
 
   return (
     <div className="questionnaire">
       <h2>Section 2 - Essential</h2>
 
+      {/* Questions essentielles */}
       <span>
         Appareils électroménagers performants selon les recommandations de
         l'ADEME (cf. infographie de l'ADEME) A minima 3 équipements suivants :
         Réfrigérateur, lave-linge, sèche-linge, lave-vaisselle, four.
-        https://agirpourlatransition.ademe.fr/particuliers/conso/droit-conso/nouvelle-etiquette-
-        energie :
+        <a href="https://agirpourlatransition.ademe.fr/particuliers/conso/droit-conso/nouvelle-etiquette-energie">
+          Lien vers l'ADEME
+        </a>
       </span>
       <select value={question1} onChange={handleQuestion1Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -56,18 +59,23 @@ function Essential() {
         matériaux de construction biosourcés :
       </span>
       <select value={question2} onChange={handleQuestion2Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
       <span>
         Isolation thermique performante des murs et plafonds
-        https://librairie.ademe.fr/cadic/2047/guide-pratique-isoler-sa-maison.pdf?modal=false
-        :
+        <a href="https://librairie.ademe.fr/cadic/2047/guide-pratique-isoler-sa-maison.pdf?modal=false">
+          Lien vers le guide de l'ADEME
+        </a>
       </span>
       <select value={question3} onChange={handleQuestion3Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -77,7 +85,9 @@ function Essential() {
         été : volets battants, électriques, casquette végétale, etc :
       </span>
       <select value={question4} onChange={handleQuestion4Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
@@ -86,23 +96,25 @@ function Essential() {
         Pour ses besoins en chauffage ou eau chaude sanitaire, l'établissement -
         utilise des énergies renouvelables ou - est alimenté en électricité par
         un fournisseur labellisé Vert Volt
-        https://agirpourlatransition.ademe.fr/particuliers/vertvolt#paragraph-584788
-        :
+        <a href="https://agirpourlatransition.ademe.fr/particuliers/vertvolt#paragraph-584788">
+          Lien vers Vert Volt
+        </a>
       </span>
       <select value={question5} onChange={handleQuestion5Change}>
-        <option value="">Sélectionnez une réponse</option>
+        <option value="" hidden>
+          Sélectionnez une réponse
+        </option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
-      {/* {essentialCompleted ? (
-        <Optional />
-      ) : ( */}
+      {/* Bouton "Next" */}
       <button type="button" onClick={handleNextSection}>
         Next
       </button>
-      {/* )} */}
-      <Optional />
+
+      {/* Affichage du composant Optional */}
+      {showOptional && <Optional />}
     </div>
   );
 }
