@@ -6,22 +6,22 @@
 </div>
 
 <div>
-<p>Description :</p> 
+<h3>Description :</h3> 
 <p>Développer une plateforme afin de mesurer l'éligibilité des acteurs touristiques locaux à des labels en lien avec l'éco-tourisme.</p>
 </div>
 
 <div>
-<p>Porteur du projet :</p>
+<h3>Porteur du projet :</h3>
 <p>Monsieur Pierre Labadie, Agence de Développement Touristique de la Marne (ADT).</p>
 </div>
 
 <div>
-<p>Collaborateurs du projet :</p>
-<p>- [Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)</p>
-<p>- [Adlan Khaliev](https://www.linkedin.com/in/khaliev/)</p>
-<p>- [Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)</p>
-<p>- [Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)</p>
-<p>- [Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)</p>
+<h3>Collaborateurs du projet :</h3>
+- [Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)
+- [Adlan Khaliev](https://www.linkedin.com/in/khaliev/)
+- [Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
+- [Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)
+- [Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)
 </div>
 
 ## Concept
