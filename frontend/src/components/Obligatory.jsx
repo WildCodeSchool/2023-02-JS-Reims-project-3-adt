@@ -35,7 +35,7 @@ function Obligatory() {
 
   return (
     <div className="questionnaire">
-      <h2>Section 1 - Obligatory</h2>
+      <h2>Les critères obligatoires </h2>
 
       <span>Suivi mensuel des consommations électriques:</span>
       <select value={question1} onChange={handleQuestion1Change}>

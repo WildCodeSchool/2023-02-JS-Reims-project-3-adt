@@ -35,7 +35,7 @@ function Essential() {
 
   return (
     <div className="questionnaire">
-      <h2>Section 2 - Essential</h2>
+      <h2>Les critères essentiels</h2>
 
       {/* Questions essentielles */}
       <span>
