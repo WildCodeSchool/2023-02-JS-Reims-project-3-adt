@@ -1,30 +1,27 @@
-<h2>Projet Eco-tourisme ADT de la Marne</h2>
-<br>
+<h2> Projet Eco-tourisme ADT de la Marne</h2>
+
 <div>
-Date début du projet : 24/05/2023<br> 
-Date fin du projet : 13/07/2023<br>
+<p>Date début du projet : 24/05/2023</p>
+<p>Date fin du projet : 13/07/2023</p>
 </div>
-<br>
+
 <div>
-Description :<br> 
-<br>
-Développer une plateforme afin de mesurer l'éligibilité des acteurs touristiques locaux à des labels en lien avec l'éco-tourisme.<br> 
+<p>Description :</p> 
+<p>Développer une plateforme afin de mesurer l'éligibilité des acteurs touristiques locaux à des labels en lien avec l'éco-tourisme.</p>
 </div>
-<br>
+
 <div>
-Porteur du projet :<br>
-<br> 
-Monsieur Pierre Labadie, Agence de Développement Touristique de la Marne (ADT).<br>
+<p>Porteur du projet :</p>
+<p>Monsieur Pierre Labadie, Agence de Développement Touristique de la Marne (ADT).</p>
 </div>
-<br>
+
 <div>
-Collaborateurs du projet :<br> 
-<br>
-Elodie Jehl (https://www.linkedin.com/in/elodie-jehl/)<br>
-Adlan Khaliev (https://www.linkedin.com/in/khaliev/)<br>
-Alexandre Oudin (https://www.linkedin.com/in/alexandre-oudin-b66b98236/)<br>
-Alexandre Pompidou (https://www.linkedin.com/in/apompidou/)<br>
-Rina Wati (https://www.linkedin.com/in/ni-kadek-rina-wati/)<br>
+<p>Collaborateurs du projet :</p>
+<p>- [Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)</p>
+<p>- [Adlan Khaliev](https://www.linkedin.com/in/khaliev/)</p>
+<p>- [Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)</p>
+<p>- [Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)</p>
+<p>- [Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)</p>
 </div>
 
 ## Concept

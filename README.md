@@ -1,30 +1,27 @@
-<h2> Project Eco-tourisme ADT de la Marne<h2>
-<br>
+<h2> Project Eco-tourisme ADT de la Marne</h2>
+
 <div>
-Project start date : 24/05/2023<br>
-Project end date : 13/07/2023<br>
+<p>Project start date : 24/05/2023</p>
+<p>Project end date : 13/07/2023</p>
 </div>
-<br>
+
 <div>
-Description :<br>
-<br>
-Develop a platform to measure the eligibility of local tourism actors for labels related to eco-tourism.<br>
+<p>Description :</p>
+<p>Develop a platform to measure the eligibility of local tourism actors for labels related to eco-tourism.</p>
 </div>
-<br>
+
 <div>
-Project leader :<br>
-<br>
-Sir Pierre Labadie, Marne Development Agency Partner (ADT).<br>
+<p>Project leader :</p>
+<p>Sir Pierre Labadie, Marne Development Agency Partner (ADT).</p>
 </div>
-<br>
+
 <div>
-Project collaborators :<br>
-<br>
-Elodie Jehl (https://www.linkedin.com/in/elodie-jehl/)<br>
-Adlan Khaliev (https://www.linkedin.com/in/khaliev/)<br>
-Alexandre Oudin (https://www.linkedin.com/in/alexandre-oudin-b66b98236/)<br>
-Alexandre Pompidou (https://www.linkedin.com/in/apompidou/)<br>
-Rina Wati (https://www.linkedin.com/in/ni-kadek-rina-wati/)<br>
+<p>Project collaborators :</p>
+<p>- [Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)</p>
+<p>- [Adlan Khaliev](https://www.linkedin.com/in/khaliev/)</p>
+<p>- [Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)</p>
+<p>- [Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)</p>
+<p>- [Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)</p>
 </div>
 
 ## Concept
