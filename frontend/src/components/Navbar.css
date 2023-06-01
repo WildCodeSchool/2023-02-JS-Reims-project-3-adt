@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 navbar {
   height: 10%;
   width: 100%;
@@ -24,6 +25,7 @@ navbar {
   display: flex;
   padding: 0 30px;
   font-size: 25px;
+  font-family: "Biryani", sans-serif;
 }
 
 .icon {
@@ -38,6 +40,3 @@ navbar {
   margin: 1rem;
 }
 
-div {
-  height: 100rem;
-}
