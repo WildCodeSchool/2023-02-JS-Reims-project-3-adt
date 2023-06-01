@@ -22,7 +22,7 @@
 <li> <a href="https://www.linkedin.com/in/khaliev/">Adlan Khaliev</a></li>
 <li> <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/">Alexandre Oudin</a></li>
 <li> <a href="https://www.linkedin.com/in/apompidou/">Alexandre Pompidou</a></li>
-<li> <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/)">Rina Wati</a></li>
+<li> <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/">Rina Wati</a></li>
 </ul>
 </div>
 
