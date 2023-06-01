@@ -15,12 +15,16 @@
 <p>Sir Pierre Labadie, Marne Development Agency Partner (ADT).</p>
 </div>
 
+<div>
 <h3>Project collaborators :</h3>
-- [Elodie Jehl](https://www.linkedin.com/in/elodie-jehl/)
-- [Adlan Khaliev](https://www.linkedin.com/in/khaliev/)
-- [Alexandre Oudin](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
-- [Alexandre Pompidou](https://www.linkedin.com/in/apompidou/)
-- [Rina Wati](https://www.linkedin.com/in/ni-kadek-rina-wati/)
+<ul>
+<li> Elodie Jehl <a href="https://www.linkedin.com/in/elodie-jehl/"></li>
+<li> Adlan Khaliev <a href="https://www.linkedin.com/in/khaliev/"></li>
+<li> Alexandre Oudin <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/"></li>
+<li> Alexandre Pompidou <a href="https://www.linkedin.com/in/apompidou/"></li>
+<li> Rina Wati <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/)"></li>
+</ul>
+</div>
 
 ## Concept
 
