@@ -28,7 +28,7 @@ function Optional() {
   };
 
   return (
-    <div className="questionnaire">
+    <>
       <h2>Les critères optionnels</h2>
       <span>Conception du bâtiment avec un niveau de performance élevé:</span>
       <select value={question1} onChange={handleQuestion1Change}>
@@ -74,7 +74,7 @@ function Optional() {
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
-    </div>
+    </>
   );
 }
 

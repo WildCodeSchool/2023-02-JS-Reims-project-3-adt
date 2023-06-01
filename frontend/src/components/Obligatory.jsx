@@ -34,7 +34,7 @@ function Obligatory() {
   };
 
   return (
-    <div className="questionnaire">
+    <div>
       <h2>Les critères obligatoires </h2>
 
       <span>Suivi mensuel des consommations électriques:</span>
