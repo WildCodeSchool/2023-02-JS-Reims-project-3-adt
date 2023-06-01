@@ -1,8 +1,6 @@
 /* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/button-has-type */
 import React, { useState } from "react";
-import Optional from "./Optional";
+import Essential from "./Essential";
 
 function Obligatory() {
   const [question1, setQuestion1] = useState("");
@@ -39,42 +37,50 @@ function Obligatory() {
     <div className="questionnaire">
       <h2>Section 1 - Obligatory</h2>
 
-      <label>Suivi mensuel des consommations électriques:</label>
+      <span>Suivi mensuel des consommations électriques:</span>
       <select value={question1} onChange={handleQuestion1Change}>
         <option value="">Sélectionnez une réponse</option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
-      <label>
+      <span>
         Plus de la moitié des dispositifs d'éclairage sont de classe A:
-      </label>
+      </span>
       <select value={question2} onChange={handleQuestion2Change}>
         <option value="">Sélectionnez une réponse</option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
-      <label>
+      <span>
         L'hébergement n'a pas recours à des dispositifs de chauffage ou de
         climatisation extérieurs:
-      </label>
+      </span>
       <select value={question3} onChange={handleQuestion3Change}>
         <option value="">Sélectionnez une réponse</option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
-      <label>Chauffage à faible consommation:</label>
-      <select value={question4} onChange={handleQuestion4Change}>
+      <span htmlFor="question4">Chauffage à faible consommation:</span>
+      <select
+        name="question4"
+        value={question4}
+        onChange={handleQuestion4Change}
+      >
         <option value="">Sélectionnez une réponse</option>
         <option value="Non applicable">Non applicable</option>
         <option value="Critère atteint">Critère atteint</option>
       </select>
 
-      {obligatoryCompleted && <Optional />}
-
-      <button onClick={handleNextSection}>Next</button>
+      {obligatoryCompleted ? (
+        <Essential />
+      ) : (
+        <button type="button" onClick={handleNextSection}>
+          Next
+        </button>
+      )}
     </div>
   );
 }
