@@ -1,14 +1,30 @@
-Nom du projet : Projet ADT de la departement de la Marne.
-Début du projet : 24/05/23
-Fin du projet : 13/07/23
+<h2> Project Eco-tourisme ADT de la Marne</h2>
 
-Collaborateurs du projet : 
-[Adlan](https://www.linkedin.com/in/khaliev/)
-[Rina](https://www.linkedin.com/in/ni-kadek-rina-wati/)
-[Alexandre. O](https://www.linkedin.com/in/apompidou/)
-[Alexandre. P](https://www.linkedin.com/in/alexandre-oudin-b66b98236/)
-[Elodie](https://www.linkedin.com/in/elodie-jehl/)
+<div>
+<p>Project start date : 24/05/2023</p>
+<p>Project end date : 13/07/2023</p>
+</div>
 
+<div>
+<h3>Description :</h3>
+<p>Develop a platform to measure the eligibility of local tourism actors for labels related to eco-tourism.</p>
+</div>
+
+<div>
+<h3>Project leader :</h3>
+<p>Sir Pierre Labadie, Marne Development Agency Partner (ADT).</p>
+</div>
+
+<div>
+<h3>Project collaborators :</h3>
+<ul>
+<li> <a href="https://www.linkedin.com/in/elodie-jehl/">Elodie Jehl</a></li>
+<li> <a href="https://www.linkedin.com/in/khaliev/">Adlan Khaliev</a></li>
+<li> <a href="https://www.linkedin.com/in/alexandre-oudin-b66b98236/">Alexandre Oudin</a></li>
+<li> <a href="https://www.linkedin.com/in/apompidou/">Alexandre Pompidou</a></li>
+<li> <a href="https://www.linkedin.com/in/ni-kadek-rina-wati/">Rina Wati</a></li>
+</ul>
+</div>
 
 ## Concept
 
