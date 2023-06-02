@@ -1,35 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 navbar {
-  height: 100rem;
-  width: 10rem;
+  height: 10%;
+  width: 100%;
   background: linear-gradient(45deg, #1a201f, #325b3b);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .liste {
   display: flex;
-  height: 35rem;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 10%;
+  justify-content: space-around;
+  align-items: center;
   color: rgb(255, 255, 255);
   list-style-type: none;
 }
+.items {
+  display: flex;
+  padding: 0 30px;
+  font-size: 25px;
+}
 
 .icon {
-  height: 5rem;
-  width: 5rem;
+  width: 5vw;
   border-radius: 1rem 1rem;
   margin: 1rem;
-  margin-top: 4rem;
 }
 
 .logo {
-  height: 3rem;
+  width: 10vw;
   border-radius: 1rem 1rem;
   margin: 1rem;
-}
-
-div {
-  height: 100rem;
 }
