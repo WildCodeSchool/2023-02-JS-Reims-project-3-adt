@@ -4,18 +4,17 @@
 }
 
 navbar {
-  height: 10%;
   width: 100%;
   background: linear-gradient(45deg, #1a201f, #325b3b);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0.4rem;
 }
 
 .liste {
   display: flex;
-  height: 10%;
   justify-content: space-around;
   align-items: center;
   color: rgb(255, 255, 255);
@@ -24,7 +23,7 @@ navbar {
 .items {
   display: flex;
   padding: 0 30px;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-family: "Biryani", sans-serif;
 }
 
@@ -39,4 +38,3 @@ navbar {
   border-radius: 1rem 1rem;
   margin: 1rem;
 }
-

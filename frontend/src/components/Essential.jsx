@@ -35,7 +35,7 @@ function Essential() {
   };
 
   return (
-    <div className="questionnaire">
+    <>
       <h2>Les critères essentiels</h2>
 
       {/* Questions essentielles */}
@@ -116,7 +116,7 @@ function Essential() {
 
       {/* Affichage du composant Optional */}
       {showOptional && <Optional />}
-    </div>
+    </>
   );
 }
 
