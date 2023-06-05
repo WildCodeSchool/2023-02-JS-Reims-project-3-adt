@@ -1,11 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import React from "react";
+import Register from "./pages/Register";
 import "./App.css";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <p>coucou</p>
+      <Routes>
+        <Route path="/" element={<Register />} />
+      </Routes>
     </div>
   );
 }
