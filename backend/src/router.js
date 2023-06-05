@@ -1,21 +1,28 @@
 const express = require("express");
+const mysql = require("mysql");
 
 const router = express.Router();
 
-const itemControllers = require("./controllers/itemControllers");
+const questionControllers = require("./controllers/questionControllers");
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+const optionBd = {
+  host: "localhost",
+  user: "root",
+  password: "",
+  port: 3306,
+  database: "ADT",
+};
 
-const userControllers = require("./controllers/userControllers");
+router.get("/questions/family/:familyId", questionControllers.browseByFamily);
+router.post("/questions/family/:familyId", questionControllers.addByFamily);
 
-router.get("/users", userControllers.browse);
-router.get("/users/:id", userControllers.read);
-router.put("/users/:id", userControllers.edit);
-router.post("/users", userControllers.add);
-router.delete("/users/:id", userControllers.destroy);
+router.get(
+  "/questions/category/:categoryId",
+  questionControllers.browseByCategory
+);
+router.post(
+  "/questions/category/:categoryId",
+  questionControllers.addByCategory
+);
 
 module.exports = router;
