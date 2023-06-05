@@ -33,3 +33,17 @@ navbar {
 div {
   height: 100rem;
 }
+
+/*NAVBAR USER*/
+.containerNavbarUser {
+  width: 100%;
+  height: 5em;
+  position: fixed;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+.logoUser img {
+  height: 3em;
+  top: 0;
+  z-index: 10;
+  padding: 1em;
+}
