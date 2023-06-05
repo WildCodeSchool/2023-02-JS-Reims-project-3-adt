@@ -1,19 +1,36 @@
-const express = require("express");
+const QuestionManager = require("../models/questionManager");
 
-const router = express.Router();
-const Question = require("../router");
+const questionManager = new QuestionManager();
 
-router.get("/questions/:family", async (req, res) => {
-  const { family } = req.params;
+const browseByFamily = (req, res) => {
+  const { familyId } = req.params;
 
-  try {
-    const questions = await Question.find({ family });
-    res.json(questions);
-  } catch (error) {
-    res.status(500).json({
-      message: "Une erreur est survenue lors de la récupération des questions.",
+  questionManager
+    .findByFamily(familyId)
+    .then((questions) => {
+      res.json(questions);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
     });
-  }
-});
+};
 
-module.exports = router;
+const addByFamily = (req, res) => {
+  const newQuestion = req.body;
+
+  questionManager
+    .insert(newQuestion)
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+
+module.exports = {
+  browseByFamily,
+  addByFamily,
+};
