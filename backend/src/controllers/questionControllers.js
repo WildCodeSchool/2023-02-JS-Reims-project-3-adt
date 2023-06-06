@@ -6,7 +6,7 @@ const browseByCategory = (req, res) => {
   const { categoryId } = req.params;
 
   questionManager
-    .findByCategory(categoryId)
+    .getAllByCategory(categoryId)
     .then((questions) => {
       res.json(questions);
     })
@@ -34,7 +34,7 @@ const getAllByCategory = (req, res) => {
   const { categoryId } = req.params;
 
   questionManager
-    .getAllByCategory(categoryId)
+    .getAllByCategory(categoryId) // Utilisation de la méthode correcte getAllByCategory
     .then((questions) => {
       res.json(questions);
     })

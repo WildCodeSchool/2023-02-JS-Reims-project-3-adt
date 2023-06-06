@@ -8,7 +8,7 @@ class QuestionManager extends AbstractManager {
   insert(question) {
     return this.database.query(
       `INSERT INTO ${this.table} (content, category) VALUES (?, ?)`,
-      [question.content, question, question.category]
+      [question.content, question.category]
     );
   }
 
@@ -26,7 +26,7 @@ class QuestionManager extends AbstractManager {
     );
   }
 
-  findByMandatory_level(mandatoryLevel) {
+  findByMandatoryLevel(mandatoryLevel) {
     return this.database.query(
       `SELECT * FROM ${this.table} WHERE mandatory_level = ?`,
       [mandatoryLevel]
