@@ -1,11 +1,9 @@
-const QuestionManager = require("../models/QuestionManager");
-
-const questionManager = new QuestionManager();
+const models = require("../models");
 
 const browseByCategory = (req, res) => {
   const { categoryId } = req.params;
 
-  questionManager
+  models.questionManager
     .getAllByCategory(categoryId)
     .then((questions) => {
       res.json(questions);
@@ -19,7 +17,7 @@ const browseByCategory = (req, res) => {
 const addByCategory = (req, res) => {
   const newQuestion = req.body;
 
-  questionManager
+  models.questionManager
     .insert(newQuestion)
     .then(() => {
       res.sendStatus(201);
@@ -33,7 +31,7 @@ const addByCategory = (req, res) => {
 const getAllByCategory = (req, res) => {
   const { categoryId } = req.params;
 
-  questionManager
+  models.questionManager
     .getAllByCategory(categoryId) // Utilisation de la méthode correcte getAllByCategory
     .then((questions) => {
       res.json(questions);

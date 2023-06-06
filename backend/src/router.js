@@ -12,6 +12,4 @@ router.post(
   questionControllers.addByCategory
 );
 
-// router.get("/hello", (req, res) => (res.send("hello")))
-
 module.exports = router;
