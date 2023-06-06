@@ -3,6 +3,7 @@ import React from "react";
 import Register from "./pages/Register";
 import "./App.css";
 import NavbarUser from "./components/NavbarUser";
+import FooterUser from "./components/FooterUser";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/register" element={<Register />} />
       </Routes>
       <NavbarUser />
+      <FooterUser />
     </div>
   );
 }

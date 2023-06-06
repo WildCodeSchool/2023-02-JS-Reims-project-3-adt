@@ -5,4 +5,14 @@ create table user (
   password varchar(80) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+create table question(
+  id int(11) unsigned primary key not null AUTO_INCREMENT,
+  label_question varchar(80) not null unique,
+  category_id int(11) not null,
+  valid boolean null
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 INSERT INTO user (username,email, password) VALUES ('user', 'wcd@gmail.com', 'admin');
+
