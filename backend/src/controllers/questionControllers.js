@@ -1,12 +1,12 @@
-const QuestionManager = require("../models/questionManager");
+const QuestionManager = require("../models/QuestionManager");
 
 const questionManager = new QuestionManager();
 
-const browseByFamily = (req, res) => {
-  const { familyId } = req.params;
+const browseByCategory = (req, res) => {
+  const { categoryId } = req.params;
 
   questionManager
-    .findByFamily(familyId)
+    .findByCategory(categoryId)
     .then((questions) => {
       res.json(questions);
     })
@@ -16,7 +16,7 @@ const browseByFamily = (req, res) => {
     });
 };
 
-const addByFamily = (req, res) => {
+const addByCategory = (req, res) => {
   const newQuestion = req.body;
 
   questionManager
@@ -30,11 +30,11 @@ const addByFamily = (req, res) => {
     });
 };
 
-const getAllByFamily = (req, res) => {
-  const { familyId } = req.params;
+const getAllByCategory = (req, res) => {
+  const { categoryId } = req.params;
 
   questionManager
-    .getAllByFamily(familyId)
+    .getAllByCategory(categoryId)
     .then((questions) => {
       res.json(questions);
     })
@@ -45,7 +45,7 @@ const getAllByFamily = (req, res) => {
 };
 
 module.exports = {
-  browseByFamily,
-  addByFamily,
-  getAllByFamily,
+  browseByCategory,
+  addByCategory,
+  getAllByCategory,
 };

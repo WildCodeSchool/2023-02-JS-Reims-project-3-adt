@@ -7,34 +7,29 @@ class QuestionManager extends AbstractManager {
 
   insert(question) {
     return this.database.query(
-      `INSERT INTO ${this.table} (text, family, category) VALUES (?, ?, ?)`,
-      [question.text, question.family, question.category]
+      `INSERT INTO ${this.table} (content, category) VALUES (?, ?)`,
+      [question.content, question, question.category]
     );
   }
 
   update(question) {
     return this.database.query(
-      `UPDATE ${this.table} SET text = ?, family = ?, category = ? WHERE id = ?`,
-      [question.text, question.family, question.category, question.id]
+      `UPDATE ${this.table} SET content = ?, category = ? WHERE id = ?`,
+      [question.content, question.category, question.id]
     );
   }
 
-  findByFamily(family) {
-    return this.database.query(`SELECT * FROM ${this.table} WHERE family = ?`, [
-      family,
-    ]);
-  }
-
-  getAllByFamily(family) {
-    return this.database.query(`SELECT * FROM ${this.table} WHERE family = ?`, [
-      family,
-    ]);
-  }
-
-  findByCategory(category) {
+  getAllByCategory(category) {
     return this.database.query(
       `SELECT * FROM ${this.table} WHERE category = ?`,
       [category]
+    );
+  }
+
+  findByMandatory_level(mandatoryLevel) {
+    return this.database.query(
+      `SELECT * FROM ${this.table} WHERE mandatory_level = ?`,
+      [mandatoryLevel]
     );
   }
 }
