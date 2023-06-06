@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FullScoring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 25rem;
+  width: 25rem;
+  margin: 5rem;
+}
+
+.Score {
+  border: #3f7438 1px solid;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 3px;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.ScoreText {
+  color: rgb(2, 2, 2);
+}
+
+.BeContacted {
+  height: 5rem;
+  width: 10rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  border: #3f7438 1px solid;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.NotBeContacted {
+  height: 5rem;
+  width: 10rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  border: #3f7438 1px solid;
+}
+
+button {
+  background: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+}
