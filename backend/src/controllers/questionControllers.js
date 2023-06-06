@@ -30,7 +30,22 @@ const addByFamily = (req, res) => {
     });
 };
 
+const getAllByFamily = (req, res) => {
+  const { familyId } = req.params;
+
+  questionManager
+    .getAllByFamily(familyId)
+    .then((questions) => {
+      res.json(questions);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browseByFamily,
   addByFamily,
+  getAllByFamily,
 };

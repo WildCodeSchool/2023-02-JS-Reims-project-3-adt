@@ -25,6 +25,12 @@ class QuestionManager extends AbstractManager {
     ]);
   }
 
+  getAllByFamily(family) {
+    return this.database.query(`SELECT * FROM ${this.table} WHERE family = ?`, [
+      family,
+    ]);
+  }
+
   findByCategory(category) {
     return this.database.query(
       `SELECT * FROM ${this.table} WHERE category = ?`,
