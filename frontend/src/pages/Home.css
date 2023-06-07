@@ -11,11 +11,11 @@
   margin: auto;
   gap: 2rem;
   font-size: 14px;
-  max-width: 600px;
+  width: 600px;
   padding: 2em;
   border-radius: 1em;
   border: 1px solid #3f7438;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 span {
   text-decoration-line: underline;
