@@ -54,8 +54,7 @@ function Home() {
             une démarche de progrès continus.
           </li>
         </ul>
-
-        <Link to="/formulaire-1">
+        <Link to="/formulaire/water">
           <button type="button" className="buttonBegin">
             Commencer
           </button>
