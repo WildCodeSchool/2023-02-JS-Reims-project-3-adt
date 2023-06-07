@@ -1,10 +1,4 @@
 * {
   margin: 0;
-}
-.instructionWrap {
-  display: flex;
-  flex-basis: 40%;
-  position: relative;
-  margin-left: 50px;
-  margin-right: 50px;
+  font-family: "Montserrat", sans-serif;
 }
