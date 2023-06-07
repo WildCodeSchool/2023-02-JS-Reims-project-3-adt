@@ -4,7 +4,7 @@ import "./Scoring.css";
 export default function Scoring() {
   return (
     <div className="fullScoring">
-      <div className="Score">
+      <div className="score">
         <span className="scoreText">04/20</span>
       </div>
 
