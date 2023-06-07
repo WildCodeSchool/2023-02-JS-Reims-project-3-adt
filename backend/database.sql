@@ -6,3 +6,4 @@ create table user (
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO user (username,email, password) VALUES ('user', 'wcd@gmail.com', 'admin');
+
