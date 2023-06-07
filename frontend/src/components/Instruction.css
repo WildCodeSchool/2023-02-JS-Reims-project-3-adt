@@ -1,5 +1,5 @@
 
-/*.instruction {
+.instruction {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +13,7 @@
   border-radius: 1em;
   border: 1px solid #3f7438;
   /* letter-spacing: 1px; */
-/* }
+}
 span {
   text-decoration-line: underline;
 }
@@ -27,4 +27,4 @@ ul li {
   font-size: 1rem;
   background-color: #3f7438;
   color: white;
-} */
+}

@@ -2,3 +2,7 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
+.home {
+  display: flex;
+  flex-direction: column;
+}
