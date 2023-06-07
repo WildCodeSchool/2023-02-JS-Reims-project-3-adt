@@ -3,16 +3,16 @@ import "./Scoring.css";
 
 export default function Scoring() {
   return (
-    <div className="FullScoring">
+    <div className="fullScoring">
       <div className="Score">
-        <span className="ScoreText">04/20</span>
+        <span className="scoreText">04/20</span>
       </div>
 
-      <div className="BeContacted">
+      <div className="beContacted">
         <button type="button">être contacter</button>
       </div>
 
-      <div className="NotBeContacted">
+      <div className="notbeContacted">
         <button type="button">ne pas être contacter</button>
       </div>
     </div>

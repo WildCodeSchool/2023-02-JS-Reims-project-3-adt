@@ -4,22 +4,19 @@ body {
   align-items: center;
 }
 
-.FullScoring {
+.fullScoring {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  height: 25rem;
-  width: 25rem;
   margin: 5rem;
 }
 
 .Score {
   border: #3f7438 1px solid;
-  height: 20rem;
-  width: 20rem;
   border-radius: 3px;
+  padding: 5rem;
   margin: 2rem;
   display: flex;
   justify-content: center;
@@ -28,13 +25,12 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
-.ScoreText {
+.scoreText {
   color: rgb(2, 2, 2);
+  font-size: 1.5rem;
 }
 
-.BeContacted {
-  height: 5rem;
-  width: 10rem;
+.beContacted {
   margin: 1rem;
   display: flex;
   justify-content: center;
@@ -44,9 +40,7 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
-.NotBeContacted {
-  height: 5rem;
-  width: 10rem;
+.notbeContacted {
   margin: 1rem;
   display: flex;
   justify-content: center;
@@ -58,6 +52,8 @@ body {
 
 button {
   background: transparent;
+  font-size: 1rem;
   color: rgb(0, 0, 0);
   border: none;
+  margin: 2rem;
 }
