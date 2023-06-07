@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Optional from "./Optional";
+import "./Survey.css";
 
 function Essential() {
   const [question1, setQuestion1] = useState("");

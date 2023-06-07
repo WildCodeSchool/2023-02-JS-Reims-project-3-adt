@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
 import Essential from "./Essential";
+import "./Survey.css";
 
 function Obligatory() {
   const [question1, setQuestion1] = useState("");
