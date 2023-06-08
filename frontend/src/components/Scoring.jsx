@@ -9,13 +9,13 @@ export default function Scoring() {
       </div>
 
       <div className="beContacted">
-        <button type="button" className="buttonScor">
+        <button type="button" className="buttonScore">
           être contacter
         </button>
       </div>
 
       <div className="notbeContacted">
-        <button type="button" className="buttonScor">
+        <button type="button" className="buttonScore">
           ne pas être contacter
         </button>
       </div>
