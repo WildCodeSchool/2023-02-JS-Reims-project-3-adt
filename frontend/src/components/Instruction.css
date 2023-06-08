@@ -1,0 +1,30 @@
+
+.instruction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: justify;
+  margin: auto;
+  gap: 2rem;
+  font-size: 14px;
+  width: 600px;
+  padding: 2em;
+  border-radius: 1em;
+  border: 1px solid #3f7438;
+  /* letter-spacing: 1px; */
+}
+span {
+  text-decoration-line: underline;
+}
+ul li {
+  padding: 0.5em;
+}
+.buttonBegin {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 2em;
+  font-size: 1rem;
+  background-color: #3f7438;
+  color: white;
+}

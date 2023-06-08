@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   margin: 5rem;
 }
 
@@ -44,7 +43,7 @@
   border: #3f7438 1px solid;
 }
 
-.buttonScor {
+.buttonScore {
   background: transparent;
   font-size: 1rem;
   color: rgb(0, 0, 0);
