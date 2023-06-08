@@ -40,3 +40,5 @@ create table user_survey (
   REFERENCES category(id),
   score int unsigned not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+

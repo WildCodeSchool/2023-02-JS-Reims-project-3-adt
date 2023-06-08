@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import hotel from "../assets/hotel.svg";
+import droplet from "../assets/droplet.svg";
+
 import "./Instruction.css";
 
 function Instruction() {
@@ -51,13 +54,24 @@ function Instruction() {
           démarche de progrès continus.
         </li>
       </ul>
-      <button
-        onClick={() => navigate("category")}
-        type="button"
-        className="buttonBegin"
-      >
-        Commencer
-      </button>
+      <div className="buttonCategory">
+        <button
+          onClick={() => navigate("category")}
+          type="button"
+          className="intructionButton"
+        >
+          <img src={hotel} alt="" />
+          Hebergement
+        </button>
+        <button
+          onClick={() => navigate("category")}
+          type="button"
+          className="intructionButton"
+        >
+          <img src={droplet} alt="" />
+          Travel
+        </button>
+      </div>
     </div>
   );
 }
