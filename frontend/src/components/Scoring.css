@@ -1,15 +1,8 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .fullScoring {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   margin: 5rem;
 }
 
@@ -50,7 +43,7 @@ body {
   border: #3f7438 1px solid;
 }
 
-button {
+.buttonScore {
   background: transparent;
   font-size: 1rem;
   color: rgb(0, 0, 0);

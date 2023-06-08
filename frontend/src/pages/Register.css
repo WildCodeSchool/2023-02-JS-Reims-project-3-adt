@@ -1,6 +1,6 @@
 .background {
   background-image: url("../assets/vignoble.jpeg");
-  background-size: cover;
+ 
   min-height: 100vh;
   display: flex;
   align-items: center;
