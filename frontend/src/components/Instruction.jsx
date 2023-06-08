@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import hotel from "../assets/hotel.svg";
-import droplet from "../assets/droplet.svg";
-
+import logo from "../assets/ecotourisme.jpeg";
 import "./Instruction.css";
 
 function Instruction() {
   const navigate = useNavigate();
   return (
     <div className="instruction">
+      <img src={logo} alt="" className="logoInstruction" />
       <h2>Préambule</h2>
       <p>
         Cette charte concerne les acteurs du tourisme réceptif dans la Marne,
@@ -54,22 +53,27 @@ function Instruction() {
           démarche de progrès continus.
         </li>
       </ul>
-      <div className="buttonCategory">
+      <div className="userButton">
         <button
-          onClick={() => navigate("category")}
+          onClick={() => navigate("/category/hebergement")}
           type="button"
-          className="intructionButton"
+          className="userBtn"
         >
-          <img src={hotel} alt="" />
           Hebergement
         </button>
         <button
-          onClick={() => navigate("category")}
+          onClick={() => navigate("/category/guide")}
           type="button"
-          className="intructionButton"
+          className="userBtn"
         >
-          <img src={droplet} alt="" />
-          Travel
+          Guide
+        </button>
+        <button
+          onClick={() => navigate("/category/restaurant")}
+          type="button"
+          className="userBtn"
+        >
+          Restaurant
         </button>
       </div>
     </div>

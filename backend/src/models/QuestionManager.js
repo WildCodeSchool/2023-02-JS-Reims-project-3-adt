@@ -21,7 +21,7 @@ class QuestionManager extends AbstractManager {
 
   getAllByCategory(category) {
     return this.database.query(
-      `SELECT * FROM ${this.table} WHERE category = ?`,
+      `SELECT * FROM ${this.table} WHERE category_id = ?`,
       [category]
     );
   }
