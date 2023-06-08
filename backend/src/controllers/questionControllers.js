@@ -5,11 +5,11 @@ const browseByCategory = (req, res) => {
 
   models.question
     .getAllByCategory(categoryId)
-    .then((questions) => {
-      res.json(questions);
+    .then(([rows]) => {
+      res.send(rows);
     })
-    .catch((error) => {
-      console.error(error);
+    .catch((err) => {
+      console.error(err);
       res.sendStatus(500);
     });
 };
