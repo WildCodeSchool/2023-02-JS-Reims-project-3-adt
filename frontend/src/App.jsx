@@ -14,7 +14,6 @@ function App() {
         <Route path="/formulaire" element={<Home />} />
         <Route path="/" element={<Register />} />
         <Route path="/scoring" element={<Scoring />} />
-        <Route path="/formulaire" element={<Survey />} />
       </Routes>
     </div>
   );

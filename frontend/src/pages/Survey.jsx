@@ -25,7 +25,6 @@ function Survey() {
               );
             })}
           </ul>
-          ;
         </li>
       </ul>
       <div>
