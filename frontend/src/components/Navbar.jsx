@@ -1,6 +1,6 @@
 import logo from "../assets/adt-logo.png";
 import icon from "../assets/Ecotourisme_4X4.jpg";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   return (
