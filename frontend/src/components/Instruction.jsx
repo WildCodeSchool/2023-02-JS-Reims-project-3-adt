@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Instruction.css";
 
 function Instruction() {
+  const navigate = useNavigate();
   return (
     <div className="instruction">
       <h2>Préambule</h2>
@@ -50,11 +51,13 @@ function Instruction() {
           démarche de progrès continus.
         </li>
       </ul>
-      <Link to="/formulaire/eau">
-        <button type="button" className="buttonBegin">
-          Commencer
-        </button>
-      </Link>
+      <button
+        onClick={() => navigate("category")}
+        type="button"
+        className="buttonBegin"
+      >
+        Commencer
+      </button>
     </div>
   );
 }
