@@ -1,0 +1,52 @@
+.fullScoring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem;
+}
+
+.score {
+  border: #3f7438 1px solid;
+  border-radius: 3px;
+  padding: 5rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.scoreText {
+  color: rgb(2, 2, 2);
+  font-size: 1.5rem;
+}
+
+.beContacted {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  border: #3f7438 1px solid;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.notbeContacted {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  border: #3f7438 1px solid;
+}
+
+.buttonScore {
+  background: transparent;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  border: none;
+  margin: 2rem;
+}

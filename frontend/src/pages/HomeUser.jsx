@@ -1,13 +1,15 @@
 import NavbarUser from "../components/NavbarUser";
 import FooterUser from "../components/FooterUser";
+import Instruction from "../components/Instruction";
 
-function Home() {
+function HomeUser() {
   return (
-    <div>
+    <div className="home">
       <NavbarUser />
+      <Instruction />
       <FooterUser />
     </div>
   );
 }
 
-export default Home;
+export default HomeUser;
