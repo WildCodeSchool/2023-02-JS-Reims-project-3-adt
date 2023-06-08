@@ -9,7 +9,7 @@ export default function Scoring() {
       </div>
 
       <div className="beContacted">
-        <button type="button" className="buttoScor">
+        <button type="button" className="buttonScor">
           être contacter
         </button>
       </div>
