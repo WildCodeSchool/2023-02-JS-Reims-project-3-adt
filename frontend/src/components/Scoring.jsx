@@ -13,7 +13,9 @@ export default function Scoring() {
       </div>
 
       <div className="notbeContacted">
-        <button type="button">ne pas être contacter</button>
+        <button type="button" className="buttonNotBeContacted">
+          ne pas être contacter
+        </button>
       </div>
     </div>
   );
