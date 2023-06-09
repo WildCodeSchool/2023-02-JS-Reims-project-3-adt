@@ -4,7 +4,7 @@ const router = express.Router();
 const questionControllers = require("./controllers/questionControllers");
 
 router.get(
-  "/category/:categoryId/questions",
+  "/categories/:categoryId/questions",
   questionControllers.browseByCategory
 );
 router.post(
