@@ -13,11 +13,11 @@ router.delete("/users/:id", userControllers.destroy);
 const questionControllers = require("./controllers/questionControllers");
 
 router.get(
-  "/questions/category/:categoryId",
+  "/categories/:categoryId/questions",
   questionControllers.browseByCategory
 );
 router.post(
-  "/questions/category/:categoryId",
+  "/categories/:categoryId/questions",
   questionControllers.addByCategory
 );
 
