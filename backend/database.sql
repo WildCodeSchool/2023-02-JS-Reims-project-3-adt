@@ -37,8 +37,11 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 
   ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO"),
 
-  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 1, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
-  ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 1, "Au moins 75%  des points de puisage intérieurs sont concernés");
+  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
+ 
+  ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 2, "Au moins 75%  des points de puisage intérieurs sont concernés"),
+ 
+  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2)
 
 
 
