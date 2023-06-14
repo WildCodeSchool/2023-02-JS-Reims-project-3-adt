@@ -35,7 +35,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 
   ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "essentiel", 4, NULL),
 
-  ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO");
+  ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO"),
 
   ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 1, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
   ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 1, "Au moins 75%  des points de puisage intérieurs sont concernés");
