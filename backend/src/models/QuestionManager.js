@@ -19,10 +19,10 @@ class QuestionManager extends AbstractManager {
     );
   }
 
-  getAllByCategory(category) {
+  getAllByCategory(question) {
     return this.database.query(
-      `SELECT * FROM ${this.table} WHERE category = ?`,
-      [category]
+      `SELECT * FROM ${this.table} WHERE category_id = ?`,
+      [question]
     );
   }
 

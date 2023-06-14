@@ -3,13 +3,13 @@ const models = require("../models");
 const browseByCategory = (req, res) => {
   const { categoryId } = req.params;
 
-  models.questionManager
+  models.question
     .getAllByCategory(categoryId)
-    .then((questions) => {
-      res.json(questions);
+    .then(([rows]) => {
+      res.send(rows);
     })
-    .catch((error) => {
-      console.error(error);
+    .catch((err) => {
+      console.error(err);
       res.sendStatus(500);
     });
 };
@@ -17,7 +17,7 @@ const browseByCategory = (req, res) => {
 const addByCategory = (req, res) => {
   const newQuestion = req.body;
 
-  models.questionManager
+  models.question
     .insert(newQuestion)
     .then(() => {
       res.sendStatus(201);
@@ -31,7 +31,7 @@ const addByCategory = (req, res) => {
 const getAllByCategory = (req, res) => {
   const { categoryId } = req.params;
 
-  models.questionManager
+  models.question
     .getAllByCategory(categoryId) // Utilisation de la méthode correcte getAllByCategory
     .then((questions) => {
       res.json(questions);
