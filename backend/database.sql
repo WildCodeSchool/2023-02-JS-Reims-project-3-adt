@@ -12,7 +12,8 @@ id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),('Responsabilité sociale') ;
+INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),("Responsabilité sociale") ;
+
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   content text not null,
@@ -147,7 +148,6 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
   ("L'hébergement est accessible à au moins deux types de handicaps parmi : handicap moteur, visuel, auditif ou mental.", "Essentiel", 6, "Cette accessibilité peut être travaillée en lien avec l'ADT de la Marne."),
 
   ("L'établissement est labellisé pour l'accueil de personnes en situation de handicap.", "Optionnel", 6, NULL);
-
 
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
