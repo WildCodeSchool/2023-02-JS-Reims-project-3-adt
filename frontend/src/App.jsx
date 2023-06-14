@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<HomeUser />} />
         <Route path="/scoring" element={<Scoring />} />
         <Route path="/survey" element={<Survey />} />
-        <Route path="/survey/:familyId/" element={<Question />} />
+        <Route path="/survey/:categoryId/" element={<Question />} />
       </Routes>
     </div>
   );
