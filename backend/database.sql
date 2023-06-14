@@ -100,7 +100,16 @@ https://agirpourlatransition.ademe.fr/particuliers/vertvolt#paragraph-584788", "
 
  ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "Essentiel", 4, NULL),
 
- ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO");
+ ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO"),
+
+ ("L'établissement veille à respecter l'égalité des genres.", "Obligatoire", 6, "L'index de l'égalité est applicable aux entreprisess de plus de 50 salariés. 
+En deçà, il est souhaitable de mettre en place une démarche interne qui peut être appuyée par un guide produit par le ministère du travail : https://travail-emploi.gouv.fr/demarches-ressources-documentaires/documentation-et-publications-officielles/guides/guide-egapro-tpepme"),
+
+("Les modes de paiement type chèques vacances sont acceptés.", "Essentiel", 6, NULL),
+
+("L'hébergement est accessible à au moins deux types de handicaps parmi : handicap moteur, visuel, auditif ou mental.", "Essentiel", 6, "Cette accessibilité peut être travaillée en lien avec l'ADT de la Marne."),
+
+("L'établissement est labellisé pour l'accueil de personnes en situation de handicap.", "Optionnel", 6, NULL);
 
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
