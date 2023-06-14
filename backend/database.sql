@@ -16,17 +16,18 @@ INSERT INTO category (title) VALUES ("title");
 
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
-  content varchar(900) not null,
+  content text not null,
   mandatory_level varchar(80) not null,
+  tooltip_content text, 
   category_id int unsigned not null,
   CONSTRAINT fk_category_id 
   FOREIGN KEY (category_id)
   REFERENCES category(id)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO question (content, mandatory_level, category_id) VALUES 
-  ('content', 'obligatoire', 1),
-  ('content2', 'essentiel', 1);
+INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
+  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 1, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
+  ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 1, "Au moins 75%  des points de puisage intérieurs sont concernés");
 
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
