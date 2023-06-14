@@ -39,8 +39,19 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
   ("Informer les clients sur l'offre touristique à proximité de l'établissement en mettant en avant ceux qui sont engagés dans une démarche écotouristique", "obligatoire", 5, NULL),
 
  ("Offrir en direct ou par le biais d'un partenariat des modes de transport bas-carbone : vélo, borne de recharge, etc", "essentiel", 5, "P. ex : La possibilité de faire déposer sur site des vélos loués auprès d'un professionnel partenaire"),
+ ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO"),
 
-  ("Communication auprès des clients et du personnel sur des procédures de nettoyage avec un recours maîtrisé et raisonné des produits d'entretien", "essentiel", 5, NULL);
+ ("L'établissement veille à respecter l'égalité des genres.", "Obligatoire", 6, "L'index de l'égalité est applicable aux entreprisess de plus de 50 salariés. 
+En deçà, il est souhaitable de mettre en place une démarche interne qui peut être appuyée par un guide produit par le ministère du travail : https://travail-emploi.gouv.fr/demarches-ressources-documentaires/documentation-et-publications-officielles/guides/guide-egapro-tpepme"),
+
+("Les modes de paiement type chèques vacances sont acceptés.", "Essentiel", 6, NULL),
+
+("L'hébergement est accessible à au moins deux types de handicaps parmi : handicap moteur, visuel, auditif ou mental.", "Essentiel", 6, "Cette accessibilité peut être travaillée en lien avec l'ADT de la Marne."),
+
+("L'établissement est labellisé pour l'accueil de personnes en situation de handicap.", "Optionnel", 6, NULL),
+
+("Communication auprès des clients et du personnel sur des procédures de nettoyage avec un recours maîtrisé et raisonné des produits d'entretien", "essentiel", 5, NULL);
+
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   user_id int unsigned not null,
