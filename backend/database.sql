@@ -12,7 +12,8 @@ id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),('Responsabilité sociale') ;
+INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),("Responsabilité sociale") ;
+
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   content text not null,
@@ -25,50 +26,21 @@ create table question (
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
+  ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "obligatoire", 4, NULL),
 
--- Water management category
+  ("Choix d'espèce végétales non invasives", "obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
 
-  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées"),
- 
-  ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 2, "Au moins 75%  des points de puisage intérieurs sont concernés"),
- 
-  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2, NULL),
+  ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "obligatoire", 4, NULL),
 
-  ("Les appareils lavants (linge, vaisselle) sont économes en eau", "essentiel", 2, "L'étiquette environnementale permet de connaître la consommation d'eau par cycle. 
-  La valeur seuil et de 10 l/kg de linge lavé pour les lave linge et de 1l/couvert plafonné à 10l pour les lave-vaisselle"),
-
-  ("Alimentation en eau de pluie pour les extérieurs si applicable", "essentiel", 2, NULL),
-
-  ("Irrigation adaptée des espaces extérieurs : système de maîtrise de l'eau distribuée, végétaux peu gourmands en eau, etc.", "essentiel", 2, NULL),
-
-  ("Alimentation en eau de pluie pour les sanitaires", "optionnel", 2, NULL),
-
-  ("Les sanitaires sont des toilettes sèches", "optionnel", 2, "Au moins l'un des sanitaires"),
-
-  ("Désimperméabilisation des sols extérieurs", "optionnel", 2, NULL),
-
-  ("Les piscines ou spas sont 
-      - couverts pour limiter l'évaporation 
-      et/ou 
-      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2, NULL),
-
--- Communication and awareness category
-
-  ("Affichage de l'engagement en faveur de l'écotourisme : signalétique extérieure, site internet, support print", "obligatoire", 5, NULL),
-
-  ("Sensibiliser les clients sur leur rôle  : économies d'énergies, d'eau, réduction des déchets, etc.", "obligatoire", 5, NULL),
-
-  ("Le personnel est formé à la politique environnementale de l'établissement : engagements, gestes et/ou procédures (eau, énergie, etc)", "obligatoire", 5, NULL),
-
+ ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "Essentiel", 4, NULL),
   ("Communiquer sur les modes de transport bas-carbone permettant d'accéder à l'hébergement et de visiter le territoire", "obligatoire", 5, "Les mobilités concernées sont collectives, à pied, en vélo"),
 
+ ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "Essentiel", 4, NULL),
   ("Informer les clients sur l'offre touristique à proximité de l'établissement en mettant en avant ceux qui sont engagés dans une démarche écotouristique", "obligatoire", 5, NULL),
 
-  ("Offrir en direct ou par le biais d'un partenariat des modes de transport bas-carbone : vélo, borne de recharge, etc", "essentiel", 5, "P. ex : La possibilité de faire déposer sur site des vélos loués auprès d'un professionnel partenaire"),
+ ("Offrir en direct ou par le biais d'un partenariat des modes de transport bas-carbone : vélo, borne de recharge, etc", "essentiel", 5, "P. ex : La possibilité de faire déposer sur site des vélos loués auprès d'un professionnel partenaire"),
 
   ("Communication auprès des clients et du personnel sur des procédures de nettoyage avec un recours maîtrisé et raisonné des produits d'entretien", "essentiel", 5, NULL);
-
-
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   user_id int unsigned not null,
