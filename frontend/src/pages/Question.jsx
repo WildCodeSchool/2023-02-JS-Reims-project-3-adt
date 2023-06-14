@@ -24,9 +24,12 @@ function Question() {
     <div>
       {question.map((categorie) => (
         <div key={categorie.id}>
-          <h1>{categorie.title}</h1>
+          {/* <h1>{categorie.title}</h1> */}
           <h2>{categorie.categoy_id}</h2>
-          <p>{categorie.content}</p>
+          <p>{categorie.content} </p>
+          <p>
+            <mark>{categorie.tooltip_content}</mark>
+          </p>
         </div>
       ))}
     </div>
