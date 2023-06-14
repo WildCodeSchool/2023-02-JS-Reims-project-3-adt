@@ -25,24 +25,31 @@ create table question (
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
-  ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "obligatoire", 4, NULL),
 
-  ("Choix d'espèce végétales non invasives", "obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
 
-  ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "obligatoire", 4, NULL),
-
-  ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "essentiel", 4, NULL),
-
-  ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "essentiel", 4, NULL),
-
-  ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO"),
-
-  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
+  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées"),
  
   ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 2, "Au moins 75%  des points de puisage intérieurs sont concernés"),
  
-  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2)
+  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2),
 
+  ("Les appareils lavants (linge, vaisselle) sont économes en eau", "essentiel", 2, "L'étiquette environnementale permet de connaître la consommation d'eau par cycle. 
+  La valeur seuil et de 10 l/kg de linge lavé pour les lave linge et de 1l/couvert plafonné à 10l pour les lave-vaisselle"),
+
+  ("Alimentation en eau de pluie pour les extérieurs si applicable", "essentiel", 2),
+
+  ("Irrigation adaptée des espaces extérieurs : système de maîtrise de l'eau distribuée, végétaux peu gourmands en eau, etc.", "essentiel", 2),
+
+  ("Alimentation en eau de pluie pour les sanitaires", "optionnel", 2),
+
+  ("Les sanitaires sont des toilettes sèches", "optionnel", 2, "Au moins l'un des sanitaires"),
+
+  ("Désimperméabilisation des sols extérieurs", "optionnel", 2),
+
+  ("Les piscines ou spas sont 
+      - couverts pour limiter l'évaporation 
+      et/ou 
+      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2);
 
 
 create table user_survey (
