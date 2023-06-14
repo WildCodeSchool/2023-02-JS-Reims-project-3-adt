@@ -26,6 +26,7 @@ create table question (
 
 INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
 
+-- Water management category
 
   ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées"),
  
@@ -49,7 +50,23 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
   ("Les piscines ou spas sont 
       - couverts pour limiter l'évaporation 
       et/ou 
-      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2);
+      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2),
+
+-- Communication and awareness category
+
+  ("Affichage de l'engagement en faveur de l'écotourisme : signalétique extérieure, site internet, support print", "obligatoire", 5),
+
+  ("Sensibiliser les clients sur leur rôle  : économies d'énergies, d'eau, réduction des déchets, etc.", "obligatoire", 5),
+
+  ("Le personnel est formé à la politique environnementale de l'établissement : engagements, gestes et/ou procédures (eau, énergie, etc)", "obligatoire", 5),
+
+  ("Communiquer sur les modes de transport bas-carbone permettant d'accéder à l'hébergement et de visiter le territoire", "obligatoire", 5, "Les mobilités concernées sont collectives, à pied, en vélo"),
+
+  ("Informer les clients sur l'offre touristique à proximité de l'établissement en mettant en avant ceux qui sont engagés dans une démarche écotouristique", "obligatoire", 5),
+
+  ("Offrir en direct ou par le biais d'un partenariat des modes de transport bas-carbone : vélo, borne de recharge, etc", "essentiel", 5, "P. ex : La possibilité de faire déposer sur site des vélos loués auprès d'un professionnel partenaire"),
+
+  ("Communication auprès des clients et du personnel sur des procédures de nettoyage avec un recours maîtrisé et raisonné des produits d'entretien", "essentiel", 5);
 
 
 create table user_survey (
