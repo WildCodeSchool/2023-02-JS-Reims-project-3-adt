@@ -31,25 +31,25 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
  
   ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches", "obligatoire", 2, "Au moins 75%  des points de puisage intérieurs sont concernés"),
  
-  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2),
+  ("Mécanisme double commande pour les sanitaires ou à défaut sur sanitaires anciens système de réduction du volume de la cuve", "obligatoire", 2, NULL ),
 
   ("Les appareils lavants (linge, vaisselle) sont économes en eau", "essentiel", 2, "L'étiquette environnementale permet de connaître la consommation d'eau par cycle. 
   La valeur seuil et de 10 l/kg de linge lavé pour les lave linge et de 1l/couvert plafonné à 10l pour les lave-vaisselle"),
 
-  ("Alimentation en eau de pluie pour les extérieurs si applicable", "essentiel", 2),
+  ("Alimentation en eau de pluie pour les extérieurs si applicable", "essentiel", 2, NULL),
 
-  ("Irrigation adaptée des espaces extérieurs : système de maîtrise de l'eau distribuée, végétaux peu gourmands en eau, etc.", "essentiel", 2),
+  ("Irrigation adaptée des espaces extérieurs : système de maîtrise de l'eau distribuée, végétaux peu gourmands en eau, etc.", "essentiel", 2, NULL),
 
-  ("Alimentation en eau de pluie pour les sanitaires", "optionnel", 2),
+  ("Alimentation en eau de pluie pour les sanitaires", "optionnel", 2, NULL),
 
   ("Les sanitaires sont des toilettes sèches", "optionnel", 2, "Au moins l'un des sanitaires"),
 
-  ("Désimperméabilisation des sols extérieurs", "optionnel", 2),
+  ("Désimperméabilisation des sols extérieurs", "optionnel", 2, NULL),
 
   ("Les piscines ou spas sont 
       - couverts pour limiter l'évaporation 
       et/ou 
-      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2);
+      - pourvus d'une gestion optimisée du chlore ", "optionnel", 2, NULL);
 
 
 create table user_survey (
