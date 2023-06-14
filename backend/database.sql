@@ -27,18 +27,37 @@ create table question (
 
 INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
 
-("Mise en place du tri des déchets selon les modes de collecte locaux : papier, plastiques, métal, verre", "Obligatoire", 3)
-  ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "Obligatoire", 4, NULL),
+ ("Mise en place du tri des déchets selon les modes de collecte locaux : papier, plastiques, métal, verre", "Obligatoire", 3, NULL),
 
-  ("Choix d'espèce végétales non invasives", "Obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
+ ("Aucun produit jetable n'est proposé ou un plan de suppresssion est proposé pour :
+ >  les articles de toilette
+ >  les articles de restauration (couverts, assiettes, etc)", "Obligatoire", 3, "Les produits jetables sont considérés comme à usage unique."),
 
-  ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "Obligatoire", 4, NULL),
+ ("Les produits ménagers sont porteurs d'un écolabel ou fabriqués à partir de produits naturels (ex. vinaigre blanc)", "Obligatoire", 3, NULL),
 
-  ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "Essentiel", 4, NULL),
+ ("Les produits d'hygiène mis à disposition sont porteurs d'un écolabel ou fabriqués à partir de produits naturels", "Obligatoire", 3, NULL),
 
-  ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "Essentiel", 4, NULL),
+ ("Mise en place de la collecte sélective des déchets pour compostage (sur site ou dans une filière de collecte)", "Essentiel", 3, NULL),
 
-  ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO");
+ ("Réduction des déchets d'emballage pour les produits ménagers et la restauration : suppression des emballages individuels à minima, plus des trois quarts des produits sont conditionnés en vrac.", "Essentiel", 3, NULL),
+
+ ("Les biens mobiliers en fin de vie font l'objet prioritairement d'une mise sur le marché de seconde main/don en priorité lorsque leur état le permet", "Optionnel", 3, NULL),
+
+ ("Le recours aux mobilier se fait via l'achat de seconde main lorsque la réglementation le permet.", "Optionnel", 3, NULL),
+
+ ("Une procédure de collecte et recyclage des mégots est mise en place en direction du personnel et des clients", "Optionnel", 3, NULL),
+
+ ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "Obligatoire", 4, NULL),
+
+ ("Choix d'espèce végétales non invasives", "Obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
+
+ ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "Obligatoire", 4, NULL),
+
+ ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "Essentiel", 4, NULL),
+
+ ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "Essentiel", 4, NULL),
+
+ ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO");
 
 
 create table user_survey (
