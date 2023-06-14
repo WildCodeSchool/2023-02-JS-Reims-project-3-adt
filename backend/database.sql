@@ -5,6 +5,8 @@ create table `user` (
   password varchar(80) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO user (username, email, password) VALUES ('user', 'wcd@gmail.com', 'admin');
+
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null
@@ -24,18 +26,19 @@ create table question (
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
-  ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "obligatoire", 4, NULL),
 
-  ("Choix d'espèce végétales non invasives", "obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
+("Mise en place du tri des déchets selon les modes de collecte locaux : papier, plastiques, métal, verre", "Obligatoire", 3)
+  ("Entretien des espaces extérieurs sans produits phytosanitaires : herbicides, fongicides, insecticides, etc.", "Obligatoire", 4, NULL),
 
-  ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "obligatoire", 4, NULL),
+  ("Choix d'espèce végétales non invasives", "Obligatoire", 4, "Certaines espèces exotiques envahissantes font l'objet d'une surveillance comme par exemple la renouée du Japon, l'herbe de la pampa, l'armoisie à feuille épi, etc."),
 
-  ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "essentiel", 4, NULL),
+  ("Les aménagements extérieurs ne doivent pas représenter de danger pour la biodiversité (ex. risque de noyade dans un bac récupérateur d'eau de pluie).", "Obligatoire", 4, NULL),
 
-  ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "essentiel", 4, NULL),
+  ("Espèces végétales principalement locales avec un impact positif sur la biodiversité : mellifères, baies pour les oiseaux, etc", "Essentiel", 4, NULL),
+
+  ("Aménagements en faveur de l'accueil de la biodiversité (au moins trois) parmi : nichoir, mangeoire (été/hiver), mare, refuge à hérisson, hôtel à insectes (disposé judicieusement), etc.", "Essentiel", 4, NULL),
 
   ("Engagement dans un réseau / label en faveur de la biodiversité", "Optionnel", 4, "P. ex : LPO");
-
 
 
 create table user_survey (
@@ -50,21 +53,3 @@ create table user_survey (
   REFERENCES category(id),
   score int unsigned not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-INSERT INTO user (username, email, password) VALUES ('user', 'wcd@gmail.com', 'admin');
-
-INSERT INTO category (title) VALUES ("Energy"),('Eau'),('Gestion des dechets'),('Biodeversité'), ('Communication et Sensibilitaion'),('Responsabilité sociale') ;
-
-INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VALUES 
-("Mise en place du tri des déchets selon les modes de collecte locaux : papier, plastiques, métal, verre","Obligatoire", 3),
-("Aucun produit jetable n'est proposé ou un plan de suppresssion est proposé pour :
- >  les articles de toilette
- >  les articles de restauration (couverts, assiettes, etc)","Obligatoire", 3, "Les produits jetables sont considérés comme à usage unique."),
-("Les produits ménagers sont porteurs d''un écolabel ou fabriqués à partir de produits naturels (ex. vinaigre blanc)", "Obligatoire", 3),
-("Les produits d'hygiène mis à disposition sont porteurs d''un écolabel ou fabriqués à partir de produits naturels", "Obligatoire", 3),
-("Mise en place de la collecte sélective des déchets pour compostage (sur site ou dans une filière de collecte)", "Essentiel", 3),
-("Réduction des déchets d'emballage pour les produits ménagers et la restauration : suppression des emballages individuels à minima, plus des trois quarts des produits sont conditionnés en vrac.", "Essentiel", 3),
-("Les biens mobiliers en fin de vie font l''objet prioritairement d''une mise sur le marché de seconde main/don en priorité lorsque leur état le permet", "Optionnel", 3),
-("Le recours aux mobilier se fait via l'achat de seconde main lorsque la réglementation le permet.", "Optionnel", 3),
-("Une procédure de collecte et recyclage des mégots est mise en place en direction du personnel et des clients", "Optionnel", 3);
