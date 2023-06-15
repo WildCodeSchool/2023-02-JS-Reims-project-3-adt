@@ -5,7 +5,7 @@ const browseByTitleCategory = (req, res) => {
 
   models.category
     .findAllByTitle(categoryTitle)
-    .then((rows) => {
+    .then(([rows]) => {
       res.send(rows);
     })
     .catch((err) => {
