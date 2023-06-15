@@ -4,7 +4,7 @@ const browseByTitleCategory = (req, res) => {
   const { categoryTitle } = req.params;
 
   models.category
-    .findAllByTitle(categoryTitle)
+    .getAllCategoryTitle(categoryTitle)
     .then(([rows]) => {
       res.send(rows);
     })

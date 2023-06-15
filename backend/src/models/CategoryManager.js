@@ -5,7 +5,7 @@ class CategoryManager extends AbstractManager {
     super({ table: "category" });
   }
 
-  findAllByTitle() {
+  getAllCategoryTitle() {
     return this.database.query(`SELECT title FROM ${this.table}`);
   }
 }
