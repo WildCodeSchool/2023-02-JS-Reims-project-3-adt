@@ -1,6 +1,6 @@
 const models = require("../models");
 
-const browseByTitleCategory = (req, res) => {
+const browse = (req, res) => {
   const { categoryTitle } = req.params;
 
   models.category
@@ -15,5 +15,5 @@ const browseByTitleCategory = (req, res) => {
 };
 
 module.exports = {
-  browseByTitleCategory,
+  browse,
 };

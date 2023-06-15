@@ -17,7 +17,7 @@ router.get(
   "/categories/:categoryId/questions",
   questionControllers.browseByCategory
 );
-router.get("/categories", categoryControllers.browseByTitleCategory);
+router.get("/categories", categoryControllers.browse);
 
 router.post(
   "/categories/:categoryId/questions",
