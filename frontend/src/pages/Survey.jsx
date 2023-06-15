@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Survey() {
-  const [category, setCategory] = useState([]);
+  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     axios
       .get("/api/category")
       .then((response) => {
-        setCategory(response.data);
+        setCategories(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -17,10 +18,10 @@ function Survey() {
 
   return (
     <div>
-      <h2>Select familly</h2>
-      {category.map((categorie) => (
-        <Link key={categorie.id} to={`/survey/${categorie.id}`}>
-          <button type="button"> {categorie.title}</button>
+      <h2>Select family</h2>
+      {categories.map((category) => (
+        <Link key={category.id} to={`/survey/${category.id}`}>
+          <button type="button">{category.title}</button>
         </Link>
       ))}
     </div>
