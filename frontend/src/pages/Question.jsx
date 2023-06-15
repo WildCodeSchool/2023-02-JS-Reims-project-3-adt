@@ -3,8 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function Question() {
-  const [question, setQuestion] = useState([]);
+  const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
+
   useEffect(() => {
     axios
       .get(
@@ -13,7 +14,7 @@ function Question() {
         }/categories/${categoryId}/questions`
       )
       .then((response) => {
-        setQuestion(response.data);
+        setQuestions(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -22,13 +23,13 @@ function Question() {
 
   return (
     <div>
-      {question.map((categorie) => (
-        <div key={categorie.id}>
-          {/* <h1>{categorie.title}</h1> */}
-          <h2>{categorie.categoy_id}</h2>
-          <p>{categorie.content} </p>
+      {questions.map((question) => (
+        <div key={question.id}>
+          {/* <h1>{question.title}</h1> */}
+          {/* <h2>{question.category_id}</h2> */}
+          <p>{question.content}</p>
           <p>
-            <mark>{categorie.tooltip_content}</mark>
+            <mark>{question.tooltip_content}</mark>
           </p>
         </div>
       ))}
