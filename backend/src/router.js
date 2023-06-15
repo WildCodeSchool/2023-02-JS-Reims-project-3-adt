@@ -11,11 +11,14 @@ router.post("/users", userControllers.add);
 router.delete("/users/:id", userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
+const categoryControllers = require("./controllers/categoryControllers");
 
 router.get(
   "/categories/:categoryId/questions",
   questionControllers.browseByCategory
 );
+router.get("/categories", categoryControllers.browse);
+
 router.post(
   "/categories/:categoryId/questions",
   questionControllers.addByCategory
