@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import NavbarUser from "../components/NavbarUser";
+import FooterUser from "../components/FooterUser";
 
 function Survey() {
   const [categories, setCategories] = useState([]);
@@ -18,12 +20,14 @@ function Survey() {
 
   return (
     <div>
-      <h2>Select family</h2>
+      <NavbarUser />
+      <h2>HEBERGEMENT</h2>
       {categories.map((category) => (
         <Link key={category.id} to={`/survey/${category.id}`}>
           <button type="button">{category.title}</button>
         </Link>
       ))}
+      <FooterUser />
     </div>
   );
 }
