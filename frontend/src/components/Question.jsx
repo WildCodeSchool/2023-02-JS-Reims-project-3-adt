@@ -23,6 +23,7 @@ function Question() {
       {questions.map((question) => (
         <div key={question.id}>
           <p>{question.content}</p>
+          <p>{question.mandatory_level}</p>
         </div>
       ))}
     </div>
