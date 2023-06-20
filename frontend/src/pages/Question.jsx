@@ -13,14 +13,11 @@ function Question() {
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
         }/categories/${categoryId}/questions`
       )
-      .then((response) => {
-        setQuestions(response.data);
-      })
+      .then((response) => setQuestions(response.data))
       .catch((error) => {
         console.error(error);
       });
-  }, []);
-
+  }, [categoryId]);
   return (
     <div>
       {questions.map((question) => (

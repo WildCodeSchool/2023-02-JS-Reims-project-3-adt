@@ -25,7 +25,10 @@ function Categories() {
       <div>
         {categories.map((category) => (
           <Link key={category.id} to={`/categories/${category.id}`}>
-            {category.title}
+            <div>
+              <img src={category.image} alt={category.title} />
+              <span>{category.title}</span>
+            </div>
           </Link>
         ))}
       </div>
