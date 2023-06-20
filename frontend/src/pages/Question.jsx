@@ -22,12 +22,7 @@ function Question() {
     <div>
       {questions.map((question) => (
         <div key={question.id}>
-          {/* <h1>{question.title}</h1> */}
-          {/* <h2>{question.category_id}</h2> */}
           <p>{question.content}</p>
-          <p>
-            <mark>{question.tooltip_content}</mark>
-          </p>
         </div>
       ))}
     </div>
