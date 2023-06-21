@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import "./Question.css";
 
 function Question() {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
+  const navigate = useNavigate();
+
+  const handleNextPage = () => {
+    navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
+  };
+  const handlePreviousPage = () => {
+    navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
+  };
 
   useEffect(() => {
     axios
@@ -20,51 +28,61 @@ function Question() {
       });
   }, [categoryId]);
 
-  const handleResponseChange = (questionId, response) => {
-    const updatedQuestions = questions.map((question) => {
-      if (question.id === questionId) {
-        return { ...question, response };
-      }
-      return question;
-    });
-    setQuestions(updatedQuestions);
-  };
-
   return (
-    <div className="question">
+    <section className="surveyQuestion">
       {questions.map((question) => (
-        <div className="surveyQuestion">
+        <div className="questions">
           <div key={question.id} className="questionList">
-            <p>{question.content}</p>
-            <p>{question.mandatory_level}</p>
+            <p className="questionContent">{question.content}</p>
+            <p className="mandatoryLevel">{question.mandatory_level}</p>
           </div>
-          <label htmlFor="answer" className="answerChoice">
-            <input type="radio" required id="answer" name="answer" />
-            Atteint
-          </label>
-          <label htmlFor="answer" className="answerChoice">
-            <input type="radio" required id="answer" name="answer" />
-            Non Atteint
-          </label>
-          <label htmlFor="answer" className="answerChoice">
-            <input type="radio" required id="answer" name="answer" />
-            Non Concerné
-          </label>
-          <label htmlFor="answer" className="answerChoice">
-            <input
-              type="radio"
-              required
-              id="answer"
-              name="answer"
-              value="ne sais pas"
-              checked={question.response === "not atteint"}
-              onChange={() => handleResponseChange(question.id, "not atteint")}
-            />
-            Ne sais pas
-          </label>
+          <div className="answer">
+            <label htmlFor="answer" className="answerChoice">
+              <input
+                type="radio"
+                required
+                id="answer"
+                name="answer"
+                className="testradio"
+              />
+              Atteint
+            </label>
+            <label htmlFor="answer" className="answerChoice">
+              <input type="radio" required id="answer" name="answer" />
+              Non Atteint
+            </label>
+            <label htmlFor="answer" className="answerChoice">
+              <input type="radio" required id="answer" name="answer" />
+              Non Concerné
+            </label>
+            <label htmlFor="answer" className="answerChoice">
+              <input type="radio" required id="answer" name="answer" />
+              Ne sais pas
+            </label>
+          </div>
         </div>
       ))}
-    </div>
+      <div className="btn">
+        {categoryId <= 6 && (
+          <div className="questionBtnNext">
+            <button className="btnNext" type="button" onClick={handleNextPage}>
+              Suivant
+            </button>
+          </div>
+        )}
+        {categoryId > 1 && (
+          <div className="questionBtnPrevious">
+            <button
+              className="btnPrevious"
+              type="button"
+              onClick={handlePreviousPage}
+            >
+              Précédent
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 export default Question;

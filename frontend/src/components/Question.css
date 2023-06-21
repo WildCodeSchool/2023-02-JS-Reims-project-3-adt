@@ -1,43 +1,46 @@
-.surveyQuestions {
+.surveyQuestion {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 2em;
-  align-items: center;
   justify-content: center;
   box-sizing: border-box;
   width: 70%;
   margin: auto;
 }
-.questionList {
+.questions {
   display: flex;
   flex-direction: column;
   border: 1px solid #3f7438;
   list-style: none;
   text-align: justify;
+  padding: 1em;
+}
+.questionList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .mandatoryLevel {
   color: blue;
+  padding-left: 2rem;
 }
-.tooltipContent {
-  color: red;
-}
-.tooltipContent span {
-  color: rgb(2, 2, 2);
-  font-weight: bold;
-}
-.answerChoice {
+.answer {
   display: flex;
   flex-direction: row;
-  padding: 0.5em;
+  gap: 1rem;
+  padding: 1em 1em 1em 0;
+  text-align: justify;
 }
-.pageBtn {
+
+.btn {
   display: flex;
   justify-content: space-between;
-  padding: 2em;
+  flex-direction: row-reverse;
 }
-/* .answersList {
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: justify;
-  } */
+.questionBtnPrevious button,
+.questionBtnNext button {
+  background-color: #3f7438;
+  padding: 1em;
+  color: white;
+}
