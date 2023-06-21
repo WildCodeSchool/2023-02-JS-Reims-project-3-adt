@@ -1,0 +1,33 @@
+* {
+  margin: auto;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: justify;
+  margin: auto;
+  gap: 1.5rem;
+  font-size: 14px;
+  width: 37.5rem;
+  padding: 1.5em;
+  border-radius: 1em;
+  border: 1px solid #3f7438;
+  padding: 2rem;
+  height: 80%;
+}
+
+p {
+  font-family: "Monsterrat", sans-serif;
+}
+
+h2 {
+  font-family: "Monsterrat", sans-serif;
+}
+
+.logo-adt {
+  width: 10rem;
+}
