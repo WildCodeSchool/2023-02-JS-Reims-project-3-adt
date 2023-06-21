@@ -1,5 +1,5 @@
 import logo from "../assets/ADT-Logo-Vert.jpeg";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 function NavbarUser() {
   return (
