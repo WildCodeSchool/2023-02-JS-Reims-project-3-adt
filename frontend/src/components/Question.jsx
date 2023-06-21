@@ -18,12 +18,49 @@ function Question() {
         console.error(error);
       });
   }, [categoryId]);
+
+  const handleResponseChange = (questionId, response) => {
+    const updatedQuestions = questions.map((question) => {
+      if (question.id === questionId) {
+        return { ...question, response };
+      }
+      return question;
+    });
+    setQuestions(updatedQuestions);
+  };
+
   return (
-    <div>
+    <div className="question">
       {questions.map((question) => (
-        <div key={question.id}>
-          <p>{question.content}</p>
-          <p>{question.mandatory_level}</p>
+        <div>
+          <div key={question.id}>
+            <p>{question.content}</p>
+            <p>{question.mandatory_level}</p>
+          </div>
+          <label htmlFor="answer" className="answerChoice">
+            <input type="radio" required id="answer" name="answer" />
+            Atteint
+          </label>
+          <label htmlFor="answer" className="answerChoice">
+            <input type="radio" required id="answer" name="answer" />
+            Non Atteint
+          </label>
+          <label htmlFor="answer" className="answerChoice">
+            <input type="radio" required id="answer" name="answer" />
+            Non Concerné
+          </label>
+          <label htmlFor="answer" className="answerChoice">
+            <input
+              type="radio"
+              required
+              id="answer"
+              name="answer"
+              value="ne sais pas"
+              checked={question.response === "not atteint"}
+              onChange={() => handleResponseChange(question.id, "not atteint")}
+            />
+            Ne sais pas
+          </label>
         </div>
       ))}
     </div>
