@@ -9,9 +9,8 @@
 .hotelCategory h2 {
   padding-bottom: 1em;
   text-align: center;
-  color: red;
-  text-decoration: underline;
-  font-size: 30px;
+  color: blue;
+  font-size: 35px;
 }
 .categories {
   gap: 1em;
@@ -24,10 +23,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid;
-  background-color: #3f7438;
-  color: white;
+  background-color: #b4efa7;
+  color: black;
   padding: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 .categoryList img {
   width: 50px;

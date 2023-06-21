@@ -15,11 +15,15 @@
   list-style: none;
   text-align: justify;
   padding: 1em;
+  background-color: #f3f2f3;
 }
 .questionList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.questionContent {
+  gap: 1rem;
 }
 .mandatoryLevel {
   color: blue;
@@ -43,4 +47,6 @@
   background-color: #3f7438;
   padding: 1em;
   color: white;
+  font-size: 14px;
+  border: none;
 }
