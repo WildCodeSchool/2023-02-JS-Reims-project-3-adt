@@ -4,12 +4,11 @@
   flex-direction: row;
   align-items: center;
   gap: 2em;
-  padding: 2em;
-  
+  padding: 0.5em;
 }
 
 .hotelCategory h2 {
-  padding-bottom: 1em;
+  padding: 0 0 1em 1em;
   text-align: center;
   color: blue;
   font-size: 35px;
@@ -25,7 +24,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #b4efa7;
   color: black;
   padding: 1em;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
@@ -33,4 +31,7 @@
 }
 .categoryList img {
   width: 50px;
+}
+.categoryList span {
+  padding-top: 0.5em;
 }

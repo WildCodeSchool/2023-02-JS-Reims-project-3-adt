@@ -61,7 +61,7 @@ function Question() {
             </div>
             <div className="answer">
               <input
-                type="radio"
+                type="checkbox"
                 required
                 id={`answer${question.id}`}
                 name={`answer${question.id}`}
@@ -73,7 +73,7 @@ function Question() {
                 Atteint
               </label>
               <input
-                type="radio"
+                type="checkbox"
                 required
                 id={`answer${question.id}`}
                 name={`answer${question.id}`}
@@ -88,7 +88,7 @@ function Question() {
               </label>
 
               <input
-                type="radio"
+                type="checkbox"
                 required
                 id={`answer${question.id}`}
                 name={`answer${question.id}`}
@@ -103,7 +103,7 @@ function Question() {
               </label>
 
               <input
-                type="radio"
+                type="checkbox"
                 required
                 id={`answer${question.id}`}
                 name={`answer${question.id}`}
