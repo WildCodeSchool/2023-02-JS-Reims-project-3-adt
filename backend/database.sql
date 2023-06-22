@@ -9,10 +9,16 @@ INSERT INTO user (username, email, password) VALUES ('user', 'wcd@gmail.com', 'a
 
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
-title varchar(100) not null
+title varchar(100) not null,
+image varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),("Responsabilité sociale") ;
+INSERT INTO category (title, image) VALUES ("Gestion de l'énergie", '/src/assets/images_icons/energie.png'),
+("Gestion de l'eau", '/src/assets/images_icons/water.png'),
+("Gestion des déchets", '/src/assets/images_icons/waste.png'),
+("Biodeversité", '/src/assets/images_icons/recycle.png'), 
+("Communication et Sensibilitaion", '/src/assets/images_icons/communication.png'),
+("Responsabilité sociale", '/src/assets/images_icons/human.png') ;
 
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,

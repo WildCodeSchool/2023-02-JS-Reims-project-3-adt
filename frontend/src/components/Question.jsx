@@ -13,24 +13,17 @@ function Question() {
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
         }/categories/${categoryId}/questions`
       )
-      .then((response) => {
-        setQuestions(response.data);
-      })
+      .then((response) => setQuestions(response.data))
       .catch((error) => {
         console.error(error);
       });
-  }, []);
-
+  }, [categoryId]);
   return (
     <div>
       {questions.map((question) => (
         <div key={question.id}>
-          {/* <h1>{question.title}</h1> */}
-          {/* <h2>{question.category_id}</h2> */}
           <p>{question.content}</p>
-          <p>
-            <mark>{question.tooltip_content}</mark>
-          </p>
+          <p>{question.mandatory_level}</p>
         </div>
       ))}
     </div>
