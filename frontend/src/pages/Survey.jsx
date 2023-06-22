@@ -5,7 +5,7 @@ import Categories from "../components/Categories";
 
 function Survey() {
   return (
-    <div>
+    <div className="survey">
       <NavbarUser />
       <Categories />
       <Question />

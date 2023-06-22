@@ -8,6 +8,10 @@
   width: 70%;
   margin: auto;
 }
+.small-container {
+  background-color: #3f7438;
+  height: 0.5rem;
+}
 .questions {
   display: flex;
   flex-direction: column;
@@ -16,6 +20,7 @@
   text-align: justify;
   padding: 1em;
   background-color: #f3f2f3;
+  border-radius: 10px;
 }
 .questionList {
   display: flex;
