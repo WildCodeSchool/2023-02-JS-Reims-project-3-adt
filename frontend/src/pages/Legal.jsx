@@ -41,6 +41,9 @@ function Legal() {
           (www.cnil.fr).
         </p>
       </div>
+      <button type="submit" className="buttonHome">
+        Revenir / Accueil
+      </button>
       <div className="footeruser">
         <FooterUser />
       </div>
