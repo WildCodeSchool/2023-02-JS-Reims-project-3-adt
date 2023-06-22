@@ -16,8 +16,8 @@ image varchar(100) not null
 INSERT INTO category (title, image) VALUES ("Gestion de l'énergie", '/src/assets/images_icons/energie.png'),
 ("Gestion de l'eau", '/src/assets/images_icons/water.png'),
 ("Gestion des déchets", '/src/assets/images_icons/waste.png'),
-("Biodeversité", '/src/assets/images_icons/recycle.png'), 
-("Communication et Sensibilitaion", '/src/assets/images_icons/communication.png'),
+("Biodiversité", '/src/assets/images_icons/recycle.png'), 
+("Communication et sensibilisation", '/src/assets/images_icons/communication.png'),
 ("Responsabilité sociale", '/src/assets/images_icons/human.png') ;
 
 create table question (
@@ -50,6 +50,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
   ("Pour les constructions neuves ou rénovation totale : utilisation de matériaux de construction biosourcés.", "Essentiel", 1, "Les matériaux de construction biosourcés sont par exemple le bois, les panneaux type Fermacell®, les enduits terre, etc."),
 
   ("Isolation thermique performante des murs et plafonds.
+
   https://librairie.ademe.fr/cadic/2047/guide-pratique-isoler-sa-maison.pdf?modal=false", "Essentiel", 1, "La résistance thermique applicable est de :
     > toiture (comples perdus ou rampants)  r>= 6 m². K/W
     > murs (isolation intérieure ou extérieure) r>= 3,7 m². K/W"),
@@ -60,6 +61,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
     - utilise des énergies renouvelables
     ou 
     - est alimenté en électricité par un fournisseur labellisé Vert Volt
+
   https://agirpourlatransition.ademe.fr/particuliers/vertvolt#paragraph-584788", "Essentiel", 1, "A minima pour le chauffage ou la production d'eau chaude sanitaire (ECS). Un ballon d'eau chaude sanitaire thermodynamique satisfait ce critère. Attention à bien dimensionner ses besoins en ECS."),
 
   ("Possibilité de régulation différenciée du chauffage selon la période ou les pièces.", "Essentiel", 1, NULL),
@@ -70,6 +72,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
     - un mode de production basé sur les énergies renouvelables 
     ou
     -  un fournisseur labellisé Vert Volt
+    
   https://agirpourlatransition.ademe.fr/particuliers/vertvolt#paragraph-584788", "Essentiel", 1, NULL),
 
   ("Conception du bâtiment avec un niveau de performance élevé : Haute Qualité Environnementale, bioclimatique, BBC, bâtiment passif ou à énergie positive.", "Optionnel", 1, NULL),

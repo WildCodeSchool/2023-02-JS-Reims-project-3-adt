@@ -7,7 +7,6 @@ function Survey() {
   return (
     <div>
       <NavbarUser />
-      <h2>HEBERGEMENT</h2>
       <Categories />
       <Question />
       <FooterUser />

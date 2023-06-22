@@ -8,10 +8,10 @@
   gap: 2rem;
   font-size: 14px;
   width: 600px;
-  padding: 1em;
+  padding: 2em;
   border-radius: 1em;
   border: 1px solid #3f7438;
-  /* letter-spacing: 1px; */
+  background-color: white;
 }
 .logoInstruction {
   width: 10rem;

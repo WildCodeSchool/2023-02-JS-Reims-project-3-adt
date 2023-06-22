@@ -53,13 +53,8 @@ function Instruction() {
         </li>
       </ul>
       <div className="userButton">
-        <Link
-          to="/categories/:categoryId"
-          type="button"
-          className="userBtn"
-          Hebergement
-        >
-          Hebergement
+        <Link to="/categories/1" type="button" className="userBtn" Hebergement>
+          Hébergement
         </Link>
         <Link
           to="/categories/Restaurant"
@@ -67,7 +62,7 @@ function Instruction() {
           className="userBtn"
           Hebergement
         >
-          Restaurant
+          Activité
         </Link>
         <Link
           to="/categories/Guide"
@@ -75,7 +70,7 @@ function Instruction() {
           className="userBtn"
           Hebergement
         >
-          Guide
+          Restaurant
         </Link>
       </div>
     </div>
