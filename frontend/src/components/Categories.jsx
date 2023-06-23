@@ -22,16 +22,16 @@ function Categories() {
 
   return (
     <section>
-      <div>
+      <figure>
         {categories.map((category) => (
           <Link key={category.id} to={`/categories/${category.id}`}>
             <div>
               <img src={category.image} alt={category.title} />
-              <span>{category.title}</span>
+              <figcaption>{category.title}</figcaption>
             </div>
           </Link>
         ))}
-      </div>
+      </figure>
     </section>
   );
 }
