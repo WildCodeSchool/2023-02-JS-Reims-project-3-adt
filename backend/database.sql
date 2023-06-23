@@ -13,12 +13,13 @@ title varchar(100) not null,
 image varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title, image) VALUES ("Gestion de l'énergie", '/src/assets/images_icons/energie.png'),
-("Gestion de l'eau", '/src/assets/images_icons/water.png'),
-("Gestion des déchets", '/src/assets/images_icons/waste.png'),
-("Biodeversité", '/src/assets/images_icons/recycle.png'), 
-("Communication et Sensibilitaion", '/src/assets/images_icons/communication.png'),
-("Responsabilité sociale", '/src/assets/images_icons/human.png') ;
+INSERT INTO category (title, image) VALUES 
+("Gestion de l'énergie", '/assets/images/images_icons/energie.png'),
+("Gestion de l'eau", '/assets/images/images_icons/water.png'),
+("Gestion des déchets", '/assets/images/images_icons/waste.png'),
+("Biodeversité", '/assets/images/images_icons/recycle.png'), 
+("Communication et Sensibilitaion", '/assets/images/images_icons/communication.png'),
+("Responsabilité sociale", '/assets/images/images_icons/human.png') ;
 
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
