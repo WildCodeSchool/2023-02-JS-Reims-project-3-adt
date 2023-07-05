@@ -2,17 +2,22 @@ create table `user` (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   username varchar(80) not null unique,
   email varchar(80) not null unique,
-  password varchar(80) not null
+  password varchar(80) not null,
+  firstname varchar(80) not null, 
+  lastname varchar(80) not null,
+  company_name varchar(80) not null,
+  phone_number varchar (15) not null, 
+  is_admin varchar(80) not null unique
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO user (username, email, password) VALUES ('user', 'wcd@gmail.com', 'admin');
+INSERT INTO user (username, email, password, lastname, firstname, company_name, phone_number, is_admin) VALUES ('Utilisateur', 'exemple@gmail.com', 'Indiquez votre mot de passe','Indiquez votre nom', 'Indiquez votre prénom', 'Indiquez votre entreprise', 'Téléphone', 'admin' );
 
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodeversité"), ("Communication et Sensibilitaion"),("Responsabilité sociale") ;
+INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodiversité"), ("Communication et Sensibilisation"),("Responsabilité sociale") ;
 
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
