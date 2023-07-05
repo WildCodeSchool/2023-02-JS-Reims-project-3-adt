@@ -14,10 +14,18 @@ INSERT INTO user (username, email, password, lastname, firstname, company_name, 
 
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
-title varchar(100) not null
+title varchar(100) not null,
+image varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO category (title) VALUES ("Gestion de l'énergie"),("Gestion de l'eau"),("Gestion des déchets"),("Biodiversité"), ("Communication et Sensibilisation"),("Responsabilité sociale") ;
+INSERT INTO category (title, image) VALUES 
+("Gestion de l'énergie", '/assets/images/images_icons/energie.png'),
+("Gestion de l'eau", '/assets/images/images_icons/water.png'),
+("Gestion des déchets", '/assets/images/images_icons/waste.png'),
+("Biodiversité", '/assets/images/images_icons/recycle.png'), 
+("Communication et Sensibilisation", '/assets/images/images_icons/communication.png'),
+("Responsabilité sociale", '/assets/images/images_icons/human.png') ;
+
 
 create table question (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
