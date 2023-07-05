@@ -38,4 +38,9 @@
   font-weight: 500;
   background-color: #f7f7f7;
   width: auto;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
 }
