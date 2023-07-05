@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./Categories.css";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -24,7 +25,11 @@ function Categories() {
     <section className="category">
       <h2>HÉBERGEMENT</h2>
       {categories.map((category) => (
-        <Link key={category.id} to={`/categories/${category.id}`}>
+        <Link
+          key={category.id}
+          to={`/categories/${category.id}`}
+          className="list"
+        >
           <figure className="categoryList">
             <img
               src={`${
