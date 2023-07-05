@@ -72,7 +72,6 @@ function Question() {
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Atteint
               </label>
-
               <input
                 type="checkbox"
                 required
