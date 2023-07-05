@@ -2,15 +2,24 @@ create table `user` (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   username varchar(80) not null unique,
   email varchar(80) not null unique,
-  password varchar(80) not null,
   firstname varchar(80) not null, 
   lastname varchar(80) not null,
   company_name varchar(80) not null,
   phone_number varchar (15) not null, 
-  is_admin varchar(80) not null unique
+  is_admin boolean default(false) not null,
+  hashedPassword varchar(255) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO user (username, email, password, lastname, firstname, company_name, phone_number, is_admin) VALUES ('Utilisateur', 'exemple@gmail.com', 'Indiquez votre mot de passe','Indiquez votre nom', 'Indiquez votre prénom', 'Indiquez votre entreprise', 'Téléphone', 'admin' );
+INSERT INTO user (username, email, lastname, firstname, company_name, phone_number, is_admin, hashedPassword) 
+VALUES 
+('Utilisateur', 
+'john.doe@example.com', 
+'Doe', 
+'John', 
+'example-test', 
+'00.11.22.33.44.', 
+true,
+'$argon2id$v=19$m=16,t=2,p=1$emVmZXpmemZlemVmZWR6ZXplZg$rqZkhxu5YbqCGHPNrjJZpQ');
 
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
