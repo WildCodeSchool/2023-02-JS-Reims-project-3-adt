@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Question.css";
 
 function Question() {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -28,6 +29,14 @@ function Question() {
       return question;
     });
     setQuestions(updatedQuestions);
+  };
+
+  const handleNextPage = () => {
+    navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
+  };
+
+  const handlePreviousPage = () => {
+    navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
   return (
@@ -104,6 +113,42 @@ function Question() {
             </div>
           </div>
         ))}
+      <div className="buttonContainer">
+        {parseInt(categoryId, 10) < 6 && (
+          <div className="questionBtnPrevious">
+            <button
+              type="button"
+              className="nextButton"
+              onClick={handleNextPage}
+            >
+              Suivant
+            </button>
+          </div>
+        )}
+
+        {parseInt(categoryId, 10) === 6 && (
+          <div className="questionBtnPrevious">
+            <button
+              type="button"
+              className="nextButton"
+              onClick={handleNextPage}
+            >
+              Terminer
+            </button>
+          </div>
+        )}
+        {parseInt(categoryId, 10) > 1 && (
+          <div className="questionBtnNext">
+            <button
+              type="button"
+              className="previousButton"
+              onClick={handlePreviousPage}
+            >
+              Précédent
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
