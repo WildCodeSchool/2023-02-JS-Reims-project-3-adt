@@ -21,6 +21,7 @@ function Question() {
       });
   }, [categoryId]);
 
+  /* function input */
   const handleResponseChange = (questionId, response) => {
     const updatedQuestions = questions.map((question) => {
       if (question.id === questionId) {
@@ -30,7 +31,7 @@ function Question() {
     });
     setQuestions(updatedQuestions);
   };
-
+  /* function button */
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
