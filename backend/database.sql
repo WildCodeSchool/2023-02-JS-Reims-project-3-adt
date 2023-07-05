@@ -10,8 +10,6 @@ create table `user` (
   is_admin varchar(80) not null unique
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO user (username, email, password, lastname, firstname, company_name, phone_number, is_admin) VALUES ('Utilisateur', 'exemple@gmail.com', 'Indiquez votre mot de passe','Indiquez votre nom', 'Indiquez votre prénom', 'Indiquez votre entreprise', 'Téléphone', 'admin' );
-
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null,
@@ -23,8 +21,8 @@ INSERT INTO category (title, image) VALUES
 ("Gestion de l'eau", '/assets/images/images_icons/water.png'),
 ("Gestion des déchets", '/assets/images/images_icons/waste.png'),
 ("Biodiversité", '/assets/images/images_icons/recycle.png'), 
-("Communication et Sensibilisation", '/assets/images/images_icons/communication.png'),
-("Responsabilité sociale", '/assets/images/images_icons/human.png') ;
+("Communication et sensibilisation", '/assets/images/images_icons/communication.png'),
+("Responsabilité sociale", '/assets/images/images_icons/human.png');
 
 
 create table question (
