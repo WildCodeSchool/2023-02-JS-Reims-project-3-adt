@@ -32,3 +32,7 @@ figure.categoryList {
 a:link {
   text-decoration: none;
 }
+.categoryList.active {
+  background-color: #3f7438;
+  color: white;
+}
