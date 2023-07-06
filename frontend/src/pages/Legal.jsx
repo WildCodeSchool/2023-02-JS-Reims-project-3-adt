@@ -1,8 +1,8 @@
 import React from "react";
-import "./Legal.css";
 import logo from "../assets/ecotourisme.jpeg";
 import NavbarUser from "../components/NavbarUser";
 import FooterUser from "../components/FooterUser";
+import "./Legal.css";
 
 function Legal() {
   return (
