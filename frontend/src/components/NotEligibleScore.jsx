@@ -32,12 +32,13 @@ export default function NotEligibleScore() {
         Pour bénéficier de conseils 100% gratuits et personnalisés en vue
         d'intégrer le réseau de partenaires écotourisme et bénéficier :
       </p>
-      <li>
-        . des actions de mise en réseau avec les autres établissements membres
-      </li>
-      <li>. de promotion et de communication</li>
-      <li>. de conseils pour poursuivre votre démarche et aller plus loin</li>
-
+      <ul>
+        <li>
+          . des actions de mise en réseau avec les autres établissements membres
+        </li>
+        <li>. de promotion et de communication</li>
+        <li>. de conseils pour poursuivre votre démarche et aller plus loin</li>
+      </ul>
       <button type="button" className="contacterLeConseiller">
         Contacter le conseiller
       </button>

@@ -21,10 +21,12 @@ export default function EligibleScore() {
         Vous pouvez intégrer le réseau de partenaires écotourisme et bénéficier
         gratuitement
       </p>
-      <li>
-        . des actions de mise en réseau avec les autres établissements membres
-      </li>
-      <li>. de promotion de communication</li>
+      <ul>
+        <li>
+          . des actions de mise en réseau avec les autres établissements membres
+        </li>
+        <li>. de promotion de communication</li>
+      </ul>
     </div>
   );
 }
