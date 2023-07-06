@@ -53,8 +53,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.questionBtnPrevious button,
-.questionBtnNext button {
+.questionBtn {
   background-color: #3f7438;
   padding: 1em;
   color: white;

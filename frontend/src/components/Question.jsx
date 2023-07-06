@@ -118,39 +118,33 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         ))}
       <div className="buttonContainer">
         {parseInt(categoryId, 10) < 6 && (
-          <div className="questionBtnPrevious">
-            <button
-              type="button"
-              className="nextButton"
-              onClick={handleNextPage}
-            >
-              Suivant
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={handleNextPage}
+            className="questionBtn"
+          >
+            Suivant
+          </button>
         )}
 
         {parseInt(categoryId, 10) === 6 && (
-          <div className="questionBtnPrevious">
-            <button
-              type="button"
-              className="nextButton"
-              onClick={handleNextPage}
-            >
-              Terminer
-            </button>
-          </div>
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={handleNextPage}
+          >
+            Terminer
+          </button>
         )}
 
         {parseInt(categoryId, 10) > 1 && (
-          <div className="questionBtnNext">
-            <button
-              type="button"
-              className="previousButton"
-              onClick={handlePreviousPage}
-            >
-              Précédent
-            </button>
-          </div>
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={handlePreviousPage}
+          >
+            Précédent
+          </button>
         )}
       </div>
     </section>
@@ -158,7 +152,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
 }
 
 Question.propTypes = {
-  currentCategoryId: PropTypes.shape.isRequired,
+  currentCategoryId: PropTypes.number.isRequired,
   setCurrentCategoryId: PropTypes.func.isRequired,
 };
 

@@ -52,7 +52,7 @@ function Categories({ currentCategoryId, setCurrentCategoryId }) {
   );
 }
 Categories.propTypes = {
-  currentCategoryId: PropTypes.shape.isRequired,
+  currentCategoryId: PropTypes.number.isRequired,
   setCurrentCategoryId: PropTypes.func.isRequired,
 };
 export default Categories;
