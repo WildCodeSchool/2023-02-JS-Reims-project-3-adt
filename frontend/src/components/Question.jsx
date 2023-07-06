@@ -52,8 +52,8 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
           );
         })
         .map((question) => (
-          <div className="questions">
-            <div key={question.id} className="questionList">
+          <div key={question.id} className="questions">
+            <div className="questionList">
               <p className="questionContent">{question.content}</p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
