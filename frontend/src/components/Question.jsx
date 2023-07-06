@@ -22,17 +22,6 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
       });
   }, [categoryId]);
 
-  /* function input */
-  const handleResponseChange = (questionId, response) => {
-    const updatedQuestions = questions.map((question) => {
-      if (question.id === questionId) {
-        return { ...question, response };
-      }
-      return question;
-    });
-    setQuestions(updatedQuestions);
-  };
-  /* function button */
   const handleNextPage = () => {
     setCurrentCategoryId(currentCategoryId + 1);
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
@@ -41,6 +30,16 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
   const handlePreviousPage = () => {
     setCurrentCategoryId(currentCategoryId - 1);
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
+  };
+
+  const handleResponseChange = (questionId, response) => {
+    const updatedQuestions = questions.map((question) => {
+      if (question.id === questionId) {
+        return { ...question, response };
+      }
+      return question;
+    });
+    setQuestions(updatedQuestions);
   };
 
   return (
@@ -62,11 +61,11 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-atteint`}
                 name={`answer${question.id}`}
                 value="Atteint"
-                checked={question.response === "Atteint"}
                 onChange={() => handleResponseChange(question.id, "Atteint")}
+                checked={question.response === "Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
@@ -74,13 +73,13 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-not-atteint`}
                 name={`answer${question.id}`}
                 value="No Atteint"
-                checked={question.response === "Not Atteint"}
                 onChange={() =>
-                  handleResponseChange(question.id, "Not Atteint")
+                  handleResponseChange(question.id, "Non Atteint")
                 }
+                checked={question.response === "Non Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Atteint
@@ -88,13 +87,13 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-non-concerne`}
                 name={`answer${question.id}`}
                 value="ne sais pas"
-                checked={question.response === "Non Concerné"}
                 onChange={() =>
                   handleResponseChange(question.id, "Non Concerné")
                 }
+                checked={question.response === "Non Concerné"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Concerné
@@ -103,13 +102,13 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-ne-sais-pas`}
                 name={`answer${question.id}`}
                 value="ne sais pas"
-                checked={question.response === "Ne sais pas"}
                 onChange={() =>
                   handleResponseChange(question.id, "Ne sais pas")
                 }
+                checked={question.response === "Ne sais pas"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Ne sais pas
@@ -141,6 +140,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
             </button>
           </div>
         )}
+
         {parseInt(categoryId, 10) > 1 && (
           <div className="questionBtnNext">
             <button
