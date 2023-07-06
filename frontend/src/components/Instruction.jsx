@@ -53,28 +53,13 @@ function Instruction() {
         </li>
       </ul>
       <div className="userButton">
-        <Link
-          to="/categories/hebergement"
-          type="button"
-          className="userBtn"
-          Hebergement
-        >
+        <Link to="/categories/1" className="userBtn">
           Hebergement
         </Link>
-        <Link
-          to="/categories/restaurant"
-          type="button"
-          className="userBtn"
-          Hebergement
-        >
+        <Link to="/categories/restaurant" className="userBtn">
           Restaurant
         </Link>
-        <Link
-          to="/categories/guide"
-          type="button"
-          className="userBtn"
-          Hebergement
-        >
+        <Link to="/categories/guide" className="userBtn">
           Guide
         </Link>
       </div>

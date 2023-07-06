@@ -7,7 +7,7 @@ function NavbarUser() {
     <div className="containerNavbarUser">
       <div className="logoUser">
         <Link to="/">
-          <img src={logo} alt="" />
+          <img src={logo} alt="logo adt marne" />
         </Link>
       </div>
     </div>

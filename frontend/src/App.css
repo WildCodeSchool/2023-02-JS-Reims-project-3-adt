@@ -5,4 +5,6 @@
 .home {
   display: flex;
   flex-direction: column;
+  background-image: url("./assets/vignoble.jpeg");
+  background-size: cover;
 }

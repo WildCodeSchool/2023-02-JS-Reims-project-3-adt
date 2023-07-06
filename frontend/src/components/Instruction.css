@@ -10,7 +10,8 @@
   width: 600px;
   padding: 1em;
   border-radius: 1em;
-  border: 1px solid #3f7438;
+  border: 2px solid #3f7438;
+  background-color: white;
 }
 .logoInstruction {
   width: 10rem;
