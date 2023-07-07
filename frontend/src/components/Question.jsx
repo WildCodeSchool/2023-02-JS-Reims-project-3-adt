@@ -119,10 +119,6 @@ function Question() {
     return 0;
   };
 
-  useEffect(() => {
-    calculateScore();
-  }, [countCriteriaMet, countNotApplicable, countUnknown, questions.length]);
-
   return (
     <section className="surveyQuestion">
       <div className="small-container" />
@@ -134,7 +130,7 @@ function Question() {
         .map((question) => (
           <div key={question.id} className="question">
             <div className="questionText">
-              <p>{question.text}</p>
+              <p>{question.content}</p>
               <p>{question.mandatory_level}</p>
             </div>
             <div className="questionOptions">
