@@ -22,11 +22,13 @@ export default function UnknownScore() {
         Sans le savoir, vous pourriez intégrer le réseau de partenaires
         écotourisme et bénéficier
       </p>
-      <li>
-        Des actions de mise en réseau avec les autres établissemnts membres
-      </li>
-      <li>De promotion et de communication</li>
-      <li>De conseils pour pousuivre votre démarche et aller plus loin</li>
+      <ul>
+        <li>
+          Des actions de mise en réseau avec les autres établissemnts membres
+        </li>
+        <li>De promotion et de communication</li>
+        <li>De conseils pour pousuivre votre démarche et aller plus loin</li>
+      </ul>
       <p>Et maintenant !?</p>
       <p>
         Nous vous invitons à partager ce résultat avec le conseiller écotourisme
