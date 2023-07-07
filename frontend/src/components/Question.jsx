@@ -68,34 +68,55 @@ function Question() {
 
   const calculateScore = () => {
     const totalQuestions = questions.length;
+    let finalCase = null;
 
     for (let i = 0; i < totalQuestions; i += 1) {
       const questionList = questions[i];
 
       if (questionList.mandatory_level === "Obligatoire") {
         if (countUnknown > 0) {
-          console.error("cas 3");
+          finalCase = "/resultat/inconue";
+          break;
         } else if (criteriumNotReached > 0) {
-          console.error("cas 2");
+          finalCase = "/resultat/non";
         } else {
-          console.error("cas 1");
+          finalCase = "/resultat/oui";
         }
       }
+
       if (questionList.mandatory_level === "essentiel") {
         const pourcentagecountCriteriaMet =
           (countCriteriaMet / (totalQuestions - countNotApplicable)) * 100;
         const essentialThreshold = 80;
 
         if (countUnknown > 0) {
-          console.error("cas 3");
+          finalCase = "/resultat/inconue";
           if (pourcentagecountCriteriaMet >= essentialThreshold) {
-            console.error("cas 1");
+            finalCase = "/resultat/oui";
           } else {
-            console.error("cas 2");
+            finalCase = "/resultat/non";
           }
+          break;
         }
       }
     }
+
+    if (finalCase) {
+      navigate(finalCase);
+    }
+  };
+  const pourcentageObli = () => {
+    if (questions.mandatory_level === "Obligatoire") {
+      return (countCriteriaMet / (questions.length - countNotApplicable)) * 100;
+    }
+    return 0;
+  };
+
+  const pourcentageEs = () => {
+    if (questions.mandatory_level === "essentiel") {
+      return (countCriteriaMet / (questions.length - countNotApplicable)) * 100;
+    }
+    return 0;
   };
 
   useEffect(() => {
@@ -177,18 +198,33 @@ function Question() {
           </div>
         ))}
       <div className="buttonContainer">
+        {parseInt(categoryId, 10) < 6 && (
+          <button
+            type="button"
+            onClick={handleNextPage}
+            className="questionBtn"
+          >
+            Suivant
+          </button>
+        )}
+
+        {parseInt(categoryId, 10) === 6 && (
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={calculateScore}
+          >
+            Terminer
+          </button>
+        )}
+
         {parseInt(categoryId, 10) > 1 && (
           <button
             type="button"
-            className="previousButton"
+            className="questionBtn"
             onClick={handlePreviousPage}
           >
             Précédent
-          </button>
-        )}
-        {parseInt(categoryId, 10) < 5 && (
-          <button type="button" className="nextButton" onClick={handleNextPage}>
-            Suivant
           </button>
         )}
       </div>
@@ -197,6 +233,13 @@ function Question() {
         <p>Nombre de critères non atteints : {criteriumNotReached}</p>
         <p>Nombre de critères non concernés : {countNotApplicable}</p>
         <p>Nombre de critères inconnus : {countUnknown}</p>
+        <p>
+          Pourcentage des questions répondues (Obligatoire) :{" "}
+          {pourcentageObli()}%
+        </p>
+        <p>
+          Pourcentage des questions répondues (Essentiel) : {pourcentageEs()}%
+        </p>
       </div>
     </section>
   );

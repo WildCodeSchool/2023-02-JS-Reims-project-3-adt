@@ -39,20 +39,21 @@
 .answer {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1em 1em 0 0;
   text-align: justify;
 }
 .answerChoice {
+  display: flex;
+  flex-direction: row;
   color: blue;
 }
-.btn {
+.buttonContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.questionBtnPrevious button,
-.questionBtnNext button {
+.questionBtn {
   background-color: #3f7438;
   padding: 1em;
   color: white;

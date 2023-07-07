@@ -1,0 +1,34 @@
+.category {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 0.5em;
+}
+.list {
+  gap: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  padding-top: 1em;
+  font-size: 30px;
+}
+figure.categoryList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.categoryList img {
+  width: 50px;
+}
+a:link {
+  text-decoration: none;
+}
