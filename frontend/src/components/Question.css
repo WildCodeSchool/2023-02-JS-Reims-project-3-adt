@@ -1,0 +1,50 @@
+.surveyQuestion {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2em;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 70%;
+  margin: auto;
+}
+.small-container {
+  background-color: #3f7438;
+  height: 0.5rem;
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #3f7438;
+  list-style: none;
+  text-align: justify;
+  padding: 1em;
+  border-radius: 10px;
+}
+.questionList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.questionContent {
+  gap: 1rem;
+}
+.mandatoryLevel {
+  color: blue;
+  padding-left: 2rem;
+  font-size: 12px;
+  font-style: italic;
+  color: grey;
+}
+.answer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 1em 1em 0 0;
+  text-align: justify;
+}
+.answerChoice {
+  display: flex;
+  flex-direction: row;
+  color: blue;
+}

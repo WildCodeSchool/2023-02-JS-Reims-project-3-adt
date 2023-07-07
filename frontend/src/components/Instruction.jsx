@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 import "./Instruction.css";
 
 function Instruction() {
-  const navigate = useNavigate();
   return (
     <div className="instruction">
       <img src={logo} alt="" className="logoInstruction" />
@@ -54,27 +53,15 @@ function Instruction() {
         </li>
       </ul>
       <div className="userButton">
-        <button
-          onClick={() => navigate("/category/hebergement")}
-          type="button"
-          className="userBtn"
-        >
+        <Link to="/categories/1" className="userBtn">
           Hebergement
-        </button>
-        <button
-          onClick={() => navigate("/category/guide")}
-          type="button"
-          className="userBtn"
-        >
-          Guide
-        </button>
-        <button
-          onClick={() => navigate("/category/restaurant")}
-          type="button"
-          className="userBtn"
-        >
+        </Link>
+        <Link to="/categories/restaurant" className="userBtn">
           Restaurant
-        </button>
+        </Link>
+        <Link to="/categories/guide" className="userBtn">
+          Guide
+        </Link>
       </div>
     </div>
   );
