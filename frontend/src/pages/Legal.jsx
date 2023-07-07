@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 import NavbarUser from "../components/NavbarUser";
 import FooterUser from "../components/FooterUser";
@@ -41,9 +42,9 @@ function Legal() {
           (www.cnil.fr).
         </p>
       </div>
-      <button type="submit" className="buttonHome">
-        Revenir / Accueil
-      </button>
+      <Link to="/" className="buttonHome">
+        Revenir à l'Accueil
+      </Link>
       <div className="footeruser">
         <FooterUser />
       </div>
