@@ -1,9 +1,8 @@
 * {
   margin: 0;
-}
-body {
   font-family: "Montserrat", sans-serif;
 }
+
 #root {
   display: flex;
   flex-direction: column;
