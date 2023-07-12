@@ -1,9 +1,9 @@
 import React from "react";
-import "./Legal.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 import NavbarUser from "../components/NavbarUser";
 import FooterUser from "../components/FooterUser";
+import "./Legal.css";
 
 function Legal() {
   return (

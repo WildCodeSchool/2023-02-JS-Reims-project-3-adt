@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./Question.css";
 
-function Question() {
+function Question({ currentCategoryId, setCurrentCategoryId }) {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -19,6 +21,16 @@ function Question() {
         console.error(error);
       });
   }, [categoryId]);
+
+  const handleNextPage = () => {
+    setCurrentCategoryId(currentCategoryId + 1);
+    navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentCategoryId(currentCategoryId - 1);
+    navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
+  };
 
   const handleResponseChange = (questionId, response) => {
     const updatedQuestions = questions.map((question) => {
@@ -49,11 +61,11 @@ function Question() {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-atteint`}
                 name={`answer${question.id}`}
                 value="Atteint"
-                checked={question.response === "Atteint"}
                 onChange={() => handleResponseChange(question.id, "Atteint")}
+                checked={question.response === "Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
@@ -61,13 +73,13 @@ function Question() {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-not-atteint`}
                 name={`answer${question.id}`}
                 value="No Atteint"
-                checked={question.response === "Not Atteint"}
                 onChange={() =>
-                  handleResponseChange(question.id, "Not Atteint")
+                  handleResponseChange(question.id, "Non Atteint")
                 }
+                checked={question.response === "Non Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Atteint
@@ -75,13 +87,13 @@ function Question() {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-non-concerne`}
                 name={`answer${question.id}`}
                 value="ne sais pas"
-                checked={question.response === "Non Concerné"}
                 onChange={() =>
                   handleResponseChange(question.id, "Non Concerné")
                 }
+                checked={question.response === "Non Concerné"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Concerné
@@ -90,13 +102,13 @@ function Question() {
               <input
                 type="checkbox"
                 required
-                id={`answer${question.id}`}
+                id={`answer${question.id}-ne-sais-pas`}
                 name={`answer${question.id}`}
                 value="ne sais pas"
-                checked={question.response === "Ne sais pas"}
                 onChange={() =>
                   handleResponseChange(question.id, "Ne sais pas")
                 }
+                checked={question.response === "Ne sais pas"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Ne sais pas
@@ -104,8 +116,44 @@ function Question() {
             </div>
           </div>
         ))}
+      <div className="buttonContainer">
+        {parseInt(categoryId, 10) < 6 && (
+          <button
+            type="button"
+            onClick={handleNextPage}
+            className="questionBtn"
+          >
+            Suivant
+          </button>
+        )}
+
+        {parseInt(categoryId, 10) === 6 && (
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={handleNextPage}
+          >
+            Terminer
+          </button>
+        )}
+
+        {parseInt(categoryId, 10) > 1 && (
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={handlePreviousPage}
+          >
+            Précédent
+          </button>
+        )}
+      </div>
     </section>
   );
 }
+
+Question.propTypes = {
+  currentCategoryId: PropTypes.number.isRequired,
+  setCurrentCategoryId: PropTypes.func.isRequired,
+};
 
 export default Question;
