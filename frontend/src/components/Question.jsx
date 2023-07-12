@@ -75,7 +75,7 @@ function Question() {
 
       if (questionList.mandatory_level === "Obligatoire") {
         if (countUnknown > 0) {
-          finalCase = "/resultat/inconue";
+          finalCase = "/resultat/inconnu";
           break;
         } else if (criteriumNotReached > 0) {
           finalCase = "/resultat/non";
@@ -90,7 +90,7 @@ function Question() {
         const essentialThreshold = 80;
 
         if (countUnknown > 0) {
-          finalCase = "/resultat/inconue";
+          finalCase = "/resultat/inconnu";
           if (pourcentagecountCriteriaMet >= essentialThreshold) {
             finalCase = "/resultat/oui";
           } else {

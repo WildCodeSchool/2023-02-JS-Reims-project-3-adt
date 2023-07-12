@@ -19,7 +19,7 @@ function App() {
         <Route path="/scoring" element={<Scoring />} />
         <Route path="/categories/:categoryId" element={<Survey />} />
         <Route path="/legal" element={<Legal />} />
-        <Route path="/resultat/inconue" element={<UnknownScore />} />
+        <Route path="/resultat/inconnu" element={<UnknownScore />} />
         <Route path="/resultat/non" element={<NotEligibleScore />} />
         <Route path="/resultat/oui" element={<EligibleScore />} />
       </Routes>
