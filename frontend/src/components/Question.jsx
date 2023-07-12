@@ -210,6 +210,82 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
                 </label>
               </div>
             </div>
+
+            <div key={question.id} className="questions">
+              <div className="questionList">
+                <p className="questionContent">{question.content}</p>
+                <p className="mandatoryLevel">{question.mandatory_level}</p>
+              </div>
+              <div className="answer">
+                <input
+                  type="radio"
+                  required
+                  id={`answer${question.id}-atteint`}
+                  name={`answer${question.id}`}
+                  value="Atteint"
+                  onChange={() => handleResponseChange(question.id, "Atteint")}
+                  checked={question.response === "Atteint"}
+                />
+                <label
+                  htmlFor={`answer${question.id}-atteint`}
+                  className="answerChoice"
+                >
+                  Atteint
+                </label>
+                <input
+                  type="radio"
+                  required
+                  id={`answer${question.id}-not-atteint`}
+                  name={`answer${question.id}`}
+                  value="Non Atteint"
+                  onChange={() =>
+                    handleResponseChange(question.id, "Non Atteint")
+                  }
+                  checked={question.response === "Non Atteint"}
+                />
+                <label
+                  htmlFor={`answer${question.id}-not-atteint`}
+                  className="answerChoice"
+                >
+                  Non Atteint
+                </label>
+
+                <input
+                  type="radio"
+                  required
+                  id={`answer${question.id}-non-concerne`}
+                  name={`answer${question.id}`}
+                  value="Non Concerné"
+                  onChange={() =>
+                    handleResponseChange(question.id, "Non Concerné")
+                  }
+                  checked={question.response === "Non Concerné"}
+                />
+                <label
+                  htmlFor={`answer${question.id}-non-concerne`}
+                  className="answerChoice"
+                >
+                  Non Concerné
+                </label>
+                <input
+                  type="radio"
+                  required
+                  id={`answer${question.id}-ne-sais-pas`}
+                  name={`answer${question.id}`}
+                  value="Ne sais pas"
+                  onChange={() =>
+                    handleResponseChange(question.id, "Ne sais pas")
+                  }
+                  checked={question.response === "Ne sais pas"}
+                />
+                <label
+                  htmlFor={`answer${question.id}-ne-sais-pas`}
+                  className="answerChoice"
+                >
+                  Ne sais pas
+                </label>
+              </div>
+            </div>
           </div>
         ))}
       <div className="buttonContainer">

@@ -1,21 +1,23 @@
+.container-legal {
+  background-image: url("../assets/background-marne.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .legal {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  flex-wrap: nowrap;
   text-align: justify;
-  margin-top: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-  width: 37.5rem;
-  padding: 1.5em;
+  margin: auto;
+  gap: 2rem;
+  font-size: 16px;
+  width: 700px;
+  padding: 3em;
   border-radius: 1em;
-  border: 1px solid #3f7438;
-  padding: 2rem;
-  height: 80%;
-  font-family: "Monsterrat", sans-serif;
+  border: 2px solid #3f7438;
+  background-color: white;
+  line-height: 2em;
 }
 
 .logo-adt {
@@ -30,14 +32,17 @@
   padding: 0.75rem;
   border: 1px solid #3f7438;
   border-radius: 1em;
-  font-size: 1rem;
+  font-size: 20px;
   letter-spacing: 1.5px;
   font-weight: 500;
-  background-color: #f7f7f7;
-  width: 6rem;
+  background-color: #3f7438;
+  width: 10rem;
   text-decoration: none;
+  color: white;
 }
-
+.buttonHome:hover {
+  color: black;
+}
 a:link {
   text-decoration: none;
 }
