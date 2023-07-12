@@ -12,7 +12,6 @@
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  /* grid-template-columns: repeat(6, 1fr); */
   width: 80%;
 }
 .title {
@@ -42,7 +41,3 @@ a:link {
   background-color: #3f7438;
   color: white;
 }
-/* .category-link {
-  height: 100%;
-  padding: 0.5em;
-} */

@@ -7,7 +7,7 @@ import "./Legal.css";
 
 function Legal() {
   return (
-    <div>
+    <div className="container-legal">
       <NavbarUser />
       <div className="legal">
         <img src={logo} alt="logo-adt" className="logo-adt" />
@@ -41,10 +41,10 @@ function Legal() {
           gestion de vos données, vous avez la possibilité de saisir la CNIL
           (www.cnil.fr).
         </p>
+        <Link to="/" className="buttonHome">
+          Accueil
+        </Link>
       </div>
-      <Link to="/" className="buttonHome">
-        Accueil
-      </Link>
       <FooterUser />
     </div>
   );
