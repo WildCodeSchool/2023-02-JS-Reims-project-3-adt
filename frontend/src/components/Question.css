@@ -60,3 +60,10 @@
   font-size: 14px;
   border: none;
 }
+
+.tooltip {
+  background-color: #3f7438;
+  border-radius: 1rem;
+  border-style: outset;
+  font-size: 12px;
+}
