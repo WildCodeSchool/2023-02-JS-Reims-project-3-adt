@@ -2,9 +2,17 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 100vh;
+}
 .home {
   display: flex;
   flex-direction: column;
-  background-image: url("./assets/vignoble.jpeg");
+  background-image: url("./assets/background-marne.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
 }

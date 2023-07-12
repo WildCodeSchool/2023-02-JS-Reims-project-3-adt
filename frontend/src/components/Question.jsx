@@ -131,68 +131,79 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
             parseInt(question.category_id, 10) === parseInt(categoryId, 10)
         )
         .map((question) => (
-          <div key={question.id} className="question">
-            <div className="questionText">
-              <p>{question.content}</p>
-              <p>{question.mandatory_level}</p>
+          <div key={question.id} className="questions">
+            <div className="questionList">
+              <p className="questionContent">{question.content}</p>
+              <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
-            <div className="questionOptions">
-              <div className="option">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-atteint`}
-                  name={`answer${question.id}`}
-                  value="Atteint"
-                  onChange={() => handleResponseChange(question.id, "Atteint")}
-                  checked={question.response === "Atteint"}
-                />
-                <label htmlFor={`answer${question.id}-atteint`}>Atteint</label>
-              </div>
-              <div className="option">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-not-atteint`}
-                  name={`answer${question.id}`}
-                  value="Non Atteint"
-                  onChange={() =>
-                    handleResponseChange(question.id, "Non Atteint")
-                  }
-                  checked={question.response === "Non Atteint"}
-                />
-                <label htmlFor={`answer${question.id}-not-atteint`}>
-                  Non Atteint
-                </label>
-              </div>
-              <div className="option">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-non-concerne`}
-                  name={`answer${question.id}`}
-                  value="Non Concerné"
-                  onChange={() =>
-                    handleResponseChange(question.id, "Non Concerné")
-                  }
-                  checked={question.response === "Non Concerné"}
-                />
-                <label htmlFor={`answer${question.id}-non-concerne`}>
-                  Non Concerné
-                </label>
-              </div>
-              <div className="option">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-ne-sais-pas`}
-                  name={`answer${question.id}`}
-                  value="Ne sais pas"
-                  onChange={() =>
-                    handleResponseChange(question.id, "Ne sais pas")
-                  }
-                  checked={question.response === "Ne sais pas"}
-                />
-                <label htmlFor={`answer${question.id}-ne-sais-pas`}>
-                  Ne sais pas
-                </label>
-              </div>
+            <div className="answer">
+              <input
+                type="radio"
+                required
+                id={`answer${question.id}-atteint`}
+                name={`answer${question.id}`}
+                value="Atteint"
+                onChange={() => handleResponseChange(question.id, "Atteint")}
+                checked={question.response === "Atteint"}
+              />
+              <label
+                htmlFor={`answer${question.id}-atteint`}
+                className="answerChoice"
+              >
+                Atteint
+              </label>
+              <input
+                type="radio"
+                required
+                id={`answer${question.id}-not-atteint`}
+                name={`answer${question.id}`}
+                value="Non Atteint"
+                onChange={() =>
+                  handleResponseChange(question.id, "Non Atteint")
+                }
+                checked={question.response === "Non Atteint"}
+              />
+              <label
+                htmlFor={`answer${question.id}-not-atteint`}
+                className="answerChoice"
+              >
+                Non Atteint
+              </label>
+
+              <input
+                type="radio"
+                required
+                id={`answer${question.id}-non-concerne`}
+                name={`answer${question.id}`}
+                value="Non Concerné"
+                onChange={() =>
+                  handleResponseChange(question.id, "Non Concerné")
+                }
+                checked={question.response === "Non Concerné"}
+              />
+              <label
+                htmlFor={`answer${question.id}-non-concerne`}
+                className="answerChoice"
+              >
+                Non Concerné
+              </label>
+              <input
+                type="radio"
+                required
+                id={`answer${question.id}-ne-sais-pas`}
+                name={`answer${question.id}`}
+                value="Ne sais pas"
+                onChange={() =>
+                  handleResponseChange(question.id, "Ne sais pas")
+                }
+                checked={question.response === "Ne sais pas"}
+              />
+              <label
+                htmlFor={`answer${question.id}-ne-sais-pas`}
+                className="answerChoice"
+              >
+                Ne sais pas
+              </label>
             </div>
           </div>
         ))}

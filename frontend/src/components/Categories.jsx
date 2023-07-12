@@ -31,6 +31,7 @@ function Categories({ currentCategoryId, setCurrentCategoryId }) {
             key={category.id}
             to={`/categories/${category.id}`}
             onClick={() => setCurrentCategoryId(category.id)}
+            className="category-link"
           >
             <figure
               className={`categoryList ${
