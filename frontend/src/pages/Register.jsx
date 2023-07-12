@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import "./Register.css";
+import { Link } from "react-router-dom";
 import logo from "../assets/adt-logo.png";
 
 function Register() {
@@ -57,9 +57,9 @@ function Register() {
               name="password"
             />
           </div>
-          <button type="submit" className="buttonRegister">
+          <Link to="/login" className="buttonRegister">
             Créer mon compte
-          </button>
+          </Link>
           <p>
             Vous avez déjà un compte? <Link to="/login">Connexion</Link>
           </p>
