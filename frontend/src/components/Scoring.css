@@ -1,5 +1,5 @@
 .score {
-  background-image: url("../assets/nature.jpeg");
+  background-image: url("../assets/background_adt.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right 70% bottom 45%;
@@ -14,9 +14,9 @@
   gap: 2rem;
   font-size: 16px;
   width: 700px;
-  padding: 3em;
+  padding: 5em;
   border-radius: 1em;
-  border: 2px solid #3f7438;
+  border: 2px solid #63ba58;
   line-height: 2em;
   background-color: white;
 }
@@ -35,7 +35,7 @@
   grid-template-columns: repeat(1, 300px);
   grid-template-rows: repeat(1, 50px);
   align-items: center;
-  background-color: #3a7e30;
+  background-color: rgb(90, 90, 171);
   padding: 1em;
   border: none;
   border-radius: 1em;
