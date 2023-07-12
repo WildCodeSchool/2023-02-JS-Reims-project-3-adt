@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import PropTypes from "prop-types";
 import "./Question.css";
 
-function Question() {
+function Question({ currentCategoryId, setCurrentCategoryId }) {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
   const navigate = useNavigate();
@@ -13,10 +14,12 @@ function Question() {
   const [criteriumNotReached, setCriteriumNotReached] = useState(0);
 
   const handleNextPage = () => {
+    setCurrentCategoryId(currentCategoryId + 1);
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
 
   const handlePreviousPage = () => {
+    setCurrentCategoryId(currentCategoryId - 1);
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
@@ -240,5 +243,10 @@ function Question() {
     </section>
   );
 }
+
+Question.propTypes = {
+  currentCategoryId: PropTypes.number.isRequired,
+  setCurrentCategoryId: PropTypes.func.isRequired,
+};
 
 export default Question;
