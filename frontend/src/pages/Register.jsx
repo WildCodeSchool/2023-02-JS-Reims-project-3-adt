@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
-import logo from "../assets/adt-logo.png";
+import logo from "../assets/ecotourisme.jpeg";
 
 function Register() {
   const usernameRef = useRef();

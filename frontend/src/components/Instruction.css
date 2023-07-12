@@ -6,15 +6,19 @@
   text-align: justify;
   margin: auto;
   gap: 2rem;
-  font-size: 14px;
-  width: 600px;
-  padding: 2em;
+  font-size: 16px;
+  width: 700px;
+  padding: 3em;
   border-radius: 1em;
   border: 2px solid #3f7438;
   background-color: white;
+  line-height: 1.5em;
 }
 .logoInstruction {
   width: 10rem;
+}
+h2 {
+  color: blue;
 }
 span {
   text-decoration-line: underline;
@@ -22,16 +26,33 @@ span {
 ul li {
   padding: 0.5em;
 }
+ul li span {
+  /* text-decoration-line: underline; */
+  color: red;
+}
+.charte {
+  text-decoration: underline;
+}
+h3 {
+  color: blue;
+}
 .userButton {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   padding: 1rem;
-  gap: 2rem;
+  gap: 3rem;
 }
 .userBtn {
   padding: 0.75rem;
   cursor: pointer;
   font-size: 1rem;
-  color: rgb(181, 20, 20);
+  color: white;
+  border: 2px solid #3f7438;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  /* justify-content: center; */
+  background-color: #3f7438;
 }

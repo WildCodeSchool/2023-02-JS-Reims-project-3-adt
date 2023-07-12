@@ -52,6 +52,9 @@ function Instruction() {
           démarche de progrès continus.
         </li>
       </ul>
+      <h3>
+        Veuillez choisir votre secteur d'activité ci-dessous pour commencer :
+      </h3>
       <div className="userButton">
         <Link to="/categories/1" className="userBtn">
           Hebergement
