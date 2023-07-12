@@ -43,11 +43,9 @@ function Legal() {
         </p>
       </div>
       <Link to="/" className="buttonHome">
-        Revenir à l'Accueil
+        Accueil
       </Link>
-      <div className="footeruser">
-        <FooterUser />
-      </div>
+      <FooterUser />
     </div>
   );
 }

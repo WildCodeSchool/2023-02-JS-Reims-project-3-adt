@@ -31,25 +31,25 @@ function Instruction() {
         correspondante, il sera ainsi écarté du champ d'analyse.
       </p>
       <span>Cette charte comporte des critères de trois natures :</span>
-      <ul className="listCriteria">
+      <ul>
         <li>
-          Les critères obligatoires qui sont éliminatoires s’ils ne sont pas
-          validés. Ce sont des prérequis, ils ne rapportent donc pas de points
-          pour valider la charte.
+          Les critères <span>obligatoires</span> qui sont éliminatoires s’ils ne
+          sont pas validés. Ce sont des prérequis, ils ne rapportent donc pas de
+          points pour valider la charte.
         </li>
         <li>
-          Les critères essentiels concernent la plupart du temps des gestes
-          simples et applicables au quotidien. Pour que l’activité soit
-          considérée comme Eco-Tourisme, il faudra valider au moins 80% du total
-          de ces critères arrondis à l’unité supérieure, complétés si besoin par
-          les critères optionnels validés.
+          Les critères <span>essentiels</span> concernent la plupart du temps
+          des gestes simples et applicables au quotidien. Pour que l’activité
+          soit considérée comme Eco-Tourisme, il faudra valider au moins 80% du
+          total de ces critères arrondis à l’unité supérieure, complétés si
+          besoin par les critères optionnels validés.
         </li>
         <li>
-          Les critères optionnels concernent en partie des aménagements qui sont
-          plus contraignants ou coûteux à mettre en place, ils ne peuvent donc
-          pas être imposés mais sont tout de même valorisés s’ils sont validés.
-          Ils sont à considérer comme des pistes d’amélioration dans une
-          démarche de progrès continus.
+          Les critères <span>optionnels</span> concernent en partie des
+          aménagements qui sont plus contraignants ou coûteux à mettre en place,
+          ils ne peuvent donc pas être imposés mais sont tout de même valorisés
+          s’ils sont validés. Ils sont à considérer comme des pistes
+          d’amélioration dans une démarche de progrès continus.
         </li>
       </ul>
       <h3>

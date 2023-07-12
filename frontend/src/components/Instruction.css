@@ -12,12 +12,14 @@
   border-radius: 1em;
   border: 2px solid #3f7438;
   background-color: white;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 .logoInstruction {
   width: 10rem;
 }
-h2 {
+h2,
+h3,
+span {
   color: blue;
 }
 span {
@@ -26,20 +28,8 @@ span {
 ul li {
   padding: 0.5em;
 }
-ul li span {
-  /* text-decoration-line: underline; */
-  color: red;
-}
-.charte {
-  text-decoration: underline;
-}
-h3 {
-  color: blue;
-}
 .userButton {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   padding: 1rem;
   gap: 3rem;
 }
@@ -53,6 +43,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-items: center;
-  /* justify-content: center; */
   background-color: #3f7438;
+}
+.userBtn:hover {
+  color: blue;
 }
