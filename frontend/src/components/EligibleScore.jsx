@@ -2,6 +2,7 @@ import React from "react";
 import NavbarUser from "./NavbarUser";
 import FooterUser from "./FooterUser";
 import Contact from "./Contact";
+import "./Scoring.css";
 
 export default function EligibleScore() {
   return (
