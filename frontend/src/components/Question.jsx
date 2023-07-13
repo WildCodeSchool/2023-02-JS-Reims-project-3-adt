@@ -1,29 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 import PropTypes from "prop-types";
 import "./Question.css";
-// import Tooltip from "./Tooltip";
 
 function Question({ currentCategoryId, setCurrentCategoryId }) {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
   const navigate = useNavigate();
-  // Obligatoire
-  const [countCriteriaMetObligatoire, setCountCriteriaMetObligatoire] =
-    useState(0);
-  const [countNotApplicableObligatoire, setCountNotApplicableObligatoire] =
-    useState(0);
-  const [countUnknownObligatoire, setCountUnknownObligatoire] = useState(0);
-  const [criteriumNotReachedObligatoire, setCriteriumNotReachedObligatoire] =
-    useState(0);
-  // Essentiel
-  const [countCriteriaMetEssentiel, setCountCriteriaMetEssentiel] = useState(0);
-  const [countNotApplicableEssentiel, setCountNotApplicableEssentiel] =
-    useState(0);
-  const [countUnknownEssentiel, setCountUnknownEssentiel] = useState(0);
-  const [criteriumNotReachedEssentiel, setCriteriumNotReachedEssentiel] =
-    useState(0);
 
   /* function button */
   const handleNextPage = () => {
@@ -60,45 +45,8 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
       });
   }, []);
 
-  const terminer = () => {
-    for (let i = 0; i < questions.length; i += 1)
-      if (!questions[i].response) {
-        // return alert("nop");
-      } else if (questions[i].mandatory_level === "Obligatoire") {
-        if (questions[i].response === "Atteint") {
-          setCountCriteriaMetObligatoire(countCriteriaMetObligatoire + 1);
-        } else if (questions[i].response === "Non Concerné") {
-          setCountNotApplicableObligatoire(countNotApplicableObligatoire + 1);
-        } else if (questions[i].response === "Ne sais pas") {
-          setCountUnknownObligatoire(countUnknownObligatoire + 1);
-        } else if (questions[i].response === "Non Atteint") {
-          setCriteriumNotReachedObligatoire(criteriumNotReachedObligatoire + 1);
-        }
-      } else if (questions[i].mandatory_level === "Essentiel") {
-        // console.log(questions[i].response);
-        if (questions[i].response === "Atteint") {
-          setCountCriteriaMetEssentiel(countCriteriaMetEssentiel + 1);
-        } else if (questions[i].response === "Non Concerné") {
-          setCountNotApplicableEssentiel(countNotApplicableEssentiel + 1);
-        } else if (questions[i].response === "Ne sais pas") {
-          setCountUnknownEssentiel(countUnknownEssentiel + 1);
-        } else if (questions[i].response === "Non Atteint") {
-          setCriteriumNotReachedEssentiel(criteriumNotReachedEssentiel + 1);
-        }
-      }
-    // console.log(countCriteriaMetObligatoire, countCriteriaMetEssentiel);
-
-    return navigate("/scoring");
-  };
-  // console.log(questions);
-  // const test = () => {
-  //   for (let i = 0; i < questions.length; i++)
-  //     questions[i].response = "Atteint";
-  // };
-
   return (
     <section className="surveyQuestion">
-      {/* <button onClick={test}>test</button> */}
       <div className="small-container" />
       {questions
         .filter((question) => {
@@ -108,15 +56,25 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         })
         .map((question) => (
           <div key={question.id} className="questions">
-            <div className="questionList">
-              <p className="questionContent">{question.content}</p>
-              {/* {question.tooltip_content && (
-                <Tooltip text={question.tooltip_content}>
-                  <span className="material-symbols-outlined">info</span>
-                </Tooltip>
-              )} */}
+            <div className={`questionText questionText${question.id}`}>
+              <p className="questionContent">
+                {question.content}
+                {question.tooltip_content != null && "    📌"}
+              </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
+
+            {question.tooltip_content != null && (
+              <Tooltip
+                className="tooltip"
+                anchorSelect={`.questionText${question.id}`}
+              >
+                <div>
+                  <p>{question.tooltip_content}</p>
+                </div>
+              </Tooltip>
+            )}
+
             <div className="answer">
               <input
                 type="checkbox"
@@ -188,7 +146,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         )}
 
         {parseInt(categoryId, 10) === 6 && (
-          <button type="button" className="questionBtn" onClick={terminer}>
+          <button type="button" className="questionBtn">
             Terminer
           </button>
         )}
