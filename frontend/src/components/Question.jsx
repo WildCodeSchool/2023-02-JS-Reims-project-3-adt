@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
 import axios from "axios";
 import PropTypes from "prop-types";
 import "./Question.css";
@@ -157,10 +158,24 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         )
         .map((question) => (
           <div key={question.id} className="questions">
-            <div className="questionList">
-              <p className="questionContent">{question.content}</p>
+            <div className={`questionList questionList${question.id}`}>
+              <p className="questionContent">
+                {question.content}
+                {question.tooltip_content != null && "    📌"}
+              </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
+
+            {question.tooltip_content != null && (
+              <Tooltip
+                className="tooltip"
+                anchorSelect={`.questionText${question.id}`}
+              >
+                <div>
+                  <p>{question.tooltip_content}</p>
+                </div>
+              </Tooltip>
+            )}
             <div className="answer">
               <input
                 type="radio"

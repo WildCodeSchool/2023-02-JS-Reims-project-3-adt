@@ -7,7 +7,7 @@ create table `user` (
   lastname varchar(80) not null,
   company_name varchar(80) not null,
   phone_number varchar (15) not null, 
-  is_admin varchar(80) not null unique
+  is_admin varchar(80) not null default(false)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table category (
