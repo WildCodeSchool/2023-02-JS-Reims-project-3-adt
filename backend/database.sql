@@ -2,7 +2,7 @@ create table `user` (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   username varchar(80) not null unique,
   email varchar(80) not null unique,
-  password varchar(80) not null,
+  hashedPassword varchar(255) not null,
   firstname varchar(80) not null, 
   lastname varchar(80) not null,
   company_name varchar(80) not null,
