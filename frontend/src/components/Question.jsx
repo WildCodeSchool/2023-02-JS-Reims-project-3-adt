@@ -56,19 +56,6 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
     // handleAnswer(response, questions.find((q) => q.id === questionId).response);
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `${
-  //         import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-  //       }/categories/${categoryId}/questions`
-  //     )
-  //     .then((response) => setQuestions([...questions, ...response.data]))
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [categoryId]);
-
   useEffect(() => {
     const knownCategory = questions.find(
       (question) => question.categoryId === parseInt(categoryId, 10)
@@ -159,59 +146,6 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
 
     return "/resultat/oui";
   };
-
-  // const calculateScore = () => {
-  //   const totalQuestions = questions.length;
-  //   let finalCase = null;
-
-  //   for (let i = 0; i < totalQuestions; i += 1) {
-  //     const questionList = questions[i];
-
-  //     if (questionList.mandatory_level === "Obligatoire") {
-  //       if (countUnknown > 0) {
-  //         finalCase = "/resultat/inconnu";
-  //         break;
-  //       } else if (criteriumNotReached > 0) {
-  //         finalCase = "/resultat/non";
-  //       } else {
-  //         finalCase = "/resultat/oui";
-  //       }
-  //     }
-
-  //     if (questionList.mandatory_level === "essentiel") {
-  //       const pourcentagecountCriteriaMet =
-  //         (countCriteriaMet / (totalQuestions - countNotApplicable)) * 100;
-  //       const essentialThreshold = 80;
-
-  //       if (countUnknown > 0) {
-  //         finalCase = "/resultat/inconnu";
-  //         if (pourcentagecountCriteriaMet >= essentialThreshold) {
-  //           finalCase = "/resultat/oui";
-  //         } else {
-  //           finalCase = "/resultat/non";
-  //         }
-  //         break;
-  //       }
-  //     }
-  //   }
-
-  //   if (finalCase) {
-  //     navigate(finalCase);
-  //   }
-  // };
-  // const pourcentageObli = () => {
-  //   if (questions.mandatory_level === "Obligatoire") {
-  //     return (countCriteriaMet / (questions.length - countNotApplicable)) * 100;
-  //   }
-  //   return 0;
-  // };
-
-  // const pourcentageEs = () => {
-  //   if (questions.mandatory_level === "essentiel") {
-  //     return (countCriteriaMet / (questions.length - countNotApplicable)) * 100;
-  //   }
-  //   return 0;
-  // };
 
   return (
     <section className="surveyQuestion">
