@@ -128,13 +128,13 @@ function Question() {
             parseInt(question.category_id, 10) === parseInt(categoryId, 10)
         )
         .map((question) => (
-          <div key={question.id} className="question">
-            <div className="questionText">
-              <p>{question.content}</p>
-              <p>{question.mandatory_level}</p>
+          <div key={question.id} className="questions">
+            <div className="questionList">
+              <p className="questionContent">{question.content}</p>
+              <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
             <div className="questionOptions">
-              <div className="option">
+              <div className="answer">
                 <input
                   type="radio"
                   id={`answer${question.id}-atteint`}
@@ -143,9 +143,14 @@ function Question() {
                   onChange={() => handleResponseChange(question, "Atteint")}
                   checked={question.response === "Atteint"}
                 />
-                <label htmlFor={`answer${question.id}-atteint`}>Atteint</label>
+                <label
+                  htmlFor={`answer${question.id}-atteint`}
+                  className="answerChoice"
+                >
+                  Atteint
+                </label>
               </div>
-              <div className="option">
+              <div className="answer">
                 <input
                   type="radio"
                   id={`answer${question.id}-not-atteint`}
@@ -154,11 +159,14 @@ function Question() {
                   onChange={() => handleResponseChange(question, "Non Atteint")}
                   checked={question.response === "Non Atteint"}
                 />
-                <label htmlFor={`answer${question.id}-not-atteint`}>
+                <label
+                  htmlFor={`answer${question.id}-not-atteint`}
+                  className="answerChoice"
+                >
                   Non Atteint
                 </label>
               </div>
-              <div className="option">
+              <div className="answer">
                 <input
                   type="radio"
                   id={`answer${question.id}-non-concerne`}
@@ -169,11 +177,14 @@ function Question() {
                   }
                   checked={question.response === "Non Concerné"}
                 />
-                <label htmlFor={`answer${question.id}-non-concerne`}>
+                <label
+                  htmlFor={`answer${question.id}-non-concerne`}
+                  className="answerChoice"
+                >
                   Non Concerné
                 </label>
               </div>
-              <div className="option">
+              <div className="answer">
                 <input
                   type="radio"
                   id={`answer${question.id}-ne-sais-pas`}
@@ -182,7 +193,10 @@ function Question() {
                   onChange={() => handleResponseChange(question, "Ne sais pas")}
                   checked={question.response === "Ne sais pas"}
                 />
-                <label htmlFor={`answer${question.id}-ne-sais-pas`}>
+                <label
+                  htmlFor={`answer${question.id}-ne-sais-pas`}
+                  className="answerChoice"
+                >
                   Ne sais pas
                 </label>
               </div>
