@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Question.css";
+// import Tooltip from "./Tooltip";
 
 function Question({ currentCategoryId, setCurrentCategoryId }) {
   const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
   const navigate = useNavigate();
-  // const [countCriteriaMet, setCountCriteriaMet] = useState(0);
-  // const [countNotApplicable, setCountNotApplicable] = useState(0);
-  // const [countUnknown, setCountUnknown] = useState(0);
-  // const [criteriumNotReached, setCriteriumNotReached] = useState(0);
+  // Obligatoire
+  const [countCriteriaMetObligatoire, setCountCriteriaMetObligatoire] =
+    useState(0);
+  const [countNotApplicableObligatoire, setCountNotApplicableObligatoire] =
+    useState(0);
+  const [countUnknownObligatoire, setCountUnknownObligatoire] = useState(0);
+  const [criteriumNotReachedObligatoire, setCriteriumNotReachedObligatoire] =
+    useState(0);
+  // Essentiel
+  const [countCriteriaMetEssentiel, setCountCriteriaMetEssentiel] = useState(0);
+  const [countNotApplicableEssentiel, setCountNotApplicableEssentiel] =
+    useState(0);
+  const [countUnknownEssentiel, setCountUnknownEssentiel] = useState(0);
+  const [criteriumNotReachedEssentiel, setCriteriumNotReachedEssentiel] =
+    useState(0);
 
+  /* function button */
   const handleNextPage = () => {
     setCurrentCategoryId(currentCategoryId + 1);
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
@@ -24,28 +36,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
-  // const handleAnswer = (answer, previousAnswer) => {
-  //   if (answer === "Atteint") {
-  //     setCountCriteriaMet(countCriteriaMet + 1);
-  //   } else if (answer === "Non Concerné") {
-  //     setCountNotApplicable(countNotApplicable + 1);
-  //   } else if (answer === "Ne sais pas") {
-  //     setCountUnknown(countUnknown + 1);
-  //   } else if (answer === "Non Atteint") {
-  //     setCriteriumNotReached(criteriumNotReached + 1);
-  //   }
-
-  //   if (previousAnswer === "Atteint") {
-  //     setCountCriteriaMet(countCriteriaMet - 1);
-  //   } else if (previousAnswer === "Non Concerné") {
-  //     setCountNotApplicable(countNotApplicable - 1);
-  //   } else if (previousAnswer === "Ne sais pas") {
-  //     setCountUnknown(countUnknown - 1);
-  //   } else if (previousAnswer === "Non Atteint") {
-  //     setCriteriumNotReached(criteriumNotReached - 1);
-  //   }
-  // };
-
+  /* function input */
   const handleResponseChange = (questionId, response) => {
     const updatedQuestions = questions.map((question) => {
       if (question.id === questionId) {
@@ -54,194 +45,132 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
       return question;
     });
     setQuestions(updatedQuestions);
-    // handleAnswer(response, questions.find((q) => q.id === questionId).response);
   };
 
   useEffect(() => {
-    const knownCategory = questions.find(
-      (question) => question.categoryId === parseInt(categoryId, 10)
-    );
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/questions`
+      )
+      .then((response) => setQuestions(response.data))
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-    if (!knownCategory) {
-      axios
-        .get(
-          `${
-            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/categories/${categoryId}/questions`
-        )
-        .then((response) => {
-          setQuestions([...questions, ...response.data]);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, [categoryId]);
-
-  const mandatoryQuestions = questions.filter(
-    (question) => question.mandatory_level === "Obligatoire"
-  );
-  const essentialQuestions = questions.filter(
-    (question) => question.mandatory_level === "Essentiel"
-  );
-
-  const countCriteriaMet = questions.filter(
-    (question) => question.response === "Atteint"
-  ).length;
-  const criteriumNotReached = questions.filter(
-    (question) => question.response === "Non Atteint"
-  ).length;
-  const countNotApplicable = questions.filter(
-    (question) => question.response === "Non Concerné"
-  ).length;
-  const countUnknown = questions.filter(
-    (question) => question.response === "Ne sais pas"
-  ).length;
-
-  const pourcentage = (questionList) => {
-    const divisor =
-      questionList.length -
-      questionList.filter((question) => question.response === "Non Concerné")
-        .length;
-
-    if (divisor === 0) {
-      return 0;
-    }
-
-    return (
-      (100 *
-        questionList.filter((question) => question.response === "Atteint")
-          .length) /
-      divisor
-    ).toFixed();
-  };
-
-  const scoreToNextPage = () => {
-    const unknown = mandatoryQuestions.find(
-      (question) => question.response === "Ne sais pas"
-    );
-
-    if (unknown) {
-      return "/resultat/inconnu";
-    }
-
-    const mandatoryScore = parseInt(pourcentage(mandatoryQuestions), 10);
-
-    if (mandatoryScore < 100) {
-      return "/resultat/non";
-    }
-
-    const essentialScore = parseInt(pourcentage(essentialQuestions), 10);
-
-    if (essentialScore < 80) {
-      const unknownEssential = essentialQuestions.find(
-        (question) => question.response === "Ne sais pas"
-      );
-
-      if (unknownEssential) {
-        return "/resultat/inconnu";
+  const terminer = () => {
+    for (let i = 0; i < questions.length; i += 1)
+      if (!questions[i].response) {
+        // return alert("nop");
+      } else if (questions[i].mandatory_level === "Obligatoire") {
+        if (questions[i].response === "Atteint") {
+          setCountCriteriaMetObligatoire(countCriteriaMetObligatoire + 1);
+        } else if (questions[i].response === "Non Concerné") {
+          setCountNotApplicableObligatoire(countNotApplicableObligatoire + 1);
+        } else if (questions[i].response === "Ne sais pas") {
+          setCountUnknownObligatoire(countUnknownObligatoire + 1);
+        } else if (questions[i].response === "Non Atteint") {
+          setCriteriumNotReachedObligatoire(criteriumNotReachedObligatoire + 1);
+        }
+      } else if (questions[i].mandatory_level === "Essentiel") {
+        // console.log(questions[i].response);
+        if (questions[i].response === "Atteint") {
+          setCountCriteriaMetEssentiel(countCriteriaMetEssentiel + 1);
+        } else if (questions[i].response === "Non Concerné") {
+          setCountNotApplicableEssentiel(countNotApplicableEssentiel + 1);
+        } else if (questions[i].response === "Ne sais pas") {
+          setCountUnknownEssentiel(countUnknownEssentiel + 1);
+        } else if (questions[i].response === "Non Atteint") {
+          setCriteriumNotReachedEssentiel(criteriumNotReachedEssentiel + 1);
+        }
       }
+    // console.log(countCriteriaMetObligatoire, countCriteriaMetEssentiel);
 
-      return "/resultat/non";
-    }
-
-    return "/resultat/oui";
+    return navigate("/scoring");
   };
+  // console.log(questions);
+  // const test = () => {
+  //   for (let i = 0; i < questions.length; i++)
+  //     questions[i].response = "Atteint";
+  // };
 
   return (
     <section className="surveyQuestion">
+      {/* <button onClick={test}>test</button> */}
       <div className="small-container" />
       {questions
-        .filter(
-          (question) =>
+        .filter((question) => {
+          return (
             parseInt(question.category_id, 10) === parseInt(categoryId, 10)
-        )
+          );
+        })
         .map((question) => (
           <div key={question.id} className="questions">
-            <div className={`questionList questionList${question.id}`}>
-              <p className="questionContent">
-                {question.content}
-                {question.tooltip_content != null && "    📌"}
-              </p>
+            <div className="questionList">
+              <p className="questionContent">{question.content}</p>
+              {/* {question.tooltip_content && (
+                <Tooltip text={question.tooltip_content}>
+                  <span className="material-symbols-outlined">info</span>
+                </Tooltip>
+              )} */}
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
-
-            {question.tooltip_content != null && (
-              <Tooltip
-                className="tooltip"
-                anchorSelect={`.questionText${question.id}`}
-              >
-                <div>
-                  <p>{question.tooltip_content}</p>
-                </div>
-              </Tooltip>
-            )}
             <div className="answer">
               <input
-                type="radio"
+                type="checkbox"
                 required
-                id={`answer${question.id}-atteint`}
+                id={`answer${question.id}`}
                 name={`answer${question.id}`}
-                value="Atteint"
-                onChange={() => handleResponseChange(question.id, "Atteint")}
+                value="atteint"
                 checked={question.response === "Atteint"}
+                onChange={() => handleResponseChange(question.id, "Atteint")}
               />
-              <label
-                htmlFor={`answer${question.id}-atteint`}
-                className="answerChoice"
-              >
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
               </label>
               <input
-                type="radio"
+                type="checkbox"
                 required
-                id={`answer${question.id}-not-atteint`}
+                id={`answer${question.id}`}
                 name={`answer${question.id}`}
-                value="Non Atteint"
+                value="No Atteint"
+                checked={question.response === "Not Atteint"}
                 onChange={() =>
-                  handleResponseChange(question.id, "Non Atteint")
+                  handleResponseChange(question.id, "Not Atteint")
                 }
-                checked={question.response === "Non Atteint"}
               />
-              <label
-                htmlFor={`answer${question.id}-not-atteint`}
-                className="answerChoice"
-              >
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Atteint
               </label>
-
               <input
-                type="radio"
+                type="checkbox"
                 required
-                id={`answer${question.id}-non-concerne`}
+                id={`answer${question.id}`}
                 name={`answer${question.id}`}
-                value="Non Concerné"
+                value="ne sais pas"
+                checked={question.response === "Non Concerné"}
                 onChange={() =>
                   handleResponseChange(question.id, "Non Concerné")
                 }
-                checked={question.response === "Non Concerné"}
               />
-              <label
-                htmlFor={`answer${question.id}-non-concerne`}
-                className="answerChoice"
-              >
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Concerné
               </label>
+
               <input
-                type="radio"
+                type="checkbox"
                 required
-                id={`answer${question.id}-ne-sais-pas`}
+                id={`answer${question.id}`}
                 name={`answer${question.id}`}
-                value="Ne sais pas"
+                value="ne sais pas"
+                checked={question.response === "Ne sais pas"}
                 onChange={() =>
                   handleResponseChange(question.id, "Ne sais pas")
                 }
-                checked={question.response === "Ne sais pas"}
               />
-              <label
-                htmlFor={`answer${question.id}-ne-sais-pas`}
-                className="answerChoice"
-              >
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Ne sais pas
               </label>
             </div>
@@ -251,23 +180,18 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         {parseInt(categoryId, 10) < 6 && (
           <button
             type="button"
-            onClick={handleNextPage}
             className="questionBtn"
+            onClick={handleNextPage}
           >
             Suivant
           </button>
         )}
 
         {parseInt(categoryId, 10) === 6 && (
-          <button
-            type="button"
-            className="questionBtn"
-            onClick={() => navigate(scoreToNextPage())}
-          >
+          <button type="button" className="questionBtn" onClick={terminer}>
             Terminer
           </button>
         )}
-
         {parseInt(categoryId, 10) > 1 && (
           <button
             type="button"
@@ -278,20 +202,20 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
           </button>
         )}
       </div>
-      <div className="counters">
+      {/* <div className="counters">
         <p>Nombre de critères atteints : {countCriteriaMet}</p>
         <p>Nombre de critères non atteints : {criteriumNotReached}</p>
         <p>Nombre de critères non concernés : {countNotApplicable}</p>
         <p>Nombre de critères inconnus : {countUnknown}</p>
-        <p>
-          Pourcentage des questions répondues (Obligatoire) :
-          {pourcentage(mandatoryQuestions)}%
-        </p>
-        <p>
-          Pourcentage des questions répondues (Essentiel) :
-          {pourcentage(essentialQuestions)}%
-        </p>
       </div>
+      <div>
+        <p>
+          pourcentage :{" "}
+          {Math.floor(
+            (countCriteriaMet / (questions.length - countNotApplicable)) * 100
+          )}
+        </p>
+      </div> */}
     </section>
   );
 }
