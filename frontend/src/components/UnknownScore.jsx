@@ -37,8 +37,8 @@ export default function UnknownScore() {
           vos coordonnées pour être recontacté et travailler avec lui sur la
           transition de votre activité.
         </p>
+        <Contact />
       </section>
-      <Contact />
       <FooterUser />
     </div>
   );

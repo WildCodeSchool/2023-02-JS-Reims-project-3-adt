@@ -42,8 +42,8 @@ export default function NotEligibleScore() {
             de conseils pour poursuivre votre démarche et aller plus loin{" "}
           </li>
         </ul>
+        <Contact />
       </section>
-      <Contact />
       <FooterUser />
     </div>
   );

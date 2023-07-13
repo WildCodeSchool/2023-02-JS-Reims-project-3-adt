@@ -23,7 +23,7 @@ export default function EligibleScore() {
         </p>
         <p>
           Vous pouvez intégrer le réseau de partenaires écotourisme et
-          bénéficier gratuitement{" "}
+          bénéficier gratuitement :
         </p>
         <ul>
           <li>
@@ -37,10 +37,10 @@ export default function EligibleScore() {
         <p>
           Nous vous invitons à partager ce résultat avec le conseiller
           écotourisme de l’Agence de Développement Touristique en nous laissant
-          vos coordonnées pour être recontacté{" "}
+          vos coordonnées pour être recontacté.
         </p>
+        <Contact />
       </section>
-      <Contact />
       <FooterUser />
     </div>
   );

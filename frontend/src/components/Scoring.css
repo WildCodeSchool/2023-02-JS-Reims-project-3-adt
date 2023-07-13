@@ -12,9 +12,9 @@
   text-align: justify;
   margin: auto;
   gap: 2rem;
-  font-size: 16px;
+  font-size: 18px;
   width: 700px;
-  padding: 5em;
+  padding: 3em;
   border-radius: 1em;
   border: 2px solid #63ba58;
   line-height: 2em;
@@ -37,8 +37,8 @@ h3 {
   grid-template-columns: repeat(1, 300px);
   grid-template-rows: repeat(1, 50px);
   align-items: center;
-  background-color: #4bb03d;
-  padding: 1em;
+  background-color: #3f7438;
+  padding: 0.5em;
   border: none;
   border-radius: 1em;
   cursor: pointer;
@@ -48,8 +48,8 @@ h3 {
   font-size: 18px;
   text-align: center;
 }
-.small-contact:hover {
-  background-color: #3f7438;
+.contact-text:hover {
+  color: black;
 }
 .case-three {
   color: blue;
