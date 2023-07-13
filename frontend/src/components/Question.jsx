@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import axios from "axios";
 import "./Question.css";
+import { QuestionContext } from "../contexts/QuestionContext";
+import pourcentage from "../services/pourcentage";
 
 function Question() {
-  const [questions, setQuestions] = useState([]);
   const { categoryId } = useParams();
   const navigate = useNavigate();
+  const { questions, setQuestions, updateQuestionResponse } =
+    useContext(QuestionContext);
 
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
@@ -15,17 +17,6 @@ function Question() {
 
   const handlePreviousPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
-  };
-
-  const handleResponseChange = (answeredQuestion, response) => {
-    const updatedQuestions = questions.map((question) => {
-      if (question.id === answeredQuestion.id) {
-        return { ...question, response };
-      }
-      return question;
-    });
-
-    setQuestions(updatedQuestions);
   };
 
   useEffect(() => {
@@ -68,24 +59,6 @@ function Question() {
   const countUnknown = questions.filter(
     (question) => question.response === "Ne sais pas"
   ).length;
-
-  const pourcentage = (questionList) => {
-    const divisor =
-      questionList.length -
-      questionList.filter((question) => question.response === "Non Concerné")
-        .length;
-
-    if (divisor === 0) {
-      return 0;
-    }
-
-    return (
-      (100 *
-        questionList.filter((question) => question.response === "Atteint")
-          .length) /
-      divisor
-    ).toFixed();
-  };
 
   const scoreToNextPage = () => {
     const unknown = mandatoryQuestions.find(
@@ -140,7 +113,7 @@ function Question() {
                   id={`answer${question.id}-atteint`}
                   name={`answer${question.id}`}
                   value="Atteint"
-                  onChange={() => handleResponseChange(question, "Atteint")}
+                  onChange={() => updateQuestionResponse(question, "Atteint")}
                   checked={question.response === "Atteint"}
                 />
                 <label
@@ -156,7 +129,9 @@ function Question() {
                   id={`answer${question.id}-not-atteint`}
                   name={`answer${question.id}`}
                   value="Non Atteint"
-                  onChange={() => handleResponseChange(question, "Non Atteint")}
+                  onChange={() =>
+                    updateQuestionResponse(question, "Non Atteint")
+                  }
                   checked={question.response === "Non Atteint"}
                 />
                 <label
@@ -173,7 +148,7 @@ function Question() {
                   name={`answer${question.id}`}
                   value="Non Concerné"
                   onChange={() =>
-                    handleResponseChange(question, "Non Concerné")
+                    updateQuestionResponse(question, "Non Concerné")
                   }
                   checked={question.response === "Non Concerné"}
                 />
@@ -190,7 +165,9 @@ function Question() {
                   id={`answer${question.id}-ne-sais-pas`}
                   name={`answer${question.id}`}
                   value="Ne sais pas"
-                  onChange={() => handleResponseChange(question, "Ne sais pas")}
+                  onChange={() =>
+                    updateQuestionResponse(question, "Ne sais pas")
+                  }
                   checked={question.response === "Ne sais pas"}
                 />
                 <label

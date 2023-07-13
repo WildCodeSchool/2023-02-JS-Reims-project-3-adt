@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QuestionContext } from "../contexts/QuestionContext";
 
 export default function EligibleScore() {
+  const { questions } = useContext(QuestionContext);
+
+  const mandatoryQuestions = questions.filter(
+    (question) => question.mandatory_level === "Obligatoire"
+  );
+  const essentialQuestions = questions.filter(
+    (question) => question.mandatory_level === "Essentiel"
+  );
+
+  const pourcentage = (questionList) => {
+    const divisor =
+      questionList.length -
+      questionList.filter((question) => question.response === "Non Concerné")
+        .length;
+
+    if (divisor === 0) {
+      return 0;
+    }
+    return (
+      (100 *
+        questionList.filter((question) => question.response === "Atteint")
+          .length) /
+      divisor
+    ).toFixed();
+  };
   return (
     <div>
       <p>atteint si</p>
@@ -9,9 +35,14 @@ export default function EligibleScore() {
       <p>Plus de 80% des questions essentielles "atteintes"</p>
       <p>Merci d'avoir fait votre auto-évaluation.</p>
       <p>Votre résultat est le suivant</p>
-      <p>X/X Questions Obligatoires</p>
-      <p>X/X Questions Essentielles</p>
-      <p>X/X Questions Optionnelles</p>
+      <p>
+        Pourcentage des questions répondues (Obligatoire) :{" "}
+        {pourcentage(mandatoryQuestions)}%
+      </p>
+      <p>
+        Pourcentage des questions répondues (Essentiel) :{" "}
+        {pourcentage(essentialQuestions)}%
+      </p>
       <p>Félicitations</p>
       <p>
         Vous avez engagé la transition vers un modèle d'activité plus

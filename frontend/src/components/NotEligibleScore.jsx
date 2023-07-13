@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QuestionContext } from "../contexts/QuestionContext";
+import pourcentage from "../services/pourcentage";
 
 export default function NotEligibleScore() {
+  const { questions } = useContext(QuestionContext);
+
+  const mandatoryQuestions = questions.filter(
+    (question) => question.mandatory_level === "Obligatoire"
+  );
+  const essentialQuestions = questions.filter(
+    (question) => question.mandatory_level === "Essentiel"
+  );
+
   return (
     <div>
       <p>Non atteint si</p>
@@ -9,9 +20,14 @@ export default function NotEligibleScore() {
       <p>Moins de 80% des questions essentielles non atteintes</p>
       <p>Merci d'avoir fait votre auto-évaluation.</p>
       <p>Votre résultat est le suivant</p>
-      <p>X/X Questions Obligatoires</p>
-      <p>X/X Questions Essentielles</p>
-      <p>X/X Questions Optionnelles</p>
+      <p>
+        Pourcentage des questions répondues (Obligatoire) :{" "}
+        {pourcentage(mandatoryQuestions)}%
+      </p>
+      <p>
+        Pourcentage des questions répondues (Essentiel) :{" "}
+        {pourcentage(essentialQuestions)}%
+      </p>
       <p>
         Vous êtes encore en chemin. Saviez-vous que le plus difficile dans la
         transition est justement de vouloir l'enclencher ?
