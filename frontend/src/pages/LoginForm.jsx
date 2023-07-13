@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
 import PropTypes from "prop-types";
-import logo from "../assets/adt-logo.png";
+import logo from "../assets/ecotourisme.jpeg";
 
 export default function LoginForm({ setUser }) {
   const usernameRef = useRef();
