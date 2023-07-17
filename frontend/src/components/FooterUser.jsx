@@ -6,7 +6,7 @@ function FooterUser() {
   return (
     <footer>
       <img src={logo} alt="logoEcotourisme" className="footer-img" />
-      <p>© 2023 ADT Marne.Tous droits réserves.</p>
+      <p>© 2023 ADT Marne. Tous droits réservés.</p>
       <div>
         <Link to="/legal">Mentions légales</Link>
       </div>

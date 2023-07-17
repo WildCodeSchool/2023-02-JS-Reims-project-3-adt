@@ -6,6 +6,7 @@ import "./Categories.css";
 
 function Categories({ currentCategoryId, setCurrentCategoryId }) {
   const [categories, setCategories] = useState([]);
+  // const { categoryId } = useParams();
 
   useEffect(() => {
     axios

@@ -10,7 +10,7 @@
 .hotelCategory h2 {
   padding: 0 0 1em 1em;
   text-align: center;
-  color: blue;
+  color: hsl(181, 35%, 46%);
 }
 .categories {
   gap: 1em;
