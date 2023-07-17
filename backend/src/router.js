@@ -12,16 +12,19 @@ router.delete("/users/:id", userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
 const categoryControllers = require("./controllers/categoryControllers");
+const answerControllers = require("./controllers/AnswerControllers");
 
 router.get(
   "/categories/:categoryId/questions",
   questionControllers.browseByCategory
 );
 router.get("/categories", categoryControllers.browse);
+router.get("/answers", answerControllers.findAllWithQuestionDetails);
 
 router.post(
   "/categories/:categoryId/questions",
   questionControllers.addByCategory
 );
+router.post("/answers", answerControllers.createAnswer);
 
 module.exports = router;

@@ -92,6 +92,23 @@ function Question() {
     return "/resultat/oui";
   };
 
+  const storeresponse = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/answers`,
+        { questions }
+      )
+      .then((reponse) => {
+        alert(reponse.data.userId);
+        navigate(scoreToNextPage());
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <section className="surveyQuestion">
       <div className="small-container" />
@@ -195,7 +212,9 @@ function Question() {
           <button
             type="button"
             className="questionBtn"
-            onClick={() => navigate(scoreToNextPage())}
+            onClick={() => {
+              storeresponse();
+            }}
           >
             Terminer
           </button>

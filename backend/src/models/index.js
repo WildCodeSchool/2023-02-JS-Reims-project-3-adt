@@ -49,6 +49,11 @@ const CategoryManager = require("./CategoryManager");
 models.category = new CategoryManager();
 models.category.setDatabase(pool);
 
+const AnswerManager = require("./AnswerManager");
+
+models.answer = new AnswerManager();
+models.answer.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
