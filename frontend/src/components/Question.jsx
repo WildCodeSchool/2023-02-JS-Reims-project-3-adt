@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
-import PropTypes from "prop-types";
 import "./Question.css";
+import { QuestionContext } from "../contexts/QuestionContext";
+import pourcentage from "../services/pourcentage";
 
-function Question({ currentCategoryId, setCurrentCategoryId }) {
-  const [questions, setQuestions] = useState([]);
+function Question() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
+  const { questions, setQuestions, updateQuestionResponse } =
+    useContext(QuestionContext);
 
   /* function button */
   const handleNextPage = () => {
-    setCurrentCategoryId(currentCategoryId + 1);
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
 
   const handlePreviousPage = () => {
-    setCurrentCategoryId(currentCategoryId - 1);
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
@@ -33,6 +32,77 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
   };
 
   useEffect(() => {
+    const knownCategory = questions.find(
+      (question) => question.categoryId === parseInt(categoryId, 10)
+    );
+
+    if (!knownCategory) {
+      axios
+        .get(
+          `${
+            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+          }/categories/${categoryId}/questions`
+        )
+        .then((response) => {
+          setQuestions([...questions, ...response.data]);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [categoryId]);
+
+  const mandatoryQuestions = questions.filter(
+    (question) => question.mandatory_level === "Obligatoire"
+  );
+  const essentialQuestions = questions.filter(
+    (question) => question.mandatory_level === "Essentiel"
+  );
+
+  const countCriteriaMet = questions.filter(
+    (question) => question.response === "Atteint"
+  ).length;
+  const criteriumNotReached = questions.filter(
+    (question) => question.response === "Non Atteint"
+  ).length;
+  const countNotApplicable = questions.filter(
+    (question) => question.response === "Non Concerné"
+  ).length;
+  const countUnknown = questions.filter(
+    (question) => question.response === "Ne sais pas"
+  ).length;
+
+  const scoreToNextPage = () => {
+    const unknown = mandatoryQuestions.find(
+      (question) => question.response === "Ne sais pas"
+    );
+
+    if (unknown) {
+      return "/resultat/inconnu";
+    }
+
+    const mandatoryScore = parseInt(pourcentage(mandatoryQuestions), 10);
+
+    if (mandatoryScore < 100) {
+      return "/resultat/non";
+    }
+
+    const essentialScore = parseInt(pourcentage(essentialQuestions), 10);
+
+    if (essentialScore < 80) {
+      const unknownEssential = essentialQuestions.find(
+        (question) => question.response === "Ne sais pas"
+      );
+
+      if (unknownEssential) {
+        return "/resultat/inconnu";
+      }
+
+      return "/resultat/non";
+    }
+
+    return "/resultat/oui";
+  };
     axios
       .get(
         `${
@@ -146,7 +216,11 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         )}
 
         {parseInt(categoryId, 10) === 6 && (
-          <button type="button" className="questionBtn">
+          <button
+            type="button"
+            className="questionBtn"
+            onClick={() => navigate(scoreToNextPage())}
+          >
             Terminer
           </button>
         )}
@@ -168,19 +242,16 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
       </div>
       <div>
         <p>
-          pourcentage :{" "}
-          {Math.floor(
-            (countCriteriaMet / (questions.length - countNotApplicable)) * 100
-          )}
+          Pourcentage des questions répondues (Obligatoire) :
+          {pourcentage(mandatoryQuestions)}%
         </p>
-      </div> */}
+        <p>
+          Pourcentage des questions répondues (Essentiel) :
+          {pourcentage(essentialQuestions)}%
+        </p>
+      </div>
     </section>
   );
 }
-
-Question.propTypes = {
-  currentCategoryId: PropTypes.number.isRequired,
-  setCurrentCategoryId: PropTypes.func.isRequired,
-};
 
 export default Question;

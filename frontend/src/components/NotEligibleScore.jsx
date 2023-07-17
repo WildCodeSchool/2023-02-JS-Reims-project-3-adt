@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QuestionContext } from "../contexts/QuestionContext";
+import pourcentage from "../services/pourcentage";
 import NavbarUser from "./NavbarUser";
 import FooterUser from "./FooterUser";
 import Contact from "./Contact";
 import "./Scoring.css";
 
 export default function NotEligibleScore() {
+  const { questions } = useContext(QuestionContext);
+
+  const mandatoryQuestions = questions.filter(
+    (question) => question.mandatory_level === "Obligatoire"
+  );
+  const essentialQuestions = questions.filter(
+    (question) => question.mandatory_level === "Essentiel"
+  );
+
   return (
     <div className="score">
       <NavbarUser />
