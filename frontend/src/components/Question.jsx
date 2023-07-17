@@ -2,24 +2,21 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import axios from "axios";
-import PropTypes from "prop-types";
 import pourcentage from "../services/pourcentage";
 import { QuestionContext } from "../contexts/QuestionContext";
 import "./Question.css";
 
-function Question({ currentCategoryId, setCurrentCategoryId }) {
+function Question() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
   const { questions, setQuestions, updateQuestionResponse } =
     useContext(QuestionContext);
 
   const handleNextPage = () => {
-    setCurrentCategoryId(currentCategoryId + 1);
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
 
   const handlePreviousPage = () => {
-    setCurrentCategoryId(currentCategoryId - 1);
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
@@ -33,7 +30,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
         .get(
           `${
             import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/categories/${categoryId}/questions`
+          }/questions`
         )
         .then((response) => {
           setQuestions([...questions, ...response.data]);
@@ -42,7 +39,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
           console.error(error);
         });
     }
-  }, [categoryId]);
+  }, []);
 
   const mandatoryQuestions = questions.filter(
     (question) => question.mandatory_level === "Obligatoire"
@@ -237,10 +234,5 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
     </section>
   );
 }
-
-Question.propTypes = {
-  currentCategoryId: PropTypes.number.isRequired,
-  setCurrentCategoryId: PropTypes.func.isRequired,
-};
 
 export default Question;
