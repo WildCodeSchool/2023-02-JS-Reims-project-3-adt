@@ -14,6 +14,9 @@ function EligibleScore() {
   const essentialQuestions = questions.filter(
     (question) => question.mandatory_level === "Essentiel"
   );
+  const optionQuestions = questions.filter(
+    (question) => question.mandatory_level === "Optionnel"
+  );
 
   const pourcentage = (questionList) => {
     const divisor =
@@ -31,6 +34,11 @@ function EligibleScore() {
       divisor
     ).toFixed();
   };
+  const numMandatoryQuestions = mandatoryQuestions.length;
+  const numEssentialQuestions = essentialQuestions.length;
+  const numOptionQuestions = optionQuestions.length;
+  const numNonConcerneQuestions = questions.length;
+
   return (
     <div className="score">
       <NavbarUser />
@@ -39,6 +47,30 @@ function EligibleScore() {
         <p>Votre résultat : </p>
         <ul>
           <li>
+            {numMandatoryQuestions}/
+            {numMandatoryQuestions +
+              numEssentialQuestions +
+              numOptionQuestions -
+              numNonConcerneQuestions}{" "}
+            QUESTIONS OBLIGATOIRES
+          </li>
+          <li>
+            {numEssentialQuestions}/
+            {numMandatoryQuestions +
+              numEssentialQuestions +
+              numOptionQuestions -
+              numNonConcerneQuestions}{" "}
+            QUESTIONS OBLIGATOIRES
+          </li>
+          <li>
+            {numOptionQuestions}/
+            {numMandatoryQuestions +
+              numEssentialQuestions +
+              numOptionQuestions -
+              numNonConcerneQuestions}{" "}
+            QUESTIONS OBLIGATOIRES
+          </li>
+          <li>
             Pourcentage des questions répondues (Obligatoire) :{" "}
             {pourcentage(mandatoryQuestions)}%
           </li>
@@ -46,7 +78,10 @@ function EligibleScore() {
             Pourcentage des questions répondues (Essentiel) :{" "}
             {pourcentage(essentialQuestions)}%
           </li>
-          {/* <li>X/X QUESTIONS OPTIONNELLES </li> */}
+          <li>
+            Pourcentage des questions répondues (Optionnel) :{" "}
+            {pourcentage(optionQuestions)}%
+          </li>
         </ul>
         <h2>Félicitations 🎉, </h2>
         <p>

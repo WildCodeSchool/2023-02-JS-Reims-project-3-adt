@@ -5,7 +5,6 @@ import RegisterUser from "./pages/RegisterUser";
 import LoginForm from "./pages/LoginForm";
 import LoginFormUser from "./pages/LoginFormUser";
 import HomeUser from "./pages/HomeUser";
-import Scoring from "./components/Scoring";
 import Survey from "./pages/Survey";
 import Legal from "./pages/Legal";
 import UnknownScore from "./components/UnknownScore";
@@ -24,7 +23,6 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/loginuser" element={<LoginFormUser />} />
           <Route path="/" element={<HomeUser />} />
-          <Route path="/scoring" element={<Scoring />} />
           <Route path="/categories/:categoryId" element={<Survey />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/resultat/inconnu" element={<UnknownScore />} />

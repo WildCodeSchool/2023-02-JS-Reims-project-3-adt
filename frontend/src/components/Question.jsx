@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import axios from "axios";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import pourcentage from "../services/pourcentage";
 import { QuestionContext } from "../contexts/QuestionContext";
 import "./Question.css";
@@ -46,6 +47,9 @@ function Question() {
   );
   const essentialQuestions = questions.filter(
     (question) => question.mandatory_level === "Essentiel"
+  );
+  const optionQuestions = questions.filter(
+    (question) => question.mandatory_level === "Optionnel"
   );
 
   const countCriteriaMet = questions.filter(
@@ -93,8 +97,15 @@ function Question() {
     return "/resultat/oui";
   };
 
+  // const test = () => {
+  //   for (let i = 0; i < questions.length; i + 1)
+  //     questions[i].response = "Atteint";
+  // };
   return (
     <section className="surveyQuestion">
+      {/* <button type="button" onClick={test}>
+        test
+      </button> */}
       <div className="small-container" />
       {questions
         .filter(
@@ -106,7 +117,9 @@ function Question() {
             <div className={`questionList questionText${question.id}`}>
               <p className="questionContent">
                 {question.content}
-                {question.tooltip_content != null && " ℹ️ "}
+                {question.tooltip_content != null && (
+                  <AiOutlineInfoCircle color="blue" />
+                )}
               </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
@@ -229,6 +242,10 @@ function Question() {
         <p>
           Pourcentage des questions répondues (Essentiel) :
           {pourcentage(essentialQuestions)}%
+        </p>
+        <p>
+          Pourcentage des questions répondues (Optionnel) :
+          {pourcentage(optionQuestions)}%
         </p>
       </div>
     </section>

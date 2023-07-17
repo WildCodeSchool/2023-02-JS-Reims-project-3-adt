@@ -15,6 +15,10 @@ function NotEligibleScore() {
   const essentialQuestions = questions.filter(
     (question) => question.mandatory_level === "Essentiel"
   );
+  const optionQuestions = questions.filter(
+    (question) => question.mandatory_level === "Optionnel"
+  );
+
   return (
     <div className="score">
       <NavbarUser />
@@ -32,7 +36,11 @@ function NotEligibleScore() {
             Pourcentage des questions répondues (Essentiel) :{" "}
             {pourcentage(essentialQuestions)}%
           </li>
-          {/* <li>X/X QUESTIONS OPTIONNELLES </li> */}
+          <li>
+            {" "}
+            Pourcentage des questions répondues (Optionnel) :{" "}
+            {pourcentage(optionQuestions)}%
+          </li>
         </ul>
 
         <p>
