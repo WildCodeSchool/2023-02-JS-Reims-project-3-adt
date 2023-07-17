@@ -1,52 +1,56 @@
-.fullScoring {
+.score {
+  background-image: url("../assets/background_adt.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 70% bottom 45%;
+}
+.title-score {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5rem;
+  flex-wrap: nowrap;
+  text-align: justify;
+  margin: auto;
+  gap: 2rem;
+  font-size: 18px;
+  width: 700px;
+  padding: 3em;
+  border-radius: 1em;
+  border: 2px solid #63ba58;
+  line-height: 2em;
+  background-color: white;
 }
-
-.score {
-  border: #3f7438 1px solid;
-  border-radius: 3px;
-  padding: 5rem;
-  margin: 2rem;
-  display: flex;
-  justify-content: center;
+.title-score h1,
+h2,
+h3 {
+  color: blue;
+}
+.btn-container {
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
   align-items: center;
-  border-radius: 3rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  padding: 3em;
 }
-
-.scoreText {
-  color: rgb(2, 2, 2);
-  font-size: 1.5rem;
-}
-
-.beContacted {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
+.small-contact {
+  display: grid;
+  grid-template-columns: repeat(1, 300px);
+  grid-template-rows: repeat(1, 50px);
   align-items: center;
-  border-radius: 3rem;
-  border: #3f7438 1px solid;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-.notbeContacted {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-  border: #3f7438 1px solid;
-}
-
-.buttonScore {
-  background: transparent;
-  font-size: 1rem;
-  color: rgb(0, 0, 0);
+  background-color: #3f7438;
+  padding: 0.5em;
   border: none;
-  margin: 2rem;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.contact-text {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+.contact-text:hover {
+  color: black;
+}
+.case-three {
+  color: blue;
 }

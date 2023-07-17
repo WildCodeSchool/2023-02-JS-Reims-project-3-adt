@@ -8,10 +8,6 @@
   width: 70%;
   margin: auto;
 }
-.small-container {
-  background-color: #3f7438;
-  height: 0.5rem;
-}
 .questions {
   display: flex;
   flex-direction: column;
@@ -47,7 +43,7 @@
 .answerChoice {
   display: flex;
   flex-direction: row;
-  color: blue;
+  color: hsl(181, 35%, 46%);
 }
 .buttonContainer {
   display: flex;
@@ -68,7 +64,7 @@
 }
 
 .tooltip {
-  background-color: #3f7438;
+  background-color: hsl(181, 35%, 46%);
   border-radius: 1rem;
   border-style: outset;
   font-size: 12px;

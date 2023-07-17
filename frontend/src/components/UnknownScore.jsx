@@ -1,8 +1,13 @@
 import React from "react";
+import NavbarUser from "./NavbarUser";
+import FooterUser from "./FooterUser";
+import Contact from "./Contact";
+import "./Scoring.css";
 
 export default function UnknownScore() {
   return (
     <div className="score">
+      <NavbarUser />
       <section className="title-score">
         <h1>Merci d’avoir fait votre auto-évaluation.</h1>
         <p>
@@ -25,14 +30,16 @@ export default function UnknownScore() {
             de conseils pour poursuivre votre démarche et aller plus loin{" "}
           </li>
         </ul>
-        <h3>Et maintenant :point_exclarrogatif:</h3>
+        <h3>Et maintenant ⁉️</h3>
         <p>
           Nous vous invitons à partager ce résultat avec le conseiller
           écotourisme de l’Agence de Développement Touristique en nous laissant
           vos coordonnées pour être recontacté et travailler avec lui sur la
           transition de votre activité.
         </p>
+        <Contact />
       </section>
+      <FooterUser />
     </div>
   );
 }
