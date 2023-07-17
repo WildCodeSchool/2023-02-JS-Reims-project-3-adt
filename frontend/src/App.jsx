@@ -1,17 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
+import { QuestionProvider } from "./contexts/QuestionContext";
 import Register from "./pages/Register";
 import RegisterUser from "./pages/RegisterUser";
 import LoginForm from "./pages/LoginForm";
 import LoginFormUser from "./pages/LoginFormUser";
 import HomeUser from "./pages/HomeUser";
-// import Scoring from "./components/Scoring";
 import Survey from "./pages/Survey";
 import Legal from "./pages/Legal";
+import EligibleScore from "./components/EligibleScore";
 import UnknownScore from "./components/UnknownScore";
 import NotEligibleScore from "./components/NotEligibleScore";
-import EligibleScore from "./components/EligibleScore";
-import { QuestionProvider } from "./contexts/QuestionContext";
+
 import "./App.css";
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/loginuser" element={<LoginFormUser />} />
           <Route path="/" element={<HomeUser />} />
-          <Route path="/scoring" element={<Scoring />} />
           <Route path="/categories/:categoryId" element={<Survey />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/resultat/inconnu" element={<UnknownScore />} />

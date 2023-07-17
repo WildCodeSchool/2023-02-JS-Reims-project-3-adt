@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
 import pourcentage from "../services/pourcentage";
@@ -20,22 +22,10 @@ function Question() {
     navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
   };
 
-  /* function input */
-  const handleResponseChange = (questionId, response) => {
-    const updatedQuestions = questions.map((question) => {
-      if (question.id === questionId) {
-        return { ...question, response };
-      }
-      return question;
-    });
-    setQuestions(updatedQuestions);
-  };
-
   useEffect(() => {
     const knownCategory = questions.find(
       (question) => question.categoryId === parseInt(categoryId, 10)
     );
-
     if (!knownCategory) {
       axios
         .get(
@@ -103,17 +93,6 @@ function Question() {
 
     return "/resultat/oui";
   };
-    axios
-      .get(
-        `${
-          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/questions`
-      )
-      .then((response) => setQuestions(response.data))
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
 
   return (
     <section className="surveyQuestion">
@@ -126,10 +105,10 @@ function Question() {
         })
         .map((question) => (
           <div key={question.id} className="questions">
-            <div className={`questionText questionText${question.id}`}>
+            <div className={`questionList questionText${question.id}`}>
               <p className="questionContent">
                 {question.content}
-                {question.tooltip_content != null && "    📌"}
+                {question.tooltip_content != null && <AiOutlineInfoCircle />}
               </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
@@ -147,55 +126,49 @@ function Question() {
 
             <div className="answer">
               <input
-                type="checkbox"
-                required
-                id={`answer${question.id}`}
+                type="radio"
+                id={`answer${question.id}-atteint`}
                 name={`answer${question.id}`}
-                value="atteint"
+                value="Atteint"
+                onChange={() => updateQuestionResponse(question, "Atteint")}
                 checked={question.response === "Atteint"}
-                onChange={() => handleResponseChange(question.id, "Atteint")}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
               </label>
               <input
-                type="checkbox"
-                required
-                id={`answer${question.id}`}
+                type="radio"
+                id={`answer${question.id}-not-atteint`}
                 name={`answer${question.id}`}
-                value="No Atteint"
-                checked={question.response === "Not Atteint"}
-                onChange={() =>
-                  handleResponseChange(question.id, "Not Atteint")
-                }
+                value="Non Atteint"
+                onChange={() => updateQuestionResponse(question, "Non Atteint")}
+                checked={question.response === "Non Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Atteint
               </label>
               <input
-                type="checkbox"
-                required
-                id={`answer${question.id}`}
+                type="radio"
+                id={`answer${question.id}-non-concerne`}
                 name={`answer${question.id}`}
-                value="ne sais pas"
-                checked={question.response === "Non Concerné"}
+                value="Non Concerné"
                 onChange={() =>
-                  handleResponseChange(question.id, "Non Concerné")
+                  updateQuestionResponse(question, "Non Concerné")
                 }
+                checked={question.response === "Non Concerné"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Non Concerné
               </label>
 
               <input
-                type="checkbox"
-                required
-                id={`answer${question.id}`}
+                type="radio"
+                id={`answer${question.id}-ne-sais-pas`}
                 name={`answer${question.id}`}
-                value="ne sais pas"
-                checked={question.response === "Ne sais pas"}
-                onChange={() =>
-                  handleResponseChange(question.id, "Ne sais pas")
+                value="Ne sais pas"
+                onChange={() => updateQuestionResponse(question, "Ne sais pas")}
+                checked={
+                  !question.response || question.response === "Ne sais pas"
                 }
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
@@ -234,7 +207,7 @@ function Question() {
           </button>
         )}
       </div>
-      {/* <div className="counters">
+      <div className="counters">
         <p>Nombre de critères atteints : {countCriteriaMet}</p>
         <p>Nombre de critères non atteints : {criteriumNotReached}</p>
         <p>Nombre de critères non concernés : {countNotApplicable}</p>

@@ -6,7 +6,7 @@ import FooterUser from "./FooterUser";
 import Contact from "./Contact";
 import "./Scoring.css";
 
-export default function NotEligibleScore() {
+function NotEligibleScore() {
   const { questions } = useContext(QuestionContext);
 
   const mandatoryQuestions = questions.filter(
@@ -22,12 +22,14 @@ export default function NotEligibleScore() {
       <section className="title-score">
         <h1>Merci d’avoir fait votre auto-évaluation.</h1>
         <p>Votre résultat est le suivant </p>
-        <ul>
-          <li>X/X QUESTIONS OBLIGATOIRES</li>
-          <li>X/X QUESTIONS ESSENTIELLES</li>
-          <li>X/X QUESTIONS OPTIONNELLES </li>
-        </ul>
-
+        <p>
+          Pourcentage des questions répondues (Obligatoire) :{" "}
+          {pourcentage(mandatoryQuestions)}%
+        </p>
+        <p>
+          Pourcentage des questions répondues (Essentiel) :{" "}
+          {pourcentage(essentialQuestions)}%
+        </p>
         <p>
           Vous êtes encore en chemin. Saviez-vous que le plus difficile dans la
           transition est justement de vouloir l’enclencher ?
@@ -59,3 +61,5 @@ export default function NotEligibleScore() {
     </div>
   );
 }
+
+export default NotEligibleScore;
