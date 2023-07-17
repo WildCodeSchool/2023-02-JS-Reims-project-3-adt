@@ -9,7 +9,6 @@
   margin: auto;
 }
 .small-container {
-  background-color: #3f7438;
   height: 0.5rem;
 }
 .questions {
@@ -68,8 +67,9 @@
 }
 
 .tooltip {
-  background-color: #3f7438;
+  background-color: hsl(181, 35%, 46%);
   border-radius: 1rem;
   border-style: outset;
   font-size: 12px;
+  width: fit-content;
 }

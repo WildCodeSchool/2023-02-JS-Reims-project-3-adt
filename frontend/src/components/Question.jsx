@@ -96,121 +96,6 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
     return "/resultat/oui";
   };
 
-  // const [questions, setQuestions] = useState([]);
-  // const { categoryId } = useParams();
-  // const navigate = useNavigate();
-
-  // const handleNextPage = () => {
-  //   setCurrentCategoryId(currentCategoryId + 1);
-  //   navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
-  // };
-
-  // const handlePreviousPage = () => {
-  //   setCurrentCategoryId(currentCategoryId - 1);
-  //   navigate(`/categories/${parseInt(categoryId, 10) - 1}`);
-  // };
-
-  // const handleResponseChange = (answeredQuestion, response) => {
-  //   const updatedQuestions = questions.map((question) => {
-  //     if (question.id === answeredQuestion) {
-  //       return { ...question, response };
-  //     }
-  //     return question;
-  //   });
-  //   setQuestions(updatedQuestions);
-  // };
-
-  // useEffect(() => {
-  //   const knownCategory = questions.find(
-  //     (question) => question.categoryId === parseInt(categoryId, 10)
-  //   );
-
-  //   if (!knownCategory) {
-  //     axios
-  //       .get(
-  //         `${
-  //           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-  //         }/categories/${categoryId}/questions`
-  //       )
-  //       .then((response) => {
-  //         setQuestions([...questions, ...response.data]);
-  //       })
-  //       .catch((error) => {
-  //         console.error(error);
-  //       });
-  //   }
-  // }, [categoryId]);
-
-  // const mandatoryQuestions = questions.filter(
-  //   (question) => question.mandatory_level === "Obligatoire"
-  // );
-  // const essentialQuestions = questions.filter(
-  //   (question) => question.mandatory_level === "Essentiel"
-  // );
-
-  // const countCriteriaMet = questions.filter(
-  //   (question) => question.response === "Atteint"
-  // ).length;
-  // const criteriumNotReached = questions.filter(
-  //   (question) => question.response === "Non Atteint"
-  // ).length;
-  // const countNotApplicable = questions.filter(
-  //   (question) => question.response === "Non Concerné"
-  // ).length;
-  // const countUnknown = questions.filter(
-  //   (question) => question.response === "Ne sais pas"
-  // ).length;
-
-  // const pourcentage = (questionList) => {
-  //   const divisor =
-  //     questionList.length -
-  //     questionList.filter((question) => question.response === "Non Concerné")
-  //       .length;
-
-  //   if (divisor === 0) {
-  //     return 0;
-  //   }
-
-  //   return (
-  //     (100 *
-  //       questionList.filter((question) => question.response === "Atteint")
-  //         .length) /
-  //     divisor
-  //   ).toFixed();
-  // };
-
-  // const scoreToNextPage = () => {
-  //   const unknown = mandatoryQuestions.find(
-  //     (question) => question.response === "Ne sais pas"
-  //   );
-
-  //   if (unknown) {
-  //     return "/resultat/inconnu";
-  //   }
-
-  //   const mandatoryScore = parseInt(pourcentage(mandatoryQuestions), 10);
-
-  //   if (mandatoryScore < 100) {
-  //     return "/resultat/non";
-  //   }
-
-  //   const essentialScore = parseInt(pourcentage(essentialQuestions), 10);
-
-  //   if (essentialScore < 80) {
-  //     const unknownEssential = essentialQuestions.find(
-  //       (question) => question.response === "Ne sais pas"
-  //     );
-
-  //     if (unknownEssential) {
-  //       return "/resultat/inconnu";
-  //     }
-
-  //     return "/resultat/non";
-  //   }
-
-  //   return "/resultat/oui";
-  // };
-
   return (
     <section className="surveyQuestion">
       <div className="small-container" />
@@ -220,7 +105,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
             parseInt(question.category_id, 10) === parseInt(categoryId, 10)
         )
         .map((question) => (
-          <div key={`${question.id}${question.content}`} className="questions">
+          <div key={question.id} className="questions">
             <div className={`questionList questionText${question.id}`}>
               <p className="questionContent">
                 {question.content}
@@ -291,7 +176,9 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
                 name={`answer${question.id}`}
                 value="Ne sais pas"
                 onChange={() => updateQuestionResponse(question, "Ne sais pas")}
-                checked={question.response === "Ne sais pas"}
+                checked={
+                  !question.response || question.response === "Ne sais pas"
+                }
               />
               <label
                 htmlFor={`answer${question.id}-ne-sais-pas`}
@@ -333,7 +220,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
           </button>
         )}
       </div>
-      {/* <div className="counters">
+      <div className="counters">
         <p>Nombre de critères atteints : {countCriteriaMet}</p>
         <p>Nombre de critères non atteints : {criteriumNotReached}</p>
         <p>Nombre de critères non concernés : {countNotApplicable}</p>
@@ -346,7 +233,7 @@ function Question({ currentCategoryId, setCurrentCategoryId }) {
           Pourcentage des questions répondues (Essentiel) :
           {pourcentage(essentialQuestions)}%
         </p>
-      </div> */}
+      </div>
     </section>
   );
 }

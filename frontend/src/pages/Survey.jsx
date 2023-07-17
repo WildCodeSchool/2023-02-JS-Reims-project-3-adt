@@ -5,7 +5,7 @@ import Question from "../components/Question";
 import Categories from "../components/Categories";
 
 function Survey() {
-  const [currentCategoryId, setCurrentCategoryId] = useState(null);
+  const [currentCategoryId, setCurrentCategoryId] = useState(1);
   return (
     <div>
       <NavbarUser />
