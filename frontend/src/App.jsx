@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import Register from "./pages/Register";
+import RegisterUser from "./pages/RegisterUser";
+import LoginForm from "./pages/LoginForm";
+import LoginFormUser from "./pages/LoginFormUser";
 import HomeUser from "./pages/HomeUser";
 import Scoring from "./components/Scoring";
 import Survey from "./pages/Survey";
@@ -17,6 +20,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/register" element={<Register />} />
+          <Route path="/registeruser" element={<RegisterUser />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/loginuser" element={<LoginFormUser />} />
           <Route path="/" element={<HomeUser />} />
           <Route path="/scoring" element={<Scoring />} />
           <Route path="/categories/:categoryId" element={<Survey />} />

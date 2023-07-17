@@ -19,7 +19,8 @@
   list-style: none;
   text-align: justify;
   padding: 1em;
-  border-radius: 10px;
+  border-radius: 1em;
+  font-size: 18px;
 }
 .questionList {
   display: flex;
@@ -57,6 +58,18 @@
   background-color: #3f7438;
   padding: 1em;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   border: none;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.questionBtn:hover {
+  color: black;
+}
+
+.tooltip {
+  background-color: #3f7438;
+  border-radius: 1rem;
+  border-style: outset;
+  font-size: 12px;
 }
