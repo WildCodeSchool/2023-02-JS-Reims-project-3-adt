@@ -9,7 +9,7 @@ create table `user` (
   is_admin varchar(80) default(false)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-create table `category` (
+create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null,
 image varchar(100) not null
