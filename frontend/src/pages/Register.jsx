@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 
 function Register() {
-  const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -27,7 +26,6 @@ function Register() {
                   "content-type": "application/json",
                 },
                 body: JSON.stringify({
-                  username: usernameRef.current.value,
                   email: emailRef.current.value,
                   password: passwordRef.current.value,
                 }),
@@ -36,17 +34,14 @@ function Register() {
           }}
         >
           <div className="register-form-input">
-            <label htmlFor="username">Username &#42;</label>
-            <input
-              ref={usernameRef}
-              type="text"
-              id="username"
-              name="username"
-            />
-          </div>
-          <div className="register-form-input">
             <label htmlFor="email">Email &#42;</label>
-            <input ref={emailRef} type="text" id="email" name="email" />
+            <input
+              ref={emailRef}
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Votre adresse mél"
+            />
           </div>
           <div className="register-form-input">
             <label htmlFor="password">Password &#42;</label>
@@ -55,6 +50,7 @@ function Register() {
               type="password"
               id="password"
               name="password"
+              placeholder="Votre mot de passe"
             />
           </div>
           <Link to="/login" className="buttonRegister">

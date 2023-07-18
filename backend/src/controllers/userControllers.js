@@ -28,6 +28,40 @@ const read = (req, res) => {
     });
 };
 
+const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  models.user
+    .findByEmailWithPassword(req.body.email)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        const [foundUser] = rows;
+
+        req.user = foundUser;
+
+        next();
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const addUserByEmailWithPasswordAndPassToNext = (req, res) => {
+  const newUser = req.body;
+
+  models.user
+    .insert(newUser)
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const user = req.body;
 
@@ -86,6 +120,8 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  getUserByEmailWithPasswordAndPassToNext,
+  addUserByEmailWithPasswordAndPassToNext,
   edit,
   add,
   destroy,

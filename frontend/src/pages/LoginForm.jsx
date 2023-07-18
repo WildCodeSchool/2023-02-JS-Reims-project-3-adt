@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import logo from "../assets/ecotourisme.jpeg";
 
 export default function LoginForm({ setUser }) {
-  const usernameRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
 
   const handleSubmit = (event) => {
@@ -20,7 +20,7 @@ export default function LoginForm({ setUser }) {
         },
         credentials: "include",
         body: JSON.stringify({
-          username: usernameRef.current.value,
+          email: emailRef.current.value,
           password: passwordRef.current.value,
         }),
       }
@@ -40,8 +40,8 @@ export default function LoginForm({ setUser }) {
         <h1 className="connection">Connectez-vous</h1>
         <form onSubmit={handleSubmit}>
           <div className="login-form-input">
-            <label htmlFor="username">Nom d'utilisateur</label>
-            <input type="text" id="username" ref={usernameRef} />
+            <label htmlFor="email">Email</label>
+            <input type="text" id="email" ref={emailRef} />
           </div>
           <div className="login-form-input">
             <label htmlFor="password">Mot de passe</label>

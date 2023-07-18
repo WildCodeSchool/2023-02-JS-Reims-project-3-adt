@@ -25,4 +25,16 @@ router.post(
   questionControllers.addByCategory
 );
 
+//    USERS
+
+router.get(
+  "/users/:userId/users",
+  userControllers.getUserByEmailWithPasswordAndPassToNext
+);
+
+router.post(
+  "/users/:userId/users",
+  userControllers.addUserByEmailWithPasswordAndPassToNext
+);
+
 module.exports = router;
