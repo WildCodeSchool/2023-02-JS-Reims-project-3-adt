@@ -28,6 +28,26 @@ const read = (req, res) => {
     });
 };
 
+const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  models.user
+    .findByEmailWithPassword(req.body.email)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(401);
+      } else {
+        const [foundUser] = rows;
+
+        req.user = foundUser;
+
+        next();
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const user = req.body;
 
@@ -51,7 +71,6 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  /* console.log("hello from POST /register", req.body); */
   const user = req.body;
 
   // TODO validations (length, format...)
@@ -86,6 +105,7 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  getUserByEmailWithPasswordAndPassToNext,
   edit,
   add,
   destroy,

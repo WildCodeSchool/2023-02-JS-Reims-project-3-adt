@@ -1,12 +1,14 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import PropTypes from "prop-types";
 import logo from "../assets/ecotourisme.jpeg";
 
 export default function LoginForm({ setUser }) {
-  const usernameRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +22,7 @@ export default function LoginForm({ setUser }) {
         },
         credentials: "include",
         body: JSON.stringify({
-          username: usernameRef.current.value,
+          email: emailRef.current.value,
           password: passwordRef.current.value,
         }),
       }
@@ -30,6 +32,12 @@ export default function LoginForm({ setUser }) {
         console.info("do you see cookie here ?", document.cookie);
 
         setUser(data.user);
+
+        if (data.user.isAdmin) {
+          navigate("/dashboard");
+        } else {
+          navigate("/");
+        }
       });
   };
 
@@ -40,8 +48,8 @@ export default function LoginForm({ setUser }) {
         <h1 className="connection">Connectez-vous</h1>
         <form onSubmit={handleSubmit}>
           <div className="login-form-input">
-            <label htmlFor="username">Nom d'utilisateur</label>
-            <input type="text" id="username" ref={usernameRef} />
+            <label htmlFor="email">Email</label>
+            <input type="text" id="email" ref={emailRef} />
           </div>
           <div className="login-form-input">
             <label htmlFor="password">Mot de passe</label>
@@ -49,9 +57,9 @@ export default function LoginForm({ setUser }) {
           </div>
 
           <div className="btn">
-            <Link to="/dashboard" className="loginButton">
+            <button type="submit" className="loginButton">
               Se connecter
-            </Link>
+            </button>
           </div>
         </form>
       </div>

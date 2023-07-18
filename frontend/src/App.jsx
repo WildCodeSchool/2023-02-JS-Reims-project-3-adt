@@ -2,9 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import React from "react";
 import { QuestionProvider } from "./contexts/QuestionContext";
 import Register from "./pages/Register";
-import RegisterUser from "./pages/RegisterUser";
 import LoginForm from "./pages/LoginForm";
-import LoginFormUser from "./pages/LoginFormUser";
 import HomeUser from "./pages/HomeUser";
 import Survey from "./pages/Survey";
 import Legal from "./pages/Legal";
@@ -20,9 +18,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/register" element={<Register />} />
-          <Route path="/registeruser" element={<RegisterUser />} />
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/loginuser" element={<LoginFormUser />} />
           <Route path="/" element={<HomeUser />} />
           <Route path="/categories/:categoryId" element={<Survey />} />
           <Route path="/legal" element={<Legal />} />

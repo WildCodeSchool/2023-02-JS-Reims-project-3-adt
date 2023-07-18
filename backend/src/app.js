@@ -1,5 +1,5 @@
 // import some node modules for later
-
+// import cookieParser from "cookie-parser";
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -13,12 +13,17 @@ const app = express();
 
 app.use(express.json());
 
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
+
 const cors = require("cors");
 
 app.use(
   cors({
     origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
     optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 
