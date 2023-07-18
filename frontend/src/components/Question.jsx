@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
 import pourcentage from "../services/pourcentage";
@@ -11,6 +13,7 @@ function Question() {
   const { questions, setQuestions, updateQuestionResponse } =
     useContext(QuestionContext);
 
+  /* function button */
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
@@ -23,7 +26,6 @@ function Question() {
     const knownCategory = questions.find(
       (question) => question.categoryId === parseInt(categoryId, 10)
     );
-
     if (!knownCategory) {
       axios
         .get(
@@ -113,87 +115,82 @@ function Question() {
     <section className="surveyQuestion">
       <div className="small-container" />
       {questions
-        .filter(
-          (question) =>
+        .filter((question) => {
+          return (
             parseInt(question.category_id, 10) === parseInt(categoryId, 10)
-        )
+          );
+        })
         .map((question) => (
           <div key={question.id} className="questions">
-            <div className="questionList">
-              <p className="questionContent">{question.content}</p>
+            <div className={`questionList questionText${question.id}`}>
+              <p className="questionContent">
+                {question.content}
+                {question.tooltip_content != null && <AiOutlineInfoCircle />}
+              </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
-            <div className="questionOptions">
-              <div className="answer">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-atteint`}
-                  name={`answer${question.id}`}
-                  value="Atteint"
-                  onChange={() => updateQuestionResponse(question, "Atteint")}
-                  checked={question.response === "Atteint"}
-                />
-                <label
-                  htmlFor={`answer${question.id}-atteint`}
-                  className="answerChoice"
-                >
-                  Atteint
-                </label>
-              </div>
-              <div className="answer">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-not-atteint`}
-                  name={`answer${question.id}`}
-                  value="Non Atteint"
-                  onChange={() =>
-                    updateQuestionResponse(question, "Non Atteint")
-                  }
-                  checked={question.response === "Non Atteint"}
-                />
-                <label
-                  htmlFor={`answer${question.id}-not-atteint`}
-                  className="answerChoice"
-                >
-                  Non Atteint
-                </label>
-              </div>
-              <div className="answer">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-non-concerne`}
-                  name={`answer${question.id}`}
-                  value="Non Concerné"
-                  onChange={() =>
-                    updateQuestionResponse(question, "Non Concerné")
-                  }
-                  checked={question.response === "Non Concerné"}
-                />
-                <label
-                  htmlFor={`answer${question.id}-non-concerne`}
-                  className="answerChoice"
-                >
-                  Non Concerné
-                </label>
-              </div>
-              <div className="answer">
-                <input
-                  type="radio"
-                  id={`answer${question.id}-ne-sais-pas`}
-                  name={`answer${question.id}`}
-                  value="Ne sais pas"
-                  onChange={() =>
-                    updateQuestionResponse(question, "Ne sais pas")
-                  }
-                  checked={question.response === "Ne sais pas"}
-                />
-                <label
-                  htmlFor={`answer${question.id}-ne-sais-pas`}
-                  className="answerChoice"
-                >
-                  Ne sais pas
-                </label>
-              </div>
+
+            {question.tooltip_content != null && (
+              <Tooltip
+                className="tooltip"
+                anchorSelect={`.questionText${question.id}`}
+              >
+                <div>
+                  <p>{question.tooltip_content}</p>
+                </div>
+              </Tooltip>
+            )}
+
+            <div className="answer">
+              <input
+                type="radio"
+                id={`answer${question.id}-atteint`}
+                name={`answer${question.id}`}
+                value="Atteint"
+                onChange={() => updateQuestionResponse(question, "Atteint")}
+                checked={question.response === "Atteint"}
+              />
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
+                Atteint
+              </label>
+              <input
+                type="radio"
+                id={`answer${question.id}-not-atteint`}
+                name={`answer${question.id}`}
+                value="Non Atteint"
+                onChange={() => updateQuestionResponse(question, "Non Atteint")}
+                checked={question.response === "Non Atteint"}
+              />
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
+                Non Atteint
+              </label>
+              <input
+                type="radio"
+                id={`answer${question.id}-non-concerne`}
+                name={`answer${question.id}`}
+                value="Non Concerné"
+                onChange={() =>
+                  updateQuestionResponse(question, "Non Concerné")
+                }
+                checked={question.response === "Non Concerné"}
+              />
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
+                Non Concerné
+              </label>
+
+              <input
+                type="radio"
+                id={`answer${question.id}-ne-sais-pas`}
+                name={`answer${question.id}`}
+                value="Ne sais pas"
+                onChange={() => updateQuestionResponse(question, "Ne sais pas")}
+                checked={
+                  !question.response || question.response === "Ne sais pas"
+                }
+              />
+              <label htmlFor={`answer${question.id}`} className="answerChoice">
+                Ne sais pas
+              </label>
             </div>
           </div>
         ))}
@@ -201,8 +198,8 @@ function Question() {
         {parseInt(categoryId, 10) < 6 && (
           <button
             type="button"
-            onClick={handleNextPage}
             className="questionBtn"
+            onClick={handleNextPage}
           >
             Suivant
           </button>
@@ -219,7 +216,6 @@ function Question() {
             Terminer
           </button>
         )}
-
         {parseInt(categoryId, 10) > 1 && (
           <button
             type="button"
@@ -235,6 +231,8 @@ function Question() {
         <p>Nombre de critères non atteints : {criteriumNotReached}</p>
         <p>Nombre de critères non concernés : {countNotApplicable}</p>
         <p>Nombre de critères inconnus : {countUnknown}</p>
+      </div>
+      <div>
         <p>
           Pourcentage des questions répondues (Obligatoire) :
           {pourcentage(mandatoryQuestions)}%

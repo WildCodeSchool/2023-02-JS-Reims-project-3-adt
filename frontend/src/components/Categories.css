@@ -17,6 +17,7 @@
 .title {
   padding-top: 1em;
   font-size: 30px;
+  color: hsl(181, 35%, 46%);
 }
 figure.categoryList {
   display: grid;
@@ -38,6 +39,6 @@ a:link {
   text-decoration: none;
 }
 .categoryList.active {
-  background-color: #3f7438;
+  background-color: hsla(113, 35%, 34%, 0.792);
   color: white;
 }
