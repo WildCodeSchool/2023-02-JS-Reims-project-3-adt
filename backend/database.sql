@@ -81,7 +81,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 
   ("Conception du bâtiment avec un niveau de performance élevé : Haute Qualité Environnementale, bioclimatique, BBC, bâtiment passif ou à énergie positive.", "Optionnel", 1, NULL),
     
-  ("Matériaux d'isolation biosourcés", "Optionnel", 1, "Les matériaux d'isoltion biosourcés peuvent être d'origine végétale (laine de bois, laine de chanvre, etc.), animale (laine de mouton, etc) ou issus du recyclage (textile p.ex.)."),
+  ("Matériaux d'isolation biosourcés", "Optionnel", 1, "Les matériaux d'isolation biosourcés peuvent être d'origine végétale (laine de bois, laine de chanvre, etc.), animale (laine de mouton, etc) ou issus du recyclage (textile p.ex.)."),
 
   ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "Obligatoire", 2, "Seules les consommations liées à l'activité touristique doivent être comptabilisées."),
  
