@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 
 function Register() {
-  const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();
 
   return (
     <div className="background">
@@ -27,26 +28,30 @@ function Register() {
                   "content-type": "application/json",
                 },
                 body: JSON.stringify({
-                  username: usernameRef.current.value,
                   email: emailRef.current.value,
                   password: passwordRef.current.value,
                 }),
               }
-            );
+            ).then((response) => {
+              if (response.ok) {
+                navigate("/login");
+              } else {
+                alert(
+                  "il y a eu un problème lors de la la création d'un compte"
+                );
+              }
+            });
           }}
         >
           <div className="register-form-input">
-            <label htmlFor="username">Username &#42;</label>
-            <input
-              ref={usernameRef}
-              type="text"
-              id="username"
-              name="username"
-            />
-          </div>
-          <div className="register-form-input">
             <label htmlFor="email">Email &#42;</label>
-            <input ref={emailRef} type="text" id="email" name="email" />
+            <input
+              ref={emailRef}
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Votre adresse mél"
+            />
           </div>
           <div className="register-form-input">
             <label htmlFor="password">Password &#42;</label>
@@ -55,11 +60,12 @@ function Register() {
               type="password"
               id="password"
               name="password"
+              placeholder="Votre mot de passe"
             />
           </div>
-          <Link to="/login" className="buttonRegister">
+          <button type="submit" className="buttonRegister">
             Créer mon compte
-          </Link>
+          </button>
           <p>
             Vous avez déjà un compte? <Link to="/login">Connexion</Link>
           </p>
