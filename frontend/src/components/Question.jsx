@@ -7,6 +7,10 @@ import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
 import pourcentage from "../services/pourcentage";
 
+const setUser = (newUser) => {
+  console.info(newUser);
+};
+
 function Question() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
@@ -102,7 +106,7 @@ function Question() {
         { questions }
       )
       .then((reponse) => {
-        alert(reponse.data.userId);
+        setUser({ id: reponse.data.userId });
         navigate(scoreToNextPage());
       })
       .catch((error) => {
