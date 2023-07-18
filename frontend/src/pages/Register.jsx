@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
 
 function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();
 
   return (
     <div className="background">
@@ -30,7 +32,15 @@ function Register() {
                   password: passwordRef.current.value,
                 }),
               }
-            );
+            ).then((response) => {
+              if (response.ok) {
+                navigate("/login");
+              } else {
+                alert(
+                  "il y a eu un problème lors de la la création d'un compte"
+                );
+              }
+            });
           }}
         >
           <div className="register-form-input">
@@ -53,9 +63,9 @@ function Register() {
               placeholder="Votre mot de passe"
             />
           </div>
-          <Link to="/login" className="buttonRegister">
+          <button type="submit" className="buttonRegister">
             Créer mon compte
-          </Link>
+          </button>
           <p>
             Vous avez déjà un compte? <Link to="/login">Connexion</Link>
           </p>

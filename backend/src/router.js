@@ -3,12 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 const userControllers = require("./controllers/userControllers");
-const { hashPassword } = require("./services/auth");
+const { hashPassword, verifyPassword, sendToken } = require("./services/auth");
 
 router.get("/users", userControllers.browse);
+router.post("/users", hashPassword, userControllers.add);
 router.get("/users/:id", userControllers.read);
 router.put("/users/:id", userControllers.edit);
-router.post("/users", hashPassword, userControllers.add);
 router.delete("/users/:id", hashPassword, userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
@@ -27,14 +27,11 @@ router.post(
 
 //    USERS
 
-router.get(
-  "/users/:userId/users",
-  userControllers.getUserByEmailWithPasswordAndPassToNext
-);
-
 router.post(
-  "/users/:userId/users",
-  userControllers.addUserByEmailWithPasswordAndPassToNext
+  "/login",
+  userControllers.getUserByEmailWithPasswordAndPassToNext,
+  verifyPassword,
+  sendToken
 );
 
 module.exports = router;

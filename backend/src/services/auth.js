@@ -51,6 +51,7 @@ const sendToken = (req, res) => {
     user: {
       id: req.user.id,
       email: req.user.email,
+      isAdmin: req.user.is_admin,
     },
   });
 };

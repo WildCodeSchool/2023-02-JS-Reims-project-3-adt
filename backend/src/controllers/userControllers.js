@@ -33,7 +33,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     .findByEmailWithPassword(req.body.email)
     .then(([rows]) => {
       if (rows[0] == null) {
-        res.sendStatus(404);
+        res.sendStatus(401);
       } else {
         const [foundUser] = rows;
 
@@ -44,20 +44,6 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const addUserByEmailWithPasswordAndPassToNext = (req, res) => {
-  const newUser = req.body;
-
-  models.user
-    .insert(newUser)
-    .then(() => {
-      res.sendStatus(201);
-    })
-    .catch((error) => {
-      console.error(error);
       res.sendStatus(500);
     });
 };
@@ -85,7 +71,6 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  /* console.log("hello from POST /register", req.body); */
   const user = req.body;
 
   // TODO validations (length, format...)
@@ -121,7 +106,6 @@ module.exports = {
   browse,
   read,
   getUserByEmailWithPasswordAndPassToNext,
-  addUserByEmailWithPasswordAndPassToNext,
   edit,
   add,
   destroy,

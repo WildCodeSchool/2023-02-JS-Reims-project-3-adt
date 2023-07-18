@@ -1,12 +1,12 @@
 create table `user` (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
-  email varchar(80) not null unique,
+  email varchar(80) unique,
   hashedPassword varchar(255),
   firstname varchar(80), 
   lastname varchar(80) ,
   company_name varchar(80),
   phone_number varchar (15), 
-  is_admin varchar(80) not null default(false)
+  is_admin boolean default false
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table category (

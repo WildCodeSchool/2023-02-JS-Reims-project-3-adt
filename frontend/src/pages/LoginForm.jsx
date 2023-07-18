@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import PropTypes from "prop-types";
 import logo from "../assets/ecotourisme.jpeg";
@@ -7,6 +7,8 @@ import logo from "../assets/ecotourisme.jpeg";
 export default function LoginForm({ setUser }) {
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +32,12 @@ export default function LoginForm({ setUser }) {
         console.info("do you see cookie here ?", document.cookie);
 
         setUser(data.user);
+
+        if (data.user.isAdmin) {
+          navigate("/dashboard");
+        } else {
+          navigate("/");
+        }
       });
   };
 
@@ -49,9 +57,9 @@ export default function LoginForm({ setUser }) {
           </div>
 
           <div className="btn">
-            <Link to="/dashboard" className="loginButton">
+            <button type="submit" className="loginButton">
               Se connecter
-            </Link>
+            </button>
           </div>
         </form>
       </div>
