@@ -47,7 +47,7 @@ const sendToken = (req, res) => {
     httpOnly: true, // try false, and console.log(document.cookie) in frontend
   });
 
-  res.send({
+  res.json({
     user: {
       id: req.user.id,
       email: req.user.email,

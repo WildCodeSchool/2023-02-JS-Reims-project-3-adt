@@ -1,14 +1,15 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
-import PropTypes from "prop-types";
 import logo from "../assets/ecotourisme.jpeg";
+import { useAuth } from "../contexts/AuthContext";
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const navigate = useNavigate();
+  const { setToken } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,8 +31,7 @@ export default function LoginForm({ setUser }) {
       .then((response) => response.json())
       .then((data) => {
         console.info("do you see cookie here ?", document.cookie);
-
-        setUser(data.user);
+        setToken(data.token);
 
         if (data.user.isAdmin) {
           navigate("/dashboard");
@@ -66,7 +66,3 @@ export default function LoginForm({ setUser }) {
     </div>
   );
 }
-
-LoginForm.propTypes = {
-  setUser: PropTypes.func.isRequired,
-};

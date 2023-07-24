@@ -2,13 +2,15 @@ import { useRef } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
+import { useAuth } from "../contexts/AuthContext";
 
-const user = { id: 1 };
+// const user = { id: 1 };
 
 function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   return (
