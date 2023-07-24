@@ -13,7 +13,6 @@ function Question() {
   const { questions, setQuestions, updateQuestionResponse } =
     useContext(QuestionContext);
 
-  /* function button */
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
