@@ -29,12 +29,13 @@ function Question() {
     const knownCategory = questions.find(
       (question) => question.categoryId === parseInt(categoryId, 10)
     );
+
     if (!knownCategory) {
       axios
         .get(
           `${
             import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/categories/${categoryId}/questions`
+          }/questions`
         )
         .then((response) => {
           setQuestions([...questions, ...response.data]);
@@ -43,7 +44,27 @@ function Question() {
           console.error(error);
         });
     }
-  }, [categoryId]);
+  }, []);
+
+  // useEffect(() => {
+  //   const knownCategory = questions.find(
+  //     (question) => question.categoryId === parseInt(categoryId, 10)
+  //   );
+  //   if (!knownCategory) {
+  //     axios
+  //       .get(
+  //         `${
+  //           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+  //         }/categories/${categoryId}/questions`
+  //       )
+  //       .then((response) => {
+  //         setQuestions([...questions, ...response.data]);
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //       });
+  //   }
+  // }, []);
 
   const mandatoryQuestions = questions.filter(
     (question) => question.mandatory_level === "Obligatoire"

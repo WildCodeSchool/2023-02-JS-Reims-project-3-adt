@@ -69,3 +69,10 @@
   border-style: outset;
   font-size: 12px;
 }
+.test {
+  width: 10%;
+  background-color: hsla(113, 35%, 34%, 0.792);
+  border: none;
+  padding: 0.5rem;
+  color: white;
+}

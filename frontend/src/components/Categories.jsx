@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import PropTypes from "prop-types";
 import "./Categories.css";
 
-function Categories({ currentCategoryId, setCurrentCategoryId }) {
+function Categories() {
   const [categories, setCategories] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
     axios
@@ -30,12 +30,11 @@ function Categories({ currentCategoryId, setCurrentCategoryId }) {
           <Link
             key={category.id}
             to={`/categories/${category.id}`}
-            onClick={() => setCurrentCategoryId(category.id)}
             className="category-link"
           >
             <figure
               className={`categoryList ${
-                category.id === currentCategoryId ? "active" : ""
+                category.id === parseInt(categoryId, 10) && "active"
               }`}
             >
               <img
@@ -52,8 +51,5 @@ function Categories({ currentCategoryId, setCurrentCategoryId }) {
     </section>
   );
 }
-Categories.propTypes = {
-  currentCategoryId: PropTypes.number.isRequired,
-  setCurrentCategoryId: PropTypes.func.isRequired,
-};
+
 export default Categories;
