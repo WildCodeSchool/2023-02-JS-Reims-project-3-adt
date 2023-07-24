@@ -1,0 +1,61 @@
+.sidebar {
+  height: 100%;
+  width: 300px;
+  background-color: blue;
+}
+.navbar {
+  height: 7rem;
+  background-color: rgb(216, 15, 15);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 60px;
+  color: black;
+}
+.logoAdmin {
+  display: flex;
+  align-items: center;
+}
+
+.logoAdt {
+  height: 6rem;
+  top: 10px;
+  padding-top: 0.5rem;
+}
+.sidebar-container {
+  background-color: hsla(113, 35%, 34%, 0.792);
+  color: white;
+  width: 230px;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 2rem;
+}
+
+.sidebar-container::-webkit-scrollbar {
+  display: none;
+}
+.nav-option {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  width: 250px;
+  font-size: 15px;
+}
+
+.nav-option:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* 
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.navbar ul li {
+  cursor: pointer;
+} */

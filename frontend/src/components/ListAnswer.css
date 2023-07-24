@@ -1,0 +1,23 @@
+.history {
+  padding: 2rem;
+  width: 50%;
+}
+.table {
+  border-spacing: 0;
+  overflow: hidden;
+  width: 80%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+.table1 {
+  color: black;
+  background-color: aqua;
+}
+.table-row,
+.table-column {
+  padding: 10px;
+  border: 1px solid #090909;
+}
+.table1:nth-child(even) {
+  background-color: #f2f2f2;
+}

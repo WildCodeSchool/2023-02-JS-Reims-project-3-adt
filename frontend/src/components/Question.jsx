@@ -163,7 +163,9 @@ function Question() {
             <div className={`questionList questionText${question.id}`}>
               <p className="questionContent">
                 {question.content}
-                {question.tooltip_content != null && <AiOutlineInfoCircle />}
+                {question.tooltip_content != null && (
+                  <AiOutlineInfoCircle color="blue" />
+                )}
               </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>

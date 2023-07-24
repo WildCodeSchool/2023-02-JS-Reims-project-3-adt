@@ -48,11 +48,11 @@ export default function LoginForm() {
         <h1 className="connection">Connectez-vous</h1>
         <form onSubmit={handleSubmit}>
           <div className="login-form-input">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email &#42;</label>
             <input type="text" id="email" ref={emailRef} />
           </div>
           <div className="login-form-input">
-            <label htmlFor="password">Mot de passe</label>
+            <label htmlFor="password">Mot de passe &#42;</label>
             <input type="password" id="password" ref={passwordRef} />
           </div>
 

@@ -15,26 +15,37 @@ function NotEligibleScore() {
   const essentialQuestions = questions.filter(
     (question) => question.mandatory_level === "Essentiel"
   );
-
+  const optionQuestions = questions.filter(
+    (question) => question.mandatory_level === "Optionnel"
+  );
   return (
     <div className="score">
       <NavbarUser />
       <section className="title-score">
         <h1>Merci d’avoir fait votre auto-évaluation.</h1>
         <p>Votre résultat est le suivant </p>
-        <p>
-          Pourcentage des questions répondues (Obligatoire) :{" "}
-          {pourcentage(mandatoryQuestions)}%
-        </p>
-        <p>
-          Pourcentage des questions répondues (Essentiel) :{" "}
-          {pourcentage(essentialQuestions)}%
-        </p>
+        <ul>
+          <li>
+            Pourcentage des questions répondues (Obligatoire) :{" "}
+            <span className="score1">{pourcentage(mandatoryQuestions)}%</span>
+          </li>
+          <li>
+            Pourcentage des questions répondues (Essentiel) :
+            <span className="score2"> {pourcentage(essentialQuestions)}%</span>
+          </li>
+          <li>
+            Pourcentage des questions répondues (Optionnel) :{" "}
+            <span className="score3">{pourcentage(optionQuestions)}%</span>
+          </li>
+        </ul>
+        <h3 className="case-two">
+          Malheureseument vous n'êtes pas eligible au label Ecotourisme et
+          maintenant ⁉️
+        </h3>
         <p>
           Vous êtes encore en chemin. Saviez-vous que le plus difficile dans la
           transition est justement de vouloir l’enclencher ?
         </p>
-        <h3>Et maintenant ⁉️</h3>
         <p>
           Nous vous invitons à partager ce résultat avec le conseiller
           écotourisme de l’Agence de Développement Touristique en nous laissant

@@ -14,9 +14,11 @@ function Register() {
   const navigate = useNavigate();
 
   return (
-    <div className="background">
+    <div className="backgrounds">
       <div className="register">
-        <img src={logo} className="logoRegister" alt="" />
+        <Link to="/">
+          <img src={logo} className="logoRegister" alt="" />
+        </Link>
         <h1 className="creationaccount">Créez votre compte</h1>
         <form
           onSubmit={(event) => {
@@ -54,7 +56,8 @@ function Register() {
               type="text"
               id="email"
               name="email"
-              placeholder="Votre adresse mél"
+              placeholder="adresse mail"
+              className="register-input"
             />
           </div>
           <div className="register-form-input">
@@ -64,7 +67,8 @@ function Register() {
               type="password"
               id="password"
               name="password"
-              placeholder="Votre mot de passe"
+              placeholder="mot de passe"
+              className="register-input"
             />
           </div>
           <button type="submit" className="buttonRegister">
