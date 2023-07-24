@@ -20,6 +20,16 @@ class AnswerManager extends AbstractManager {
       WHERE answer.response IS NOT NULL
     `);
   }
+
+  getAllByUserId(userId) {
+    return this.database.query(
+      `SELECT answer.*, question.*
+      FROM ${this.table}
+      JOIN question ON answer.question_id = question.id
+      WHERE answer.user_id = ?`,
+      [userId]
+    );
+  }
 }
 
 module.exports = AnswerManager;

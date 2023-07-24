@@ -32,9 +32,22 @@ const getAllByCategory = (req, res) => {
   const { categoryId } = req.params;
 
   models.question
-    .getAllByCategory(categoryId) // Utilisation de la méthode correcte getAllByCategory
+    .getAllByCategory(categoryId)
     .then((questions) => {
       res.json(questions);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+const getUserResponses = (req, res) => {
+  const { userId } = req.params;
+
+  models.response
+    .getResponsesByUser(userId)
+    .then((responses) => {
+      res.json(responses);
     })
     .catch((error) => {
       console.error(error);
@@ -46,4 +59,5 @@ module.exports = {
   browseByCategory,
   addByCategory,
   getAllByCategory,
+  getUserResponses,
 };

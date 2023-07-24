@@ -20,6 +20,7 @@ router.get(
   questionControllers.browseByCategory
 );
 router.get("/categories", categoryControllers.browse);
+router.get("/users/:userId/answers", answerControllers.getUserResponses);
 router.get("/answers", answerControllers.findAllWithQuestionDetails);
 
 router.post(

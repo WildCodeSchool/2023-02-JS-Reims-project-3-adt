@@ -32,6 +32,12 @@ class QuestionManager extends AbstractManager {
       [mandatoryLevel]
     );
   }
+
+  getResponsesByUser = (userId) => {
+    return this.database.query(`SELECT * FROM response WHERE user_id = ?`, [
+      userId,
+    ]);
+  };
 }
 
 module.exports = QuestionManager;
