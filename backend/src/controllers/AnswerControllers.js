@@ -7,7 +7,6 @@ const createAnswer = async (req, res) => {
     const userId = result.insertId;
 
     const { questions } = req.body;
-
     await questions.forEach(async (question) => {
       await models.answer.insert({
         user_id: userId,

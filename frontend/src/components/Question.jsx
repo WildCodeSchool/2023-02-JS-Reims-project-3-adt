@@ -5,17 +5,20 @@ import { Tooltip } from "react-tooltip";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
+import { useAuth } from "../contexts/AuthContext";
 import pourcentage from "../services/pourcentage";
 
-const setUser = (newUser) => {
-  console.info(newUser);
-};
+// const setUser = (newUser) => {
+//   console.info(typeof newUser.id);
+// };
 
 function Question() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
   const { questions, setQuestions, updateQuestionResponse } =
     useContext(QuestionContext);
+
+  const { setUser } = useAuth();
 
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
