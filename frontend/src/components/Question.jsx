@@ -151,7 +151,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Atteint"
                 onChange={() => updateQuestionResponse(question, "Atteint")}
-                checked={question.response === "Atteint"}
+                checked={!question.response || question.response === "Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
@@ -187,9 +187,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Ne sais pas"
                 onChange={() => updateQuestionResponse(question, "Ne sais pas")}
-                checked={
-                  !question.response || question.response === "Ne sais pas"
-                }
+                checked={question.response === "Ne sais pas"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Ne sais pas
