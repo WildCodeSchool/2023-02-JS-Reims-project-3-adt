@@ -1,7 +1,7 @@
 .nav {
   height: 100rem;
   width: 10rem;
-  background: linear-gradient(45deg, #1a201f, #325b3b);
+  background: linear-gradient(45deg, #1a201f, #3f7438);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,12 +38,14 @@
   margin-bottom: 2em;
   background-color: white;
 }
+
 .logoUser img {
   height: 3em;
   top: 0;
   z-index: 10;
   padding: 1em;
 }
+
 /*NAVBAR ADMIN*/
 .Navadmin {
   align-items: center;
@@ -52,25 +54,52 @@
   width: 100%;
   height: 5em;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #1a201f;
   margin-bottom: 2em;
   background-color: white;
+  margin: 0;
 }
+
 .Logoadmin {
   height: 4rem;
   border-radius: 1rem 1rem;
   margin: 1rem;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 1);
+  border-color: #0000ff;
 }
+
 .btnProfil {
   justify-content: center;
   align-items: center;
   display: flex;
-  border-radius: 37%;
+  border-radius: 3rem;
   font-size: 1.4rem;
   height: 2em;
   width: 4em;
+  background-color: #aedbb8;
+  border-color: #0000ff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 1);
 }
-.sidebar {
+
+.btnSidebar {
+  background: #3f7438;
+  width: fit-content;
+  padding: 3rem;
+  border-right: 1px solid #1a201f;
+  background: linear-gradient(350deg, #3f7438, #1a201f);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btnSidebar button {
   display: flex;
   flex-direction: column;
-  background-color: red;
+  align-items: center;
+  border-radius: 3rem;
+  background-color: #aedbb8;
+  line-height: 2rem;
+  font-size: large;
+  width: 10rem;
+  margin-top: 10rem;
+  border-color: #0000ff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 1);
 }

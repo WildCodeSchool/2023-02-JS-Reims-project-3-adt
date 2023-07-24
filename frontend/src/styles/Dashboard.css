@@ -1,7 +1,9 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
+  background-color: linear-gradient(45deg, #3F7438, #1a201f);
 }
+
 .Navadmin {
   height: 8rem;
   background: linear-gradient(45deg, #1a201f, #325b3b);
@@ -10,8 +12,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .logo {
   height: 4rem;
   border-radius: 1rem 1rem;
   margin: 1rem;
-} */
+}
