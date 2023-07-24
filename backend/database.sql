@@ -1,13 +1,12 @@
 create table `user` (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
-  username varchar(80) not null unique,
-  email varchar(80) not null unique,
-  password varchar(80) not null,
-  firstname varchar(80) not null, 
-  lastname varchar(80) not null,
-  company_name varchar(80) not null,
-  phone_number varchar (15) not null, 
-  is_admin varchar(80) not null default(false)
+  email varchar(80) unique,
+  hashedPassword varchar(255),
+  firstname varchar(80), 
+  lastname varchar(80) ,
+  company_name varchar(80),
+  phone_number varchar (15), 
+  is_admin boolean default false
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table category (
@@ -82,9 +81,9 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 
   ("Conception du bâtiment avec un niveau de performance élevé : Haute Qualité Environnementale, bioclimatique, BBC, bâtiment passif ou à énergie positive.", "Optionnel", 1, NULL),
     
-  ("Matériaux d'isolation biosourcés", "Optionnel", 1, "Les matériaux d'isoaltion biosourcés peuvent être d'origine végétale (laine de bois, laine de chanvre, etc.), animale (laine de mouton, etc) ou issus du recyclage (textile p.ex.)."),
+  ("Matériaux d'isolation biosourcés", "Optionnel", 1, "Les matériaux d'isolation biosourcés peuvent être d'origine végétale (laine de bois, laine de chanvre, etc.), animale (laine de mouton, etc) ou issus du recyclage (textile p.ex.)."),
 
-  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "Obligatoire", 2, "Seules les consommations liées à l'activité touristiques doivent être comptabilisées."),
+  ("Relevé mensuel de la consommation d'eau avec un suivi dans le temps", "Obligatoire", 2, "Seules les consommations liées à l'activité touristique doivent être comptabilisées."),
  
   ("Robinets économes en eau : mousseurs, mitigeurs avec double commande pour les lavabos, évier de cuisine et baignoires, robinet thermostatique pour les douches.", "Obligatoire", 2, "Au moins 75%  des points de puisage intérieurs sont concernés."),
  
@@ -166,7 +165,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   user_id int unsigned not null,
-  CONSTRAINT fk_user_id
+  CONSTRAINT fk_user_survey_user
   FOREIGN KEY (user_id)
   REFERENCES user(id),
   category_id int unsigned not null,
@@ -175,3 +174,17 @@ create table user_survey (
   REFERENCES category(id),
   score int unsigned not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE answer (
+  id INT(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_answer_user
+  FOREIGN KEY (user_id)
+  REFERENCES user(id),
+  question_id INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_question_id
+  FOREIGN KEY (question_id)
+  REFERENCES question(id),
+  response enum("Atteint", "Non atteint", "Non Concerné", "Ne sais pas") not null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
