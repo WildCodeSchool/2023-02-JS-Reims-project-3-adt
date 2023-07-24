@@ -9,6 +9,7 @@ import Legal from "./pages/Legal";
 import EligibleScore from "./components/EligibleScore";
 import UnknownScore from "./components/UnknownScore";
 import NotEligibleScore from "./components/NotEligibleScore";
+import Dashboard from "./pages/Dashboard";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/resultat/inconnu" element={<UnknownScore />} />
           <Route path="/resultat/non" element={<NotEligibleScore />} />
           <Route path="/resultat/oui" element={<EligibleScore />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </QuestionProvider>

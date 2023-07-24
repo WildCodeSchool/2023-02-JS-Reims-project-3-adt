@@ -1,7 +1,14 @@
-import Navbar from "../components/Navbar";
+import Headeradmin from "../components/HeaderAdmin";
+import Sidebar from "../components/Sidebar";
+import "../styles/Dashboard.css";
 
 function Dashboard() {
-  return <Navbar />;
+  return (
+    <>
+      <Headeradmin />
+      <Sidebar />{" "}
+    </>
+  );
 }
 
 export default Dashboard;
