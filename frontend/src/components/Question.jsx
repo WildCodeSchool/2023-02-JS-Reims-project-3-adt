@@ -114,8 +114,19 @@ function Question() {
       });
   };
 
+  const test = () => {
+    for (let i = 0; i < questions.length; i += 1) {
+      // if (questions[i].mandatory_level === "Obligatoire") {
+      questions[i].response = "Atteint";
+
+      // console.log(i);
+    }
+  };
   return (
     <section className="surveyQuestion">
+      <button type="button" onClick={test} className="test">
+        Cochez
+      </button>
       <div className="small-container" />
       {questions
         .filter((question) => {

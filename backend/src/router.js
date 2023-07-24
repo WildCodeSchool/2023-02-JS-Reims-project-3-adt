@@ -13,7 +13,7 @@ router.delete("/users/:id", hashPassword, userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
 const categoryControllers = require("./controllers/categoryControllers");
-const answerControllers = require("./controllers/AnswerControllers");
+const answerControllers = require("./controllers/answerControllers");
 
 router.get(
   "/categories/:categoryId/questions",
