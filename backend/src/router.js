@@ -13,6 +13,7 @@ router.delete("/users/:id", hashPassword, userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
 const categoryControllers = require("./controllers/categoryControllers");
+const answerControllers = require("./controllers/AnswerControllers");
 
 router.get(
   "/categories/:categoryId/questions",
@@ -20,11 +21,13 @@ router.get(
 );
 router.get("/categories", categoryControllers.browse);
 router.get("/users/:userId/responses", questionControllers.getUserResponses);
+router.get("/answers", answerControllers.findAllWithQuestionDetails);
 
 router.post(
   "/categories/:categoryId/questions",
   questionControllers.addByCategory
 );
+router.post("/answers", answerControllers.createAnswer);
 
 //    USERS
 

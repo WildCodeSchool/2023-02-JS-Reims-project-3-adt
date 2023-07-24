@@ -7,6 +7,10 @@ import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
 import pourcentage from "../services/pourcentage";
 
+const setUser = (newUser) => {
+  console.info(newUser);
+};
+
 function Question() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
@@ -91,6 +95,23 @@ function Question() {
     }
 
     return "/resultat/oui";
+  };
+
+  const storeresponse = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/answers`,
+        { questions }
+      )
+      .then((reponse) => {
+        setUser({ id: reponse.data.userId });
+        navigate(scoreToNextPage());
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -191,7 +212,9 @@ function Question() {
           <button
             type="button"
             className="questionBtn"
-            onClick={() => navigate(scoreToNextPage())}
+            onClick={() => {
+              storeresponse();
+            }}
           >
             Terminer
           </button>
