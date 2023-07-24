@@ -54,3 +54,12 @@ h3 {
 .case-three {
   color: blue;
 }
+.score1 {
+  color: blue;
+}
+.score2 {
+  color: #3f7438;
+}
+.score3 {
+  color: hsl(181, 35%, 46%);
+}

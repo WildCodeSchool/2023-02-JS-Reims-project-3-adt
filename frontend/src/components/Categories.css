@@ -16,7 +16,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   width: 80%;
 }
 figure.categoryList {

@@ -27,27 +27,26 @@ function NotEligibleScore() {
         <p>Votre résultat : </p>
         <ul>
           <li>
-            {" "}
             Pourcentage des questions répondues (Obligatoire) :{" "}
-            {pourcentage(mandatoryQuestions)}%
+            <span className="score1">{pourcentage(mandatoryQuestions)}%</span>
           </li>
           <li>
-            {" "}
-            Pourcentage des questions répondues (Essentiel) :{" "}
-            {pourcentage(essentialQuestions)}%
+            Pourcentage des questions répondues (Essentiel) :
+            <span className="score2"> {pourcentage(essentialQuestions)}%</span>
           </li>
           <li>
-            {" "}
             Pourcentage des questions répondues (Optionnel) :{" "}
-            {pourcentage(optionQuestions)}%
+            <span className="score3">{pourcentage(optionQuestions)}%</span>
           </li>
         </ul>
-
+        <h3>
+          Malheureseument vous n'êtes pas eligible au label Ecotourisme et
+          maintenant ⁉️
+        </h3>
         <p>
           Vous êtes encore en chemin. Saviez-vous que le plus difficile dans la
           transition est justement de vouloir l’enclencher ?
         </p>
-        <h3>Et maintenant ⁉️</h3>
         <p>
           Nous vous invitons à partager ce résultat avec le conseiller
           écotourisme de l’Agence de Développement Touristique en nous laissant

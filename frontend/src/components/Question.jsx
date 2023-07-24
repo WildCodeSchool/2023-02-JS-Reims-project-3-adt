@@ -97,15 +97,19 @@ function Question() {
     return "/resultat/oui";
   };
 
-  // const test = () => {
-  //   for (let i = 0; i < questions.length; i + 1)
-  //     questions[i].response = "Atteint";
-  // };
+  const test = () => {
+    for (let i = 0; i < questions.length; i += 1) {
+      // if (questions[i].mandatory_level === "Obligatoire") {
+      questions[i].response = "Atteint";
+
+      // console.log(i);
+    }
+  };
   return (
     <section className="surveyQuestion">
-      {/* <button type="button" onClick={test}>
-        test
-      </button> */}
+      <button type="button" onClick={test} className="test">
+        Cochez
+      </button>
       <div className="small-container" />
       {questions
         .filter(
@@ -141,7 +145,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Atteint"
                 onChange={() => updateQuestionResponse(question, "Atteint")}
-                checked={question.response === "Atteint"}
+                checked={!question.response || question.response === "Atteint"}
               />
               <label
                 htmlFor={`answer${question.id}-atteint`}
@@ -186,9 +190,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Ne sais pas"
                 onChange={() => updateQuestionResponse(question, "Ne sais pas")}
-                checked={
-                  !question.response || question.response === "Ne sais pas"
-                }
+                checked={question.response === "Ne sais pas"}
               />
               <label
                 htmlFor={`answer${question.id}-ne-sais-pas`}

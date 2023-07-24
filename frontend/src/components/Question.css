@@ -73,3 +73,14 @@
   font-size: 12px;
   width: fit-content;
 }
+.test {
+  width: 10%;
+  justify-content: flex-end;
+  background-color: hsla(113, 35%, 34%, 0.728);
+  padding: 0.5em;
+  color: white;
+  font-size: 9px;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+}

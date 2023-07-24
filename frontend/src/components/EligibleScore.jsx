@@ -34,10 +34,6 @@ function EligibleScore() {
       divisor
     ).toFixed();
   };
-  const numMandatoryQuestions = mandatoryQuestions.length;
-  const numEssentialQuestions = essentialQuestions.length;
-  const numOptionQuestions = optionQuestions.length;
-  const numNonConcerneQuestions = questions.length;
 
   return (
     <div className="score">
@@ -47,43 +43,19 @@ function EligibleScore() {
         <p>Votre résultat : </p>
         <ul>
           <li>
-            {numMandatoryQuestions}/
-            {numMandatoryQuestions +
-              numEssentialQuestions +
-              numOptionQuestions -
-              numNonConcerneQuestions}{" "}
-            QUESTIONS OBLIGATOIRES
-          </li>
-          <li>
-            {numEssentialQuestions}/
-            {numMandatoryQuestions +
-              numEssentialQuestions +
-              numOptionQuestions -
-              numNonConcerneQuestions}{" "}
-            QUESTIONS OBLIGATOIRES
-          </li>
-          <li>
-            {numOptionQuestions}/
-            {numMandatoryQuestions +
-              numEssentialQuestions +
-              numOptionQuestions -
-              numNonConcerneQuestions}{" "}
-            QUESTIONS OBLIGATOIRES
-          </li>
-          <li>
             Pourcentage des questions répondues (Obligatoire) :{" "}
-            {pourcentage(mandatoryQuestions)}%
+            <span className="score1">{pourcentage(mandatoryQuestions)}%</span>
           </li>
           <li>
-            Pourcentage des questions répondues (Essentiel) :{" "}
-            {pourcentage(essentialQuestions)}%
+            Pourcentage des questions répondues (Essentiel) :
+            <span className="score2"> {pourcentage(essentialQuestions)}%</span>
           </li>
           <li>
             Pourcentage des questions répondues (Optionnel) :{" "}
-            {pourcentage(optionQuestions)}%
+            <span className="score3">{pourcentage(optionQuestions)}%</span>
           </li>
         </ul>
-        <h2>Félicitations 🎉, </h2>
+        <h2> 🎉🎉🎉 FÉLICITATIONS 🎉🎉🎉, </h2>
         <p>
           Vous avez engagé la transition vers un modèle d’activité plus
           responsable 🌱
