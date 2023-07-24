@@ -8,7 +8,7 @@ const { hashPassword, verifyPassword, sendToken } = require("./services/auth");
 router.get("/users", userControllers.browse);
 router.post("/users", hashPassword, userControllers.add);
 router.get("/users/:id", userControllers.read);
-router.put("/users/:id", userControllers.edit);
+router.put("/users/:id", hashPassword, userControllers.edit);
 router.delete("/users/:id", hashPassword, userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");
@@ -20,7 +20,8 @@ router.get(
   questionControllers.browseByCategory
 );
 router.get("/categories", categoryControllers.browse);
-router.get("/questions", categoryControllers.browse);
+router.get("/questions", questionControllers.browse);
+router.get("/users/:userId/answers", answerControllers.getUserResponses);
 router.get("/answers", answerControllers.findAllWithQuestionDetails);
 
 router.post(

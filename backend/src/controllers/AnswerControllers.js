@@ -7,7 +7,6 @@ const createAnswer = async (req, res) => {
     const userId = result.insertId;
 
     const { questions } = req.body;
-
     await questions.forEach(async (question) => {
       await models.answer.insert({
         user_id: userId,
@@ -36,7 +35,30 @@ const findAllWithQuestionDetails = (req, res) => {
     });
 };
 
+const getUserResponses = (req, res) => {
+  const { userId } = req.params;
+
+  models.answer
+    .getAllByUserId(userId)
+    .then(([userQuestionsAndResponses]) => {
+      const userResponses = userQuestionsAndResponses.map((item) => {
+        return {
+          questionId: item.question_id,
+          questionContent: item.content,
+          response: item.response,
+        };
+      });
+
+      res.json(userResponses);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   createAnswer,
   findAllWithQuestionDetails,
+  getUserResponses,
 };
