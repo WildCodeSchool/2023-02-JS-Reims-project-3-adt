@@ -132,6 +132,7 @@ function Question() {
               </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
+
             {question.tooltip_content != null && (
               <Tooltip
                 className="tooltip"
