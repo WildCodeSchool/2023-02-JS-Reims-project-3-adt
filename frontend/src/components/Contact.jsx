@@ -5,7 +5,7 @@ function Contact() {
   return (
     <div className="btn-container">
       <div className="small-contact">
-        <Link to="/registeruser" className="contact-text">
+        <Link to="/register" className="contact-text">
           Je voudrais être contacté
         </Link>
       </div>
