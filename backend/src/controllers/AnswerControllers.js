@@ -36,7 +36,30 @@ const findAllWithQuestionDetails = (req, res) => {
     });
 };
 
+const getUserResponses = (req, res) => {
+  const { userId } = req.params;
+
+  models.answer
+    .getAllByUserId(userId)
+    .then(([userQuestionsAndResponses]) => {
+      const userResponses = userQuestionsAndResponses.map((item) => {
+        return {
+          questionId: item.question_id,
+          questionContent: item.content,
+          response: item.response,
+        };
+      });
+
+      res.json(userResponses);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   createAnswer,
   findAllWithQuestionDetails,
+  getUserResponses,
 };
