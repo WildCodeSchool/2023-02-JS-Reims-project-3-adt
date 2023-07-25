@@ -165,7 +165,7 @@ INSERT INTO question (content, mandatory_level, category_id, tooltip_content) VA
 create table user_survey (
   id int(11) unsigned primary key not null AUTO_INCREMENT,
   user_id int unsigned not null,
-  CONSTRAINT fk_user_id
+  CONSTRAINT fk_user_survey_user
   FOREIGN KEY (user_id)
   REFERENCES user(id),
   category_id int unsigned not null,
@@ -174,3 +174,17 @@ create table user_survey (
   REFERENCES category(id),
   score int unsigned not null
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE answer (
+  id INT(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_answer_user
+  FOREIGN KEY (user_id)
+  REFERENCES user(id),
+  question_id INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_question_id
+  FOREIGN KEY (question_id)
+  REFERENCES question(id),
+  response enum("Atteint", "Non atteint", "Non Concerné", "Ne sais pas") not null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

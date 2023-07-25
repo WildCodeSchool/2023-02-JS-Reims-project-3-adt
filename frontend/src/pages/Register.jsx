@@ -2,11 +2,15 @@ import { useRef } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/ecotourisme.jpeg";
+import { useAuth } from "../contexts/AuthContext";
+
+// const user = { id: 1 };
 
 function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -21,9 +25,9 @@ function Register() {
             fetch(
               `${
                 import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
-              }/users`,
+              }/users/${user.id}`,
               {
-                method: "post",
+                method: "put",
                 headers: {
                   "content-type": "application/json",
                 },

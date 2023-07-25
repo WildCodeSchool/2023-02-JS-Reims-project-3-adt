@@ -5,7 +5,12 @@ import { Tooltip } from "react-tooltip";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Question.css";
 import { QuestionContext } from "../contexts/QuestionContext";
+import { useAuth } from "../contexts/AuthContext";
 import pourcentage from "../services/pourcentage";
+
+// const setUser = (newUser) => {
+//   console.info(typeof newUser.id);
+// };
 
 function Question() {
   const { categoryId } = useParams();
@@ -13,7 +18,8 @@ function Question() {
   const { questions, setQuestions, updateQuestionResponse } =
     useContext(QuestionContext);
 
-  /* function button */
+  const { setUser } = useAuth();
+
   const handleNextPage = () => {
     navigate(`/categories/${parseInt(categoryId, 10) + 1}`);
   };
@@ -92,6 +98,23 @@ function Question() {
     }
 
     return "/resultat/oui";
+  };
+
+  const storeresponse = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/answers`,
+        { questions }
+      )
+      .then((reponse) => {
+        setUser({ id: reponse.data.userId });
+        navigate(scoreToNextPage());
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -192,7 +215,9 @@ function Question() {
           <button
             type="button"
             className="questionBtn"
-            onClick={() => navigate(scoreToNextPage())}
+            onClick={() => {
+              storeresponse();
+            }}
           >
             Terminer
           </button>
