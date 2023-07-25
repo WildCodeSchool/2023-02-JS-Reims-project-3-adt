@@ -1,16 +1,41 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: linear-gradient(45deg, #3F7438, #1a201f);
+  background-color: linear-gradient(45deg, #3f7438, #1a201f);
+}
+
+.dashboard-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "a a"
+    "b c"
+    "b d"
+    "e e";
 }
 
 .Navadmin {
-  height: 8rem;
+  grid-area: a;
   background: linear-gradient(45deg, #1a201f, #325b3b);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.btnSidebar {
+  grid-area: b;
+}
+
+.filters {
+  grid-area: c;
+}
+
+footer {
+  grid-area: e;
 }
 
 .logo {
