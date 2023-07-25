@@ -8,7 +8,7 @@ const { hashPassword, verifyPassword, sendToken } = require("./services/auth");
 router.get("/users", userControllers.browse);
 router.post("/users", hashPassword, userControllers.add);
 router.get("/users/:id", userControllers.read);
-router.put("/users/:id", userControllers.edit);
+router.put("/users/:id", hashPassword, userControllers.edit);
 router.delete("/users/:id", hashPassword, userControllers.destroy);
 
 const questionControllers = require("./controllers/questionControllers");

@@ -29,7 +29,8 @@ function Answer() {
       <ul>
         {userResponses.map((response) => (
           <li key={response.id}>
-            Question : {response.question.content} | Réponse : {response.answer}
+            Question : {response.questionContent} | Réponse :{" "}
+            {response.response}
           </li>
         ))}
       </ul>

@@ -9,27 +9,32 @@ import Legal from "./pages/Legal";
 import EligibleScore from "./components/EligibleScore";
 import UnknownScore from "./components/UnknownScore";
 import NotEligibleScore from "./components/NotEligibleScore";
-import Answer from "./components/Question_response";
+import { AuthContextProvider } from "./contexts/AuthContext";
+import Dashboard from "./pages/Dashboard";
+import Answer from "./pages/Answer";
 
 import "./App.css";
 
 function App() {
   return (
-    <QuestionProvider>
-      <div className="App">
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/" element={<HomeUser />} />
-          <Route path="/categories/:categoryId" element={<Survey />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/resultat/inconnu" element={<UnknownScore />} />
-          <Route path="/resultat/non" element={<NotEligibleScore />} />
-          <Route path="/resultat/oui" element={<EligibleScore />} />
-          <Route path="/result" element={<Answer />} />
-        </Routes>
-      </div>
-    </QuestionProvider>
+    <AuthContextProvider>
+      <QuestionProvider>
+        <div className="App">
+          <Routes>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/" element={<HomeUser />} />
+            <Route path="/categories/:categoryId" element={<Survey />} />
+            <Route path="/legal" element={<Legal />} />
+            <Route path="/resultat/inconnu" element={<UnknownScore />} />
+            <Route path="/resultat/non" element={<NotEligibleScore />} />
+            <Route path="/resultat/oui" element={<EligibleScore />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/result/:userId" element={<Answer />} />
+          </Routes>
+        </div>
+      </QuestionProvider>
+    </AuthContextProvider>
   );
 }
 
