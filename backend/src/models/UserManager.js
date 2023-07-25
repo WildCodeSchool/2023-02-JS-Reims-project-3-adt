@@ -17,14 +17,14 @@ class UserManager extends AbstractManager {
 
   find(id) {
     return this.database.query(
-      `select email, firstname, lastname, company_name, phone_number, is_admin from  ${this.table} where id = ?`,
+      `select id, email, firstname, lastname, company_name, phone_number, is_admin from  ${this.table} where id = ?`,
       [id]
     );
   }
 
   findAll() {
     return this.database.query(
-      `select email, firstname, lastname, company_name, phone_number, is_admin from  ${this.table}`
+      `select id, email, firstname, lastname, company_name, phone_number, is_admin from  ${this.table}`
     );
   }
 

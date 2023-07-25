@@ -1,15 +1,10 @@
 .filters {
   display: flex;
-  width: 71rem;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-left: 16rem;
-  padding: 0.5rem 1.5rem 0.5rem;
+  padding: 1rem;
   background-color: #aedbb8;
-  border-radius: 0.5rem;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); /* Ajoutez ces lignes */
-  position: relative;
-  top: -55em;
 }
 
 .filters select {

@@ -1,9 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
   background-color: linear-gradient(45deg, #3f7438, #1a201f);
 }
-
 .dashboard-wrapper {
   height: 100vh;
   display: grid;
@@ -29,13 +26,20 @@
 .btnSidebar {
   grid-area: b;
 }
-
 .filters {
   grid-area: c;
 }
 
 footer {
   grid-area: e;
+}
+
+.central-area {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: auto;
 }
 
 .logo {

@@ -9,6 +9,9 @@ import { useAuth } from "../contexts/AuthContext";
 function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const firstnameRef = useRef();
+  const lastnameRef = useRef();
+  const phonenumberRef = useRef();
 
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -34,6 +37,9 @@ function Register() {
                 body: JSON.stringify({
                   email: emailRef.current.value,
                   password: passwordRef.current.value,
+                  lastname: lastnameRef.current.value,
+                  firstname: firstnameRef.current.value,
+                  phone_number: phonenumberRef.current.value,
                 }),
               }
             ).then((response) => {
@@ -65,6 +71,37 @@ function Register() {
               id="password"
               name="password"
               placeholder="Votre mot de passe"
+            />
+          </div>
+          <div className="register-form-input">
+            <label htmlFor="firstname">Prénom &#42;</label>
+            <input
+              ref={firstnameRef}
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="Votre Prénom"
+            />
+          </div>
+
+          <div className="register-form-input">
+            <label htmlFor="lastname">Nom &#42;</label>
+            <input
+              ref={lastnameRef}
+              type="text"
+              id="lastname"
+              name="lastname"
+              placeholder="Votre Nom"
+            />
+          </div>
+          <div className="register-form-input">
+            <label htmlFor="phone_number">Numéro de téléphone &#42;</label>
+            <input
+              ref={phonenumberRef}
+              type="text"
+              id="phone_number"
+              name="phone_number"
+              placeholder="Votre Numéro de téléphone"
             />
           </div>
           <button type="submit" className="buttonRegister">

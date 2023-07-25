@@ -24,8 +24,10 @@ function Answer() {
   }, [userId]);
 
   return (
-    <div>
-      <h2>Réponses de l'utilisateur:{userId}</h2>
+    <div style={{ overflow: "auto" }}>
+      <h2>
+        Réponses de l'utilisateur : {userResponses[0] && userResponses[0].email}
+      </h2>
       <ul>
         {userResponses.map((response) => (
           <li key={response.id}>

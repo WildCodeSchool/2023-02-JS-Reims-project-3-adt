@@ -2,13 +2,10 @@ footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 1em 0 0 1em;
-  bottom: 0;
-  width: 100%;
+  padding: 1rem;
   gap: 2em;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   background-color: white;
-  margin-top: 2em;
 }
 .footer-img {
   height: 7em;

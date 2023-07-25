@@ -46,6 +46,11 @@ const getUserResponses = (req, res) => {
           questionId: item.question_id,
           questionContent: item.content,
           response: item.response,
+          email: item.email,
+          firstname: item.firstname,
+          lastname: item.lastname,
+          company_name: item.company_name,
+          phone_number: item.phone_number,
         };
       });
 
