@@ -11,6 +11,9 @@ import UnknownScore from "./components/UnknownScore";
 import NotEligibleScore from "./components/NotEligibleScore";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import ListAnswer from "./components/ListAnswer";
+import Dashboard from "./pages/Dashboard";
+import Answer from "./pages/Answer";
+
 import "./App.css";
 
 function App() {
@@ -28,6 +31,8 @@ function App() {
             <Route path="/resultat/non" element={<NotEligibleScore />} />
             <Route path="/resultat/oui" element={<EligibleScore />} />
             <Route path="/list" element={<ListAnswer />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/result/:userId" element={<Answer />} />
           </Routes>
         </div>
       </QuestionProvider>
