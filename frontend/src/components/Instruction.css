@@ -7,12 +7,14 @@
   margin: auto;
   gap: 2rem;
   font-size: 16px;
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
   padding: 3em;
   border-radius: 1em;
   border: 2px solid #3f7438;
   background-color: white;
   line-height: 2em;
+  margin-bottom: 2rem;
 }
 .logoInstruction {
   width: 10rem;

@@ -8,12 +8,10 @@ function User() {
   useEffect(() => {
     axios
       .get(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/answers`
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`
       )
       .then((response) => {
-        const uniqueUsers = Array.from(
-          new Set(response.data.map((user) => user.user_id))
-        );
+        const uniqueUsers = response.data.reverse();
 
         setUsers(uniqueUsers);
       })
@@ -23,18 +21,72 @@ function User() {
   }, []);
 
   return (
-    <div>
+    <div className="central-area">
       <h1>Liste des utilisateurs :</h1>
-      <ul>
-        {users.map((userId) => (
-          <li key={userId}>
-            User ID: {userId}
-            <Link to={`/result/${userId}`}>
-              <button type="button">Voir ces réponses</button>
-            </Link>
-          </li>
+      <table>
+        <tr
+          style={{
+            position: "sticky",
+            top: 0,
+            backgroundColor: "white",
+          }}
+        >
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          >
+            Id
+          </td>
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          >
+            Prénom
+          </td>
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          >
+            Nom
+          </td>
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          >
+            Structure
+          </td>
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          />
+        </tr>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.id}</td>
+            <td>{user.firstname}</td>
+            <td>{user.lastname}</td>
+            <td>{user.company_name}</td>
+            <td>
+              <Link to={`/result/${user.id}`}>Voir ses réponses</Link>
+            </td>
+          </tr>
         ))}
-      </ul>
+      </table>
     </div>
   );
 }
