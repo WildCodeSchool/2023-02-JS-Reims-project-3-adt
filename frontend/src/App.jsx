@@ -11,9 +11,7 @@ import UnknownScore from "./components/UnknownScore";
 import NotEligibleScore from "./components/NotEligibleScore";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import ListAnswer from "./components/ListAnswer";
-
 import "./App.css";
-import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -29,7 +27,6 @@ function App() {
             <Route path="/resultat/inconnu" element={<UnknownScore />} />
             <Route path="/resultat/non" element={<NotEligibleScore />} />
             <Route path="/resultat/oui" element={<EligibleScore />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/list" element={<ListAnswer />} />
           </Routes>
         </div>
