@@ -1,6 +1,6 @@
 import Headeradmin from "../components/HeaderAdmin";
 import FilterBar from "../components/FilterBar";
-import Sidebar from "../components/Sidebar";
+// import Sidebar from "../components/Sidebar";
 import FooterUser from "../components/FooterUser";
 import User from "../components/User";
 // import Navbar from "../components/Navbar";
@@ -10,7 +10,7 @@ function Dashboard() {
   return (
     <div className="dashboard-wrapper">
       <Headeradmin />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <FilterBar />
       <User />
       <FooterUser />

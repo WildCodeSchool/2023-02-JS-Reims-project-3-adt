@@ -8,10 +8,14 @@
   width: 80%;
   font-size: 16px;
   border: 1px solid #ccc;
+  padding: 2rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .table1 {
-  color: black;
-  background-color: aqua;
+  color: white;
+  background-color: #325b3b;
 }
 .table-row,
 .table-column {

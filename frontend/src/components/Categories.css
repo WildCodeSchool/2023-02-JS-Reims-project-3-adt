@@ -41,5 +41,5 @@ a:link {
 }
 .categoryList.active {
   background-color: hsla(113, 35%, 34%, 0.792);
-  color: white;
+  color: black;
 }

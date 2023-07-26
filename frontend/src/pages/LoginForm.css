@@ -14,11 +14,12 @@
   flex-direction: column;
   padding: 2rem 5rem;
   border-radius: 1em;
-  width: 15rem;
+  width: 60vh;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   gap: 2rem;
+  border: 2px solid #3f7438;
 }
 .logoLogin {
   width: 7rem;
@@ -43,12 +44,11 @@
   border-radius: 6px;
   outline: none;
   width: 100%;
-  
 }
 .loginButton {
   cursor: pointer;
   letter-spacing: 1.5px;
-  background-color: hsla(113, 35%, 34%, 0.792);
+  background-color: #3f7438;
   text-align: center;
   padding: 0.75rem;
   font-size: 1rem;

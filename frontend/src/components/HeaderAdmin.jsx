@@ -6,7 +6,7 @@ function Headeradmin() {
     <div className="Navadmin">
       <img src={logo} alt="logo adt marne" className="Logoadmin" />
       <button type="button" className="btnProfil">
-        Profil
+        Se deconnecter
       </button>
     </div>
   );

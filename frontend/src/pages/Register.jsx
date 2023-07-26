@@ -32,7 +32,7 @@ function Register() {
                 import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
               }/users/${user.id}`,
               {
-                method: "put",
+                method: "post",
                 headers: {
                   "content-type": "application/json",
                 },
@@ -84,9 +84,8 @@ function Register() {
               type="text"
               id="email"
               name="email"
-              placeholder="adresse mail"
               className="register-input"
-              placeholder="Votre adresse mail"
+              placeholder="Adresse mail"
             />
           </div>
           <div className="register-form-input">
@@ -96,7 +95,7 @@ function Register() {
               type="password"
               id="password"
               name="password"
-              placeholder="mot de passe"
+              placeholder="Mot de passe"
               className="register-input"
             />
           </div>
@@ -108,20 +107,10 @@ function Register() {
               type="text"
               id="phone_number"
               name="phone_number"
-              placeholder="Votre Numéro de téléphone"
+              placeholder="Numéro de téléphone"
             />
           </div>
 
-          <div className="register-form-input">
-            <label htmlFor="phone_number">Numéro de téléphone &#42;</label>
-            <input
-              ref={phonenumberRef}
-              type="text"
-              id="phone_number"
-              name="phone_number"
-              placeholder="Votre Numéro de téléphone"
-            />
-          </div>
           <button type="submit" className="buttonRegister">
             Créer mon compte
           </button>
