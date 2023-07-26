@@ -1,4 +1,5 @@
 require("dotenv").config();
+const argon2 = require("argon2");
 
 const fs = require("fs");
 const mysql = require("mysql2/promise");
@@ -21,6 +22,20 @@ const migrate = async () => {
   const sql = fs.readFileSync("./database.sql", "utf8");
 
   await connection.query(sql);
+
+  const hashedPassword = await argon2.hash("azerty");
+  await connection.query(
+    `INSERT INTO user (email,hashedPassword,firstname,lastname,company_name,phone_number,is_admin) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [
+      "pierre@adt.fr",
+      hashedPassword,
+      "Pierre",
+      "Labadie",
+      "ADT",
+      "0326456788",
+      true,
+    ]
+  );
 
   connection.end();
 };

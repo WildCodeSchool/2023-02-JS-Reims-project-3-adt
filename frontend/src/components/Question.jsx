@@ -264,22 +264,45 @@ function Question() {
           </button>
         )}
       </div>
-      <div className="counters">
-        <p>Nombre de critères atteints : {countCriteriaMet}</p>
-        <p>Nombre de critères non atteints : {criteriumNotReached}</p>
-        <p>Nombre de critères non concernés : {countNotApplicable}</p>
-        <p>Nombre de critères inconnus : {countUnknown}</p>
-      </div>
-      <div>
-        <p>
-          Pourcentage des questions répondues (Obligatoire) :
-          {pourcentage(mandatoryQuestions)}%
-        </p>
-        <p>
-          Pourcentage des questions répondues (Essentiel) :
-          {pourcentage(essentialQuestions)}%
-        </p>
-      </div>
+
+      <table className="tabel-survey">
+        <thead className="survey-thead">
+          <tr className="survey-tr">
+            <th className="survey-th">Nombre de critères atteints</th>
+            <th className="survey-th">Nombre de critères non atteints</th>
+            <th className="survey-th">Nombre de critères non concernés</th>
+            <th className="survey-th">Nombre de critères inconnus</th>
+            <th className="survey-th">
+              Pourcentage des questions répondues (Obligatoire)
+            </th>
+            <th className="survey-th">
+              Pourcentage des questions répondues (Essentiel)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="survey-td">{countCriteriaMet}</td>
+            <td className="survey-td">{criteriumNotReached}</td>
+            <td className="survey-td">{countNotApplicable}</td>
+            <td className="survey-td">{countUnknown}</td>
+            <td className="survey-td">{pourcentage(mandatoryQuestions)}%</td>
+            <td className="survey-td">{pourcentage(essentialQuestions)}%</td>
+          </tr>
+        </tbody>
+        {/* <p> : {countCriteriaMet}</p>
+          <p>Nombre de critères non atteints : {criteriumNotReached}</p>
+          <p>Nombre de critères non concernés : {countNotApplicable}</p>
+          <p>Nombre de critères inconnus : {countUnknown}</p>
+          <p>
+            Pourcentage des questions répondues (Obligatoire) :
+            {pourcentage(mandatoryQuestions)}%
+          </p>
+          <p>
+            Pourcentage des questions répondues (Essentiel) :
+            {pourcentage(essentialQuestions)}%
+          </p> */}
+      </table>
     </section>
   );
 }

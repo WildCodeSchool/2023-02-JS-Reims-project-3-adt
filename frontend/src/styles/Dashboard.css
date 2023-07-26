@@ -31,10 +31,10 @@
 .filters {
   grid-area: c;
 }
-
+/* 
 footer {
   grid-area: e;
-}
+} */
 
 .central-area {
   padding: 1rem;
@@ -57,4 +57,11 @@ footer {
 }
 .central-answer {
   text-align: center;
+}
+.central-answer1 {
+  font-size: 16px;
+  padding: 1rem;
+  align-items: center;
+  flex-grow: 1;
+  background-color: none;
 }

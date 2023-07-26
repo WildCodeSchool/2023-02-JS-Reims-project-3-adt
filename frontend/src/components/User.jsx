@@ -32,6 +32,7 @@ function User() {
             backgroundColor: "white",
             border: "1px solid",
             textAlign: "center",
+            background: "#aedbb8",
           }}
         >
           <td
@@ -77,18 +78,28 @@ function User() {
               borderTop: "1px solid lightgrey",
             }}
           >
-            Resultat
+            Email
+          </td>
+          <td
+            style={{
+              padding: "1rem",
+              borderBottom: "1px solid lightgrey",
+              borderTop: "1px solid lightgrey",
+            }}
+          >
+            Résultat
           </td>
         </tr>
         {users.map((user) => (
           <tr key={user.id} className="central-answer">
-            <td>{user.id}</td>
-            <td>{user.firstname}</td>
-            <td>{user.lastname}</td>
-            <td>{user.company_name}</td>
-            <td>
+            <td className="central-answer1">{user.id}</td>
+            <td className="central-answer1">{user.firstname}</td>
+            <td className="central-answer1">{user.lastname}</td>
+            <td className="central-answer1">{user.company_name}</td>
+            <td className="central-answer1">{user.email}</td>
+            <td className="central-answer1">
               <Link to={`/result/${user.id}`}>
-                <AiOutlineEye />
+                <AiOutlineEye style={{ fontSize: "25px" }} />
               </Link>
             </td>
           </tr>
