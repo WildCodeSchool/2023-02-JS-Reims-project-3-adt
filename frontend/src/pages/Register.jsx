@@ -54,25 +54,16 @@ function Register() {
           }}
         >
           <div className="register-form-input">
-            <label htmlFor="email">Email &#42;</label>
+            <label htmlFor="lastname">Nom &#42;</label>
             <input
-              ref={emailRef}
+              ref={lastnameRef}
               type="text"
-              id="email"
-              name="email"
-              placeholder="Votre adresse mél"
+              id="lastname"
+              name="lastname"
+              placeholder="Votre Nom"
             />
           </div>
-          <div className="register-form-input">
-            <label htmlFor="password">Password &#42;</label>
-            <input
-              ref={passwordRef}
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Votre mot de passe"
-            />
-          </div>
+
           <div className="register-form-input">
             <label htmlFor="firstname">Prénom &#42;</label>
             <input
@@ -85,15 +76,26 @@ function Register() {
           </div>
 
           <div className="register-form-input">
-            <label htmlFor="lastname">Nom &#42;</label>
+            <label htmlFor="email">Email &#42;</label>
             <input
-              ref={lastnameRef}
+              ref={emailRef}
               type="text"
-              id="lastname"
-              name="lastname"
-              placeholder="Votre Nom"
+              id="email"
+              name="email"
+              placeholder="Votre adresse mail"
             />
           </div>
+          <div className="register-form-input">
+            <label htmlFor="password">Password &#42;</label>
+            <input
+              ref={passwordRef}
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Votre mot de passe"
+            />
+          </div>
+
           <div className="register-form-input">
             <label htmlFor="phone_number">Numéro de téléphone &#42;</label>
             <input
@@ -108,7 +110,7 @@ function Register() {
             Créer mon compte
           </button>
           <p>
-            Vous avez déjà un compte? <Link to="/login">Connexion</Link>
+            Vous avez déjà un compte ? <Link to="/login">Connexion</Link>
           </p>
         </form>
       </div>
