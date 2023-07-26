@@ -81,6 +81,7 @@ function User() {
             <td>{user.firstname}</td>
             <td>{user.lastname}</td>
             <td>{user.company_name}</td>
+            <td>{user.email}</td>
             <td>
               <Link to={`/result/${user.id}`}>Voir ses réponses</Link>
             </td>

@@ -46,9 +46,7 @@ function Register() {
               if (response.ok) {
                 navigate("/login");
               } else {
-                alert(
-                  "il y a eu un problème lors de la la création d'un compte"
-                );
+                alert("il y a eu un problème lors de la la création du compte");
               }
             });
           }}
@@ -60,7 +58,7 @@ function Register() {
               type="text"
               id="lastname"
               name="lastname"
-              placeholder="Votre Nom"
+              placeholder="Votre nom"
             />
           </div>
 
@@ -71,12 +69,12 @@ function Register() {
               type="text"
               id="firstname"
               name="firstname"
-              placeholder="Votre Prénom"
+              placeholder="Votre prénom"
             />
           </div>
 
           <div className="register-form-input">
-            <label htmlFor="email">Email &#42;</label>
+            <label htmlFor="email">E-mail &#42;</label>
             <input
               ref={emailRef}
               type="text"
@@ -86,7 +84,7 @@ function Register() {
             />
           </div>
           <div className="register-form-input">
-            <label htmlFor="password">Password &#42;</label>
+            <label htmlFor="password">Mot de passe &#42;</label>
             <input
               ref={passwordRef}
               type="password"
@@ -103,7 +101,7 @@ function Register() {
               type="text"
               id="phone_number"
               name="phone_number"
-              placeholder="Votre Numéro de téléphone"
+              placeholder="Votre numéro de téléphone"
             />
           </div>
           <button type="submit" className="buttonRegister">

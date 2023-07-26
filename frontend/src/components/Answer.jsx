@@ -24,18 +24,74 @@ function Answer() {
   }, [userId]);
 
   return (
-    <div style={{ overflow: "auto" }}>
+    <div style={{ overflow: "auto", padding: "1rem" }}>
       <h2>
-        Réponses de l'utilisateur : {userResponses[0] && userResponses[0].email}
+        L'email de l'utilisateur : {userResponses[0] && userResponses[0].email}
       </h2>
-      <ul>
+      <h2>
+        Numéro de téléphone :{" "}
+        {userResponses[0] && userResponses[0].phone_number}
+      </h2>
+
+      <table>
         {userResponses.map((response) => (
-          <li key={response.id}>
-            Question : {response.questionContent} | Réponse :{" "}
-            {response.response}
-          </li>
+          <tr
+            key={response.id}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "auto 1fr",
+              padding: "1rem",
+            }}
+          >
+            <td style={{ gridColumn: "1 / -1", marginBottom: "0.5rem" }}>
+              {response.questionContent}
+            </td>
+            <td>{response.response}</td>
+            <td style={{ display: "flex" }}>
+              <input
+                style={{ marginLeft: "1rem", marginRight: "0.5rem" }}
+                type="radio"
+                id={`answer${response.id}-atteint`}
+                name={`answer${response.id}`}
+                value="Atteint"
+              />
+              <label htmlFor={`answer${response.id}`} className="answerChoice">
+                Atteint
+              </label>
+              <input
+                style={{ marginLeft: "1rem", marginRight: "0.5rem" }}
+                type="radio"
+                id={`answer${response.id}-not-atteint`}
+                name={`answer${response.id}`}
+                value="Non Atteint"
+              />
+              <label htmlFor={`answer${response.id}`} className="answerChoice">
+                Non Atteint
+              </label>
+              <input
+                style={{ marginLeft: "1rem", marginRight: "0.5rem" }}
+                type="radio"
+                id={`answer${response.id}-non-concerne`}
+                name={`answer${response.id}`}
+                value="Non Concerné"
+              />
+              <label htmlFor={`answer${response.id}`} className="answerChoice">
+                Non Concerné
+              </label>
+              <input
+                style={{ marginLeft: "1rem", marginRight: "0.5rem" }}
+                type="radio"
+                id={`answer${response.id}-ne-sais-pas`}
+                name={`answer${response.id}`}
+                value="Ne sais pas"
+              />
+              <label htmlFor={`answer${response.id}`} className="answerChoice">
+                Ne sais pas
+              </label>
+            </td>
+          </tr>
         ))}
-      </ul>
+      </table>
     </div>
   );
 }
