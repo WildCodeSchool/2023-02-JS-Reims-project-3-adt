@@ -17,7 +17,7 @@ create table `user` (
 --   company_name,
 --   phone_number,
 --   is_admin) VALUES
--- ('pierre@adt.fr', 'azerty', 'Pierre', 'Labadie', 'ADT', '0326456788', true);
+-- ('pierre@adt.fr', 'azerty', 'Pierre', 'Labadie', 'ADT', '0326456789', true);
 
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
