@@ -2,8 +2,7 @@ import Headeradmin from "../components/HeaderAdmin";
 import FilterBar from "../components/FilterBar";
 import Sidebar from "../components/Sidebar";
 import FooterUser from "../components/FooterUser";
-import User from "../components/User";
-// import Navbar from "../components/Navbar";
+import Answer from "../components/Answer";
 import "../styles/Dashboard.css";
 
 function Dashboard() {
@@ -12,9 +11,8 @@ function Dashboard() {
       <Headeradmin />
       <Sidebar />
       <FilterBar />
-      <User />
+      <Answer />
       <FooterUser />
-      {/* <Navbar /> */}
     </div>
   );
 }

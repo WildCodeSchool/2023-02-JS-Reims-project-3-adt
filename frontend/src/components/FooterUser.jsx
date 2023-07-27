@@ -10,6 +10,9 @@ function FooterUser() {
       <div>
         <Link to="/legal">Mentions légales</Link>
       </div>
+      <div>
+        <Link to="/login">Connexion Admin</Link>
+      </div>
     </footer>
   );
 }

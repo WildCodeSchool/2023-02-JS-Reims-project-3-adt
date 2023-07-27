@@ -1,0 +1,38 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #aedbb8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); /* Ajoutez ces lignes */
+}
+
+.filters select {
+  display: flex;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #325b3b;
+  width: auto;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 2px solid #3f7438;
+  border-radius: 1em;
+
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 1);
+}
+
+.filters select:hover {
+  background-color: #136540;
+}
+
+.filters select option {
+  font-size: 1.5em;
+}

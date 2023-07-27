@@ -12,7 +12,7 @@
   flex-direction: column;
   padding: 1rem 5rem;
   border-radius: 1em;
-  width: 15rem;
+  width: 50vh;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -72,4 +72,8 @@
 .btn-register {
   display: flex;
   justify-content: center;
+}
+
+p {
+  padding-top: 1vh;
 }

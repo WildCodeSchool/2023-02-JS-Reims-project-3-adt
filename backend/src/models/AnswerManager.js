@@ -23,9 +23,10 @@ class AnswerManager extends AbstractManager {
 
   getAllByUserId(userId) {
     return this.database.query(
-      `SELECT answer.*, question.*
+      `SELECT answer.*, question.*, user.*
       FROM ${this.table}
       JOIN question ON answer.question_id = question.id
+      JOIN user ON answer.user_id = user.id
       WHERE answer.user_id = ?`,
       [userId]
     );
