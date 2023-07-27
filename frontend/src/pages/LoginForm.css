@@ -16,12 +16,18 @@
   margin: auto;
   gap: 2rem;
   font-size: 16px;
-  width: 25vw;
+  width: 50%;
+  max-width: 500px;
   padding: 3em;
   border-radius: 1em;
   border: 2px solid #3f7438;
   background-color: white;
 }
+
+.login form {
+  width: 100%;
+}
+
 .logoLogin {
   width: 7rem;
   align-items: center;
@@ -68,4 +74,8 @@
 .btn-user {
   display: flex;
   justify-content: center;
+}
+.login-form-input label::after {
+  content: " *";
+  color: red;
 }

@@ -8,6 +8,7 @@
   margin-left: auto;
   margin-right: auto;
   flex-grow: 1;
+  border-collapse: collapse;
 }
 .table1 {
   color: white;
@@ -39,4 +40,17 @@
 }
 table tr:nth-child(even) td {
   background-color: #d0cdcd;
+}
+.title-table {
+  width: 100%;
+  padding-left: auto;
+  padding-bottom: 1rem;
+}
+.title-table th,
+.title-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.header-cell {
+  text-align: left;
 }

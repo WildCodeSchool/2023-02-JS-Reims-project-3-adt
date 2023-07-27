@@ -84,3 +84,7 @@
 p {
   padding-top: 1vh;
 }
+.register-form-input label::after {
+  content: ' *';
+  color: red;
+}

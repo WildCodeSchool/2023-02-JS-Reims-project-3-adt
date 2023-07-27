@@ -185,7 +185,7 @@ function Register() {
           }}
         >
           <div className="register-form-input">
-            <label htmlFor="lastname">Nom &#42;</label>
+            <label htmlFor="lastname">Nom </label>
             <input
               ref={lastnameRef}
               type="text"
@@ -196,7 +196,7 @@ function Register() {
           </div>
 
           <div className="register-form-input">
-            <label htmlFor="firstname">Prénom &#42;</label>
+            <label htmlFor="firstname">Prénom </label>
             <input
               ref={firstnameRef}
               type="text"
@@ -207,7 +207,7 @@ function Register() {
           </div>
 
           <div className="register-form-input">
-            <label htmlFor="email">E-mail &#42;</label>
+            <label htmlFor="email">E-mail </label>
             <input
               ref={emailRef}
               type="text"
@@ -217,7 +217,7 @@ function Register() {
             />
           </div>
           <div className="register-form-input">
-            <label htmlFor="password">Mot de passe &#42;</label>
+            <label htmlFor="password">Mot de passe </label>
             <input
               ref={passwordRef}
               type="password"
@@ -228,7 +228,7 @@ function Register() {
           </div>
 
           <div className="register-form-input">
-            <label htmlFor="phone_number">Numéro de téléphone &#42;</label>
+            <label htmlFor="phone_number">Numéro de téléphone </label>
             <input
               ref={phonenumberRef}
               type="text"

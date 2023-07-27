@@ -75,6 +75,7 @@
   background-color: #aedbb8;
   border-color: #0000ff;
   box-shadow: 0 5px 1px rgba(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 .btnSidebar {

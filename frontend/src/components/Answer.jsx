@@ -33,21 +33,26 @@ function Answer() {
         flexGrow: "1",
       }}
     >
-      <div className="title-table">
-        <h2>
-          L'email de l'utilisateur :{" "}
-          {userResponses[0] && userResponses[0].email}
-        </h2>
-        <h2>
-          Numéro de téléphone :{" "}
-          {userResponses[0] && userResponses[0].phone_number}
-        </h2>
-      </div>
+      <table className="title-table">
+        <tbody>
+          <tr>
+            <th className="header-cell">L'email de l'utilisateur </th>
+            <th className="header-cell">
+              {userResponses[0] && userResponses[0].email}
+            </th>
+          </tr>
+          <tr>
+            <td>Numéro de téléphone </td>
+            <td>{userResponses[0] && userResponses[0].phone_number}</td>
+          </tr>
+        </tbody>
+      </table>
+
       <table className="table">
         <thead>
           <tr className="table1">
             <th className="table-column1">Question</th>
-            <th className="table-column">Response</th>
+            <th className="table-column">Résponse</th>
             <th className="table-column">Choix Résponse</th>
           </tr>
         </thead>

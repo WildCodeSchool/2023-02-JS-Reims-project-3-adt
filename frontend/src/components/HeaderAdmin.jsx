@@ -14,7 +14,7 @@ function Headeradmin() {
       cancelButtonText: "Annuler",
     });
     if (result.isConfirmed) {
-      await Swal.fire({
+      Swal.fire({
         text: "Vous êtes déconnecté",
         confirmButtonColor: "#3f7438",
       });
