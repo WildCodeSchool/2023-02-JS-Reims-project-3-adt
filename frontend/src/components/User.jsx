@@ -32,7 +32,7 @@ function User() {
               backgroundColor: "white",
             }}
           >
-            <td
+            <th
               style={{
                 padding: "1rem",
                 borderBottom: "1px solid lightgrey",
@@ -40,8 +40,8 @@ function User() {
               }}
             >
               Id
-            </td>
-            <td
+            </th>
+            <th
               style={{
                 padding: "1rem",
                 borderBottom: "1px solid lightgrey",
@@ -49,8 +49,8 @@ function User() {
               }}
             >
               Prénom
-            </td>
-            <td
+            </th>
+            <th
               style={{
                 padding: "1rem",
                 borderBottom: "1px solid lightgrey",
@@ -58,8 +58,8 @@ function User() {
               }}
             >
               Nom
-            </td>
-            <td
+            </th>
+            <th
               style={{
                 padding: "1rem",
                 borderBottom: "1px solid lightgrey",
@@ -67,14 +67,16 @@ function User() {
               }}
             >
               Structure
-            </td>
-            <td
+            </th>
+            <th
               style={{
                 padding: "1rem",
                 borderBottom: "1px solid lightgrey",
                 borderTop: "1px solid lightgrey",
               }}
-            />
+            >
+              {" "}
+            </th>
           </tr>
         </thead>
         <tbody>
