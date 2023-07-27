@@ -24,69 +24,73 @@ function User() {
     <div className="central-area">
       <h1>Liste des utilisateurs :</h1>
       <table>
-        <tr
-          style={{
-            position: "sticky",
-            top: 0,
-            backgroundColor: "white",
-          }}
-        >
-          <td
+        <thead>
+          <tr
             style={{
-              padding: "1rem",
-              borderBottom: "1px solid lightgrey",
-              borderTop: "1px solid lightgrey",
+              position: "sticky",
+              top: 0,
+              backgroundColor: "white",
             }}
           >
-            Id
-          </td>
-          <td
-            style={{
-              padding: "1rem",
-              borderBottom: "1px solid lightgrey",
-              borderTop: "1px solid lightgrey",
-            }}
-          >
-            Prénom
-          </td>
-          <td
-            style={{
-              padding: "1rem",
-              borderBottom: "1px solid lightgrey",
-              borderTop: "1px solid lightgrey",
-            }}
-          >
-            Nom
-          </td>
-          <td
-            style={{
-              padding: "1rem",
-              borderBottom: "1px solid lightgrey",
-              borderTop: "1px solid lightgrey",
-            }}
-          >
-            Structure
-          </td>
-          <td
-            style={{
-              padding: "1rem",
-              borderBottom: "1px solid lightgrey",
-              borderTop: "1px solid lightgrey",
-            }}
-          />
-        </tr>
-        {users.map((user) => (
-          <tr key={user.id}>
-            <td>{user.id}</td>
-            <td>{user.firstname}</td>
-            <td>{user.lastname}</td>
-            <td>{user.company_name}</td>
-            <td>{user.email}</td>
-            <td>
-              <Link to={`/result/${user.id}`}>Voir ses réponses</Link>
+            <td
+              style={{
+                padding: "1rem",
+                borderBottom: "1px solid lightgrey",
+                borderTop: "1px solid lightgrey",
+              }}
+            >
+              Id
             </td>
+            <td
+              style={{
+                padding: "1rem",
+                borderBottom: "1px solid lightgrey",
+                borderTop: "1px solid lightgrey",
+              }}
+            >
+              Prénom
+            </td>
+            <td
+              style={{
+                padding: "1rem",
+                borderBottom: "1px solid lightgrey",
+                borderTop: "1px solid lightgrey",
+              }}
+            >
+              Nom
+            </td>
+            <td
+              style={{
+                padding: "1rem",
+                borderBottom: "1px solid lightgrey",
+                borderTop: "1px solid lightgrey",
+              }}
+            >
+              Structure
+            </td>
+            <td
+              style={{
+                padding: "1rem",
+                borderBottom: "1px solid lightgrey",
+                borderTop: "1px solid lightgrey",
+              }}
+            />
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.firstname}</td>
+              <td>{user.lastname}</td>
+              <td>{user.company_name}</td>
+              <td>{user.email}</td>
+              <td>
+                <Link to={`/result/${user.id}`}>Voir ses réponses</Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
