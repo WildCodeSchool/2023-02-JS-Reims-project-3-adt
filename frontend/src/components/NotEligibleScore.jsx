@@ -39,7 +39,7 @@ function NotEligibleScore() {
           </li>
         </ul>
         <h3 className="case-two">
-          Malheureseument vous n'êtes pas eligible au label Ecotourisme et
+          Malheureusement vous n'êtes pas éligible au label éco-tourisme et
           maintenant ⁉️
         </h3>
         <p>

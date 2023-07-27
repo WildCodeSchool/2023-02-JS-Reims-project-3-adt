@@ -148,10 +148,10 @@ function Question() {
   };
   return (
     <section className="surveyQuestion">
-      <button type="button" onClick={test} className="test">
-        Cochez
-      </button>
       <div className="small-container" />
+      <button type="button" onClick={test} className="test">
+        Cochez "atteint"
+      </button>
       {questions
         .filter((question) => {
           return (

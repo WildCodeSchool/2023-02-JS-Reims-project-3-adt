@@ -5,7 +5,7 @@ import "../styles/Navbar.css";
 function Headeradmin() {
   const AlertAdmin = async () => {
     const result = await Swal.fire({
-      title: "Êtes-vous sûr de vouloir vous déconnecter ??",
+      title: "Êtes-vous sûr de vouloir vous déconnecter ?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3f7438",

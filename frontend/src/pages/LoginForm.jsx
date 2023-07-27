@@ -48,7 +48,7 @@ export default function LoginForm() {
         <h1 className="connection">Connectez-vous</h1>
         <form onSubmit={handleSubmit}>
           <div className="login-form-input">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">E-mail</label>
             <input type="text" id="email" ref={emailRef} />
           </div>
           <div className="login-form-input">

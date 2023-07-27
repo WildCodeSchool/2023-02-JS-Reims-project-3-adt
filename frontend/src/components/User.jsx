@@ -35,7 +35,7 @@ function User() {
             background: "#aedbb8",
           }}
         >
-          <td
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -43,8 +43,8 @@ function User() {
             }}
           >
             Id
-          </td>
-          <td
+          </th>
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -52,8 +52,8 @@ function User() {
             }}
           >
             Prénom
-          </td>
-          <td
+          </th>
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -61,8 +61,8 @@ function User() {
             }}
           >
             Nom
-          </td>
-          <td
+          </th>
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -70,8 +70,8 @@ function User() {
             }}
           >
             Structure
-          </td>
-          <td
+          </th>
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -79,8 +79,8 @@ function User() {
             }}
           >
             Email
-          </td>
-          <td
+          </th>
+          <th
             style={{
               padding: "1rem",
               borderBottom: "1px solid lightgrey",
@@ -88,7 +88,7 @@ function User() {
             }}
           >
             Résultat
-          </td>
+          </th>
         </tr>
         {users.map((user) => (
           <tr key={user.id} className="central-answer">
