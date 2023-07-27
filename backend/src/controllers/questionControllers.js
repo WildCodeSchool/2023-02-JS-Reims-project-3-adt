@@ -55,9 +55,22 @@ const getUserResponses = (req, res) => {
     });
 };
 
+const browse = (req, res) => {
+  models.question
+    .findAll()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browseByCategory,
   addByCategory,
   getAllByCategory,
   getUserResponses,
+  browse,
 };

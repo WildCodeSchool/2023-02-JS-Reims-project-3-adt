@@ -9,8 +9,8 @@ function Contact() {
           Je voudrais être contacté
         </Link>
       </div>
-      <div className="small-contact">
-        <Link to="/" className="contact-text">
+      <div className="small-contact1">
+        <Link to="/" className="contact-text1">
           Je ne voudrais pas être contacté
         </Link>
       </div>

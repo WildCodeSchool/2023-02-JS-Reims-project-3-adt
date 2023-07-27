@@ -16,6 +16,9 @@ export default function FilterBar({ onFilter }) {
 
   return (
     <form className="filters" onSubmit={handleFilterSubmit}>
+      <button type="button" className="filters1">
+        Modification
+      </button>
       <select value={category} onChange={handleCategoryChange}>
         <option value="">Questions</option>
         <option value="">Questions répondues</option>

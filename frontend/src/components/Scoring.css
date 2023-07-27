@@ -19,6 +19,7 @@
   border: 2px solid #63ba58;
   line-height: 2em;
   background-color: white;
+  margin-bottom: 2rem;
 }
 .title-score h1,
 h2,
@@ -42,15 +43,45 @@ h3 {
   border: none;
   border-radius: 1em;
   cursor: pointer;
+  border: 1px solid #3f7438;
+}
+.small-contact1 {
+  display: grid;
+  grid-template-columns: repeat(1, 300px);
+  grid-template-rows: repeat(1, 50px);
+  align-items: center;
+  background-color: white;
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  border: 1px solid #3f7438;
 }
 .contact-text {
   color: white;
   font-size: 18px;
   text-align: center;
 }
+.contact-text1 {
+  color: #3f7438;
+ 
+}
 .contact-text:hover {
   color: black;
 }
 .case-three {
   color: blue;
+}
+.score1 {
+  color: blue;
+}
+.score2 {
+  color: #3f7438;
+}
+.score3 {
+  color: hsl(181, 35%, 46%);
+}
+.case-two {
+  color: red;
+  font-weight: bold;
 }

@@ -1,0 +1,56 @@
+.table {
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100%;
+  font-size: 16px;
+  padding: 1rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 1;
+  border-collapse: collapse;
+}
+.table1 {
+  color: white;
+  background-color: #325b3b;
+}
+.table-row,
+.table-column {
+  padding: 10px;
+  border: 1px solid #090909;
+}
+.table1:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table-column1 {
+  width: 50%;
+}
+.title-table-answer {
+  text-align: "center";
+  padding: 1rem 1rem 1rem 1rem;
+}
+.table-row1 {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1em 1em 1em 1em;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid;
+  /* border-bottom: 1px solid; */
+}
+table tr:nth-child(even) td {
+  background-color: #d0cdcd;
+}
+.title-table {
+  width: 100%;
+  padding-left: auto;
+  padding-bottom: 1rem;
+}
+.title-table th,
+.title-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.header-cell {
+  text-align: left;
+}

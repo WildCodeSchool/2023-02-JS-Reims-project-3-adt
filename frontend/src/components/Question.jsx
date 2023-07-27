@@ -32,12 +32,13 @@ function Question() {
     const knownCategory = questions.find(
       (question) => question.categoryId === parseInt(categoryId, 10)
     );
+
     if (!knownCategory) {
       axios
         .get(
           `${
             import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/categories/${categoryId}/questions`
+          }/questions`
         )
         .then((response) => {
           setQuestions([...questions, ...response.data]);
@@ -46,7 +47,27 @@ function Question() {
           console.error(error);
         });
     }
-  }, [categoryId]);
+  }, []);
+
+  // useEffect(() => {
+  //   const knownCategory = questions.find(
+  //     (question) => question.categoryId === parseInt(categoryId, 10)
+  //   );
+  //   if (!knownCategory) {
+  //     axios
+  //       .get(
+  //         `${
+  //           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+  //         }/categories/${categoryId}/questions`
+  //       )
+  //       .then((response) => {
+  //         setQuestions([...questions, ...response.data]);
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //       });
+  //   }
+  // }, []);
 
   const mandatoryQuestions = questions.filter(
     (question) => question.mandatory_level === "Obligatoire"
@@ -117,9 +138,20 @@ function Question() {
       });
   };
 
+  const test = () => {
+    for (let i = 0; i < questions.length; i += 1) {
+      // if (questions[i].mandatory_level === "Obligatoire") {
+      questions[i].response = "Atteint";
+
+      // console.log(i);
+    }
+  };
   return (
     <section className="surveyQuestion">
       <div className="small-container" />
+      <button type="button" onClick={test} className="test">
+        Cochez "atteint"
+      </button>
       {questions
         .filter((question) => {
           return (
@@ -131,7 +163,9 @@ function Question() {
             <div className={`questionList questionText${question.id}`}>
               <p className="questionContent">
                 {question.content}
-                {question.tooltip_content != null && <AiOutlineInfoCircle />}
+                {question.tooltip_content != null && (
+                  <AiOutlineInfoCircle color="blue" />
+                )}
               </p>
               <p className="mandatoryLevel">{question.mandatory_level}</p>
             </div>
@@ -154,7 +188,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Atteint"
                 onChange={() => updateQuestionResponse(question, "Atteint")}
-                checked={question.response === "Atteint"}
+                checked={!question.response || question.response === "Atteint"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Atteint
@@ -190,9 +224,7 @@ function Question() {
                 name={`answer${question.id}`}
                 value="Ne sais pas"
                 onChange={() => updateQuestionResponse(question, "Ne sais pas")}
-                checked={
-                  !question.response || question.response === "Ne sais pas"
-                }
+                checked={question.response === "Ne sais pas"}
               />
               <label htmlFor={`answer${question.id}`} className="answerChoice">
                 Ne sais pas
@@ -232,22 +264,45 @@ function Question() {
           </button>
         )}
       </div>
-      <div className="counters">
-        <p>Nombre de critères atteints : {countCriteriaMet}</p>
-        <p>Nombre de critères non atteints : {criteriumNotReached}</p>
-        <p>Nombre de critères non concernés : {countNotApplicable}</p>
-        <p>Nombre de critères inconnus : {countUnknown}</p>
-      </div>
-      <div>
-        <p>
-          Pourcentage des questions répondues (Obligatoire) :
-          {pourcentage(mandatoryQuestions)}%
-        </p>
-        <p>
-          Pourcentage des questions répondues (Essentiel) :
-          {pourcentage(essentialQuestions)}%
-        </p>
-      </div>
+
+      <table className="tabel-survey">
+        <thead className="survey-thead">
+          <tr className="survey-tr">
+            <th className="survey-th">Nombre de critères atteints</th>
+            <th className="survey-th">Nombre de critères non atteints</th>
+            <th className="survey-th">Nombre de critères non concernés</th>
+            <th className="survey-th">Nombre de critères inconnus</th>
+            <th className="survey-th">
+              Pourcentage des questions répondues (Obligatoire)
+            </th>
+            <th className="survey-th">
+              Pourcentage des questions répondues (Essentiel)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="survey-td">{countCriteriaMet}</td>
+            <td className="survey-td">{criteriumNotReached}</td>
+            <td className="survey-td">{countNotApplicable}</td>
+            <td className="survey-td">{countUnknown}</td>
+            <td className="survey-td">{pourcentage(mandatoryQuestions)}%</td>
+            <td className="survey-td">{pourcentage(essentialQuestions)}%</td>
+          </tr>
+        </tbody>
+        {/* <p> : {countCriteriaMet}</p>
+          <p>Nombre de critères non atteints : {criteriumNotReached}</p>
+          <p>Nombre de critères non concernés : {countNotApplicable}</p>
+          <p>Nombre de critères inconnus : {countUnknown}</p>
+          <p>
+            Pourcentage des questions répondues (Obligatoire) :
+            {pourcentage(mandatoryQuestions)}%
+          </p>
+          <p>
+            Pourcentage des questions répondues (Essentiel) :
+            {pourcentage(essentialQuestions)}%
+          </p> */}
+      </table>
     </section>
   );
 }

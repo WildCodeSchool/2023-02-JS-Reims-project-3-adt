@@ -14,7 +14,9 @@ function EligibleScore() {
   const essentialQuestions = questions.filter(
     (question) => question.mandatory_level === "Essentiel"
   );
-
+  const optionQuestions = questions.filter(
+    (question) => question.mandatory_level === "Optionnel"
+  );
   const pourcentage = (questionList) => {
     const divisor =
       questionList.length -
@@ -38,15 +40,21 @@ function EligibleScore() {
       <section className="title-score">
         <h1>Merci d’avoir fait votre auto-évaluation.</h1>
         <p>Votre résultat est le suivant : </p>
-        <p>
-          Pourcentage des questions répondues (Obligatoire) :{" "}
-          {pourcentage(mandatoryQuestions)}%
-        </p>
-        <p>
-          Pourcentage des questions répondues (Essentiel) :{" "}
-          {pourcentage(essentialQuestions)}%
-        </p>
-        <h2>Félicitations 🎉, </h2>
+        <ul>
+          <li>
+            Pourcentage des questions répondues (Obligatoire) :{" "}
+            <span className="score1">{pourcentage(mandatoryQuestions)}%</span>
+          </li>
+          <li>
+            Pourcentage des questions répondues (Essentiel) :
+            <span className="score2"> {pourcentage(essentialQuestions)}%</span>
+          </li>
+          <li>
+            Pourcentage des questions répondues (Optionnel) :{" "}
+            <span className="score3">{pourcentage(optionQuestions)}%</span>
+          </li>
+        </ul>
+        <h2> 🎉🎉🎉 FÉLICITATIONS 🎉🎉🎉, </h2>
         <p>
           Vous avez engagé la transition vers un modèle d’activité plus
           responsable 🌱

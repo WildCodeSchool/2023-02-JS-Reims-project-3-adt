@@ -8,5 +8,8 @@ footer {
   background-color: white;
 }
 .footer-img {
-  height: 7em;
+  height: 5em;
+}
+.footer-img-admin {
+  height: 5vw;
 }

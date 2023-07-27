@@ -6,12 +6,13 @@
   gap: 2em;
   padding: 0.5em;
 }
+
 .list {
   gap: 1em;
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   width: 80%;
 }
 .title {
@@ -40,5 +41,5 @@ a:link {
 }
 .categoryList.active {
   background-color: hsla(113, 35%, 34%, 0.792);
-  color: white;
+  color: black;
 }
