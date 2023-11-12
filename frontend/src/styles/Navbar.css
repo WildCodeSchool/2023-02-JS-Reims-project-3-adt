@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
   background: linear-gradient(45deg, #1a201f, #3f7438);
   display: flex;
   flex-direction: column;
@@ -25,22 +25,32 @@
   height: 3rem;
   border-radius: 1rem 1rem;
   margin: 1rem;
-}
+} */
 
 /*NAVBAR USER*/
 .containerNavbarUser {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-  margin-bottom: 2em;
-  background-color: white;
+  /* margin-bottom: 2em; */
+  background-color: var(--color-text);
+  top: 0;
 }
-
 .logoUser {
-  padding: 0.5rem;
+  display: block;
 }
-
 .logoUser img {
   height: 5em;
-  padding: 1em;
+  padding: 1rem;
+}
+
+@media screen  and (max-width : 768px){
+  .containerNavbarUser {
+    width: 100%;
+  }
+  .logoUser img {
+   height: 3em;
+   padding: 0.5rem;
+  }
+  
 }
 
 /*NAVBAR ADMIN*/

@@ -3,18 +3,28 @@
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  /* font-size: 1rem; */
+}
+#root {
+  --primary-color : #3f7438;
+  --secondary-color : blue;
+  --customized-hover-color : hsl(181,35%,46%);
+  --color-text : white;
+  --border-radius : 10px;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  min-height: 100vh;
+.App {
+  height: 100vh;
+  width: 100vw;
 }
 .home {
   display: flex;
   flex-direction: column;
-  background-image: url("./assets/background-marne.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  flex-grow: 1;
+}
+.expanded-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

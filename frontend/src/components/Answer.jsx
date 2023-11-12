@@ -52,8 +52,8 @@ function Answer() {
         <thead>
           <tr className="table1">
             <th className="table-column1">Question</th>
-            <th className="table-column">Résponse</th>
-            <th className="table-column">Choix Résponse</th>
+            <th className="table-column">Réponse</th>
+            <th className="table-column">Choix Réponse</th>
           </tr>
         </thead>
         <tbody>

@@ -15,7 +15,7 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.11.2",
     "react-tooltip": "^5.18.0",
-    "sweetalert2": "^11.7.20",
+    "sweetalert2": "^11.6.13",
     "vite": "^4.0.4"
   },
   "devDependencies": {
@@ -28,6 +28,12 @@
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "prettier": "^2.8.3"
-  }
+    "prettier": "2.8.8"
+  },
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
