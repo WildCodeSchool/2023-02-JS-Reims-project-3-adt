@@ -20,11 +20,5 @@
 .home {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
-.expanded-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
+

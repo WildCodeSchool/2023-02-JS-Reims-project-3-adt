@@ -9,16 +9,6 @@ create table `user` (
   is_admin boolean default false
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- INSERT INTO `user` (
---   email,
---   hashedPassword,
---   firstname,
---   lastname,
---   company_name,
---   phone_number,
---   is_admin) VALUES
--- ('pierre@adt.fr', 'azerty', 'Pierre', 'Labadie', 'ADT', '0326456789', true);
-
 create table category (
 id int(11) unsigned primary key not null AUTO_INCREMENT,
 title varchar(100) not null,
@@ -197,3 +187,13 @@ CREATE TABLE answer (
   REFERENCES question(id),
   response enum("Atteint", "Non atteint", "Non Concerné", "Ne sais pas") not null
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- INSERT INTO `user` (
+--   email,
+--   hashedPassword,
+--   firstname,
+--   lastname,
+--   company_name,
+--   phone_number,
+--   is_admin) VALUES
+-- ('pierre@adt.fr', 'azerty', 'Pierre', 'Labadie', 'ADT', '0326456789', true);
