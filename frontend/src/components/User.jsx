@@ -52,7 +52,7 @@ function User() {
                 borderTop: "1px solid lightgrey",
               }}
             >
-              Prénom
+              Nom
             </th>
             <th
               style={{
@@ -61,7 +61,7 @@ function User() {
                 borderTop: "1px solid lightgrey",
               }}
             >
-              Nom
+              Prénom
             </th>
             <th
               style={{
@@ -96,8 +96,8 @@ function User() {
           {users.map((user) => (
             <tr key={user.id} className="central-answer">
               <td className="central-answer1">{user.id}</td>
-              <td className="central-answer1">{user.firstname}</td>
               <td className="central-answer1">{user.lastname}</td>
+              <td className="central-answer1">{user.firstname}</td>
               <td className="central-answer1">{user.company_name}</td>
               <td className="central-answer1">{user.email}</td>
               <td className="central-answer1">
